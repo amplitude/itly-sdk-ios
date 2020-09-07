@@ -1,0 +1,851 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9DC34C4E25000B5F00B23A17 /* GenericEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3D25000B5F00B23A17 /* GenericEvent.swift */; };
+		9DC34C4F25000B5F00B23A17 /* ItlyInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3E25000B5F00B23A17 /* ItlyInstance.swift */; };
+		9DC34C5025000B5F00B23A17 /* ItlyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4025000B5F00B23A17 /* ItlyEvent.swift */; };
+		9DC34C5125000B5F00B23A17 /* ItlyValidationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4125000B5F00B23A17 /* ItlyValidationMode.swift */; };
+		9DC34C5225000B5F00B23A17 /* ItlyEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4225000B5F00B23A17 /* ItlyEnvironment.swift */; };
+		9DC34C5325000B5F00B23A17 /* ItlyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4325000B5F00B23A17 /* ItlyLogger.swift */; };
+		9DC34C5425000B5F00B23A17 /* ItlySchemaValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4425000B5F00B23A17 /* ItlySchemaValidator.swift */; };
+		9DC34C5525000B5F00B23A17 /* ItlyDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4525000B5F00B23A17 /* ItlyDestination.swift */; };
+		9DC34C5625000B5F00B23A17 /* ItlyProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4625000B5F00B23A17 /* ItlyProperties.swift */; };
+		9DC34C5725000B5F00B23A17 /* ItlyCoreApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4725000B5F00B23A17 /* ItlyCoreApi.swift */; };
+		9DC34C5825000B5F00B23A17 /* ItlyPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4825000B5F00B23A17 /* ItlyPlugin.swift */; };
+		9DC34C5925000B5F00B23A17 /* PluginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4925000B5F00B23A17 /* PluginError.swift */; };
+		9DC34C5A25000B5F00B23A17 /* PluginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4A25000B5F00B23A17 /* PluginManager.swift */; };
+		9DC34C5B25000B5F00B23A17 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4B25000B5F00B23A17 /* Tracker.swift */; };
+		9DC34C5D25000B5F00B23A17 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4D25000B5F00B23A17 /* Validator.swift */; };
+		9DE19619250675EF00966F06 /* ItlyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DE19617250675EF00966F06 /* ItlyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DE1963A250677F700966F06 /* ItlyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4025000B5F00B23A17 /* ItlyEvent.swift */; };
+		9DE1963B250677F700966F06 /* ItlyValidationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4125000B5F00B23A17 /* ItlyValidationMode.swift */; };
+		9DE1963C250677F700966F06 /* ItlyEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4225000B5F00B23A17 /* ItlyEnvironment.swift */; };
+		9DE1963D250677F700966F06 /* ItlyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4325000B5F00B23A17 /* ItlyLogger.swift */; };
+		9DE1963E250677F700966F06 /* ItlySchemaValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4425000B5F00B23A17 /* ItlySchemaValidator.swift */; };
+		9DE1963F250677F700966F06 /* ItlyDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4525000B5F00B23A17 /* ItlyDestination.swift */; };
+		9DE19640250677F700966F06 /* ItlyProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4625000B5F00B23A17 /* ItlyProperties.swift */; };
+		9DE19641250677F700966F06 /* ItlyCoreApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4725000B5F00B23A17 /* ItlyCoreApi.swift */; };
+		9DE19642250677F700966F06 /* ItlyPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4825000B5F00B23A17 /* ItlyPlugin.swift */; };
+		9DE19643250677F700966F06 /* GenericEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3D25000B5F00B23A17 /* GenericEvent.swift */; };
+		9DE19644250677F700966F06 /* ItlyInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3E25000B5F00B23A17 /* ItlyInstance.swift */; };
+		9DE19645250677F700966F06 /* PluginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4925000B5F00B23A17 /* PluginError.swift */; };
+		9DE19646250677F700966F06 /* PluginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4A25000B5F00B23A17 /* PluginManager.swift */; };
+		9DE19647250677F700966F06 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4B25000B5F00B23A17 /* Tracker.swift */; };
+		9DE19648250677F700966F06 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4D25000B5F00B23A17 /* Validator.swift */; };
+		9DE19649250677F800966F06 /* ItlyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4025000B5F00B23A17 /* ItlyEvent.swift */; };
+		9DE1964A250677F800966F06 /* ItlyValidationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4125000B5F00B23A17 /* ItlyValidationMode.swift */; };
+		9DE1964B250677F800966F06 /* ItlyEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4225000B5F00B23A17 /* ItlyEnvironment.swift */; };
+		9DE1964C250677F800966F06 /* ItlyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4325000B5F00B23A17 /* ItlyLogger.swift */; };
+		9DE1964D250677F800966F06 /* ItlySchemaValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4425000B5F00B23A17 /* ItlySchemaValidator.swift */; };
+		9DE1964E250677F800966F06 /* ItlyDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4525000B5F00B23A17 /* ItlyDestination.swift */; };
+		9DE1964F250677F800966F06 /* ItlyProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4625000B5F00B23A17 /* ItlyProperties.swift */; };
+		9DE19650250677F800966F06 /* ItlyCoreApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4725000B5F00B23A17 /* ItlyCoreApi.swift */; };
+		9DE19651250677F800966F06 /* ItlyPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4825000B5F00B23A17 /* ItlyPlugin.swift */; };
+		9DE19652250677F800966F06 /* GenericEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3D25000B5F00B23A17 /* GenericEvent.swift */; };
+		9DE19653250677F800966F06 /* ItlyInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3E25000B5F00B23A17 /* ItlyInstance.swift */; };
+		9DE19654250677F800966F06 /* PluginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4925000B5F00B23A17 /* PluginError.swift */; };
+		9DE19655250677F800966F06 /* PluginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4A25000B5F00B23A17 /* PluginManager.swift */; };
+		9DE19656250677F800966F06 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4B25000B5F00B23A17 /* Tracker.swift */; };
+		9DE19657250677F800966F06 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4D25000B5F00B23A17 /* Validator.swift */; };
+		9DE19658250677F800966F06 /* ItlyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4025000B5F00B23A17 /* ItlyEvent.swift */; };
+		9DE19659250677F800966F06 /* ItlyValidationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4125000B5F00B23A17 /* ItlyValidationMode.swift */; };
+		9DE1965A250677F800966F06 /* ItlyEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4225000B5F00B23A17 /* ItlyEnvironment.swift */; };
+		9DE1965B250677F800966F06 /* ItlyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4325000B5F00B23A17 /* ItlyLogger.swift */; };
+		9DE1965C250677F800966F06 /* ItlySchemaValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4425000B5F00B23A17 /* ItlySchemaValidator.swift */; };
+		9DE1965D250677F800966F06 /* ItlyDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4525000B5F00B23A17 /* ItlyDestination.swift */; };
+		9DE1965E250677F800966F06 /* ItlyProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4625000B5F00B23A17 /* ItlyProperties.swift */; };
+		9DE1965F250677F800966F06 /* ItlyCoreApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4725000B5F00B23A17 /* ItlyCoreApi.swift */; };
+		9DE19660250677F800966F06 /* ItlyPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4825000B5F00B23A17 /* ItlyPlugin.swift */; };
+		9DE19661250677F800966F06 /* GenericEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3D25000B5F00B23A17 /* GenericEvent.swift */; };
+		9DE19662250677F800966F06 /* ItlyInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3E25000B5F00B23A17 /* ItlyInstance.swift */; };
+		9DE19663250677F800966F06 /* PluginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4925000B5F00B23A17 /* PluginError.swift */; };
+		9DE19664250677F800966F06 /* PluginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4A25000B5F00B23A17 /* PluginManager.swift */; };
+		9DE19665250677F800966F06 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4B25000B5F00B23A17 /* Tracker.swift */; };
+		9DE19666250677F800966F06 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4D25000B5F00B23A17 /* Validator.swift */; };
+		9DE1973825069C7500966F06 /* ItlyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DE19617250675EF00966F06 /* ItlyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DE1973925069C7600966F06 /* ItlyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DE19617250675EF00966F06 /* ItlyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DE1973A25069C7600966F06 /* ItlyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DE19617250675EF00966F06 /* ItlyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9DC34C3225000B0800B23A17 /* ItlyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ItlyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DC34C3D25000B5F00B23A17 /* GenericEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericEvent.swift; sourceTree = "<group>"; };
+		9DC34C3E25000B5F00B23A17 /* ItlyInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlyInstance.swift; sourceTree = "<group>"; };
+		9DC34C4025000B5F00B23A17 /* ItlyEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlyEvent.swift; sourceTree = "<group>"; };
+		9DC34C4125000B5F00B23A17 /* ItlyValidationMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlyValidationMode.swift; sourceTree = "<group>"; };
+		9DC34C4225000B5F00B23A17 /* ItlyEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlyEnvironment.swift; sourceTree = "<group>"; };
+		9DC34C4325000B5F00B23A17 /* ItlyLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlyLogger.swift; sourceTree = "<group>"; };
+		9DC34C4425000B5F00B23A17 /* ItlySchemaValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlySchemaValidator.swift; sourceTree = "<group>"; };
+		9DC34C4525000B5F00B23A17 /* ItlyDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlyDestination.swift; sourceTree = "<group>"; };
+		9DC34C4625000B5F00B23A17 /* ItlyProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlyProperties.swift; sourceTree = "<group>"; };
+		9DC34C4725000B5F00B23A17 /* ItlyCoreApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlyCoreApi.swift; sourceTree = "<group>"; };
+		9DC34C4825000B5F00B23A17 /* ItlyPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlyPlugin.swift; sourceTree = "<group>"; };
+		9DC34C4925000B5F00B23A17 /* PluginError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PluginError.swift; sourceTree = "<group>"; };
+		9DC34C4A25000B5F00B23A17 /* PluginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PluginManager.swift; sourceTree = "<group>"; };
+		9DC34C4B25000B5F00B23A17 /* Tracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
+		9DC34C4D25000B5F00B23A17 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		9DE19615250675EF00966F06 /* ItlyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ItlyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DE19617250675EF00966F06 /* ItlyCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItlyCore.h; sourceTree = "<group>"; };
+		9DE19618250675EF00966F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DE196222506761600966F06 /* ItlyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ItlyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DE1962F2506765B00966F06 /* ItlyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ItlyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9DC34C2F25000B0800B23A17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DE19612250675EF00966F06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DE1961F2506761600966F06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DE1962C2506765B00966F06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9DC34C2825000B0800B23A17 = {
+			isa = PBXGroup;
+			children = (
+				9DC34C3425000B0800B23A17 /* itlycore */,
+				9DE19616250675EF00966F06 /* ItlyCore */,
+				9DC34C3325000B0800B23A17 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9DC34C3325000B0800B23A17 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9DC34C3225000B0800B23A17 /* ItlyCore.framework */,
+				9DE19615250675EF00966F06 /* ItlyCore.framework */,
+				9DE196222506761600966F06 /* ItlyCore.framework */,
+				9DE1962F2506765B00966F06 /* ItlyCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9DC34C3425000B0800B23A17 /* itlycore */ = {
+			isa = PBXGroup;
+			children = (
+				9DC34C3F25000B5F00B23A17 /* API */,
+				9DC34C3D25000B5F00B23A17 /* GenericEvent.swift */,
+				9DC34C3E25000B5F00B23A17 /* ItlyInstance.swift */,
+				9DC34C4925000B5F00B23A17 /* PluginError.swift */,
+				9DC34C4A25000B5F00B23A17 /* PluginManager.swift */,
+				9DC34C4B25000B5F00B23A17 /* Tracker.swift */,
+				9DC34C4D25000B5F00B23A17 /* Validator.swift */,
+			);
+			path = itlycore;
+			sourceTree = "<group>";
+		};
+		9DC34C3F25000B5F00B23A17 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				9DC34C4025000B5F00B23A17 /* ItlyEvent.swift */,
+				9DC34C4125000B5F00B23A17 /* ItlyValidationMode.swift */,
+				9DC34C4225000B5F00B23A17 /* ItlyEnvironment.swift */,
+				9DC34C4325000B5F00B23A17 /* ItlyLogger.swift */,
+				9DC34C4425000B5F00B23A17 /* ItlySchemaValidator.swift */,
+				9DC34C4525000B5F00B23A17 /* ItlyDestination.swift */,
+				9DC34C4625000B5F00B23A17 /* ItlyProperties.swift */,
+				9DC34C4725000B5F00B23A17 /* ItlyCoreApi.swift */,
+				9DC34C4825000B5F00B23A17 /* ItlyPlugin.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		9DE19616250675EF00966F06 /* ItlyCore */ = {
+			isa = PBXGroup;
+			children = (
+				9DE19617250675EF00966F06 /* ItlyCore.h */,
+				9DE19618250675EF00966F06 /* Info.plist */,
+			);
+			path = ItlyCore;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9DC34C2D25000B0800B23A17 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DE1973825069C7500966F06 /* ItlyCore.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DE19610250675EF00966F06 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DE19619250675EF00966F06 /* ItlyCore.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DE1961D2506761600966F06 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DE1973925069C7600966F06 /* ItlyCore.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DE1962A2506765B00966F06 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DE1973A25069C7600966F06 /* ItlyCore.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9DC34C3125000B0800B23A17 /* ItlyCore_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DC34C3A25000B0800B23A17 /* Build configuration list for PBXNativeTarget "ItlyCore_iOS" */;
+			buildPhases = (
+				9DC34C2D25000B0800B23A17 /* Headers */,
+				9DC34C2E25000B0800B23A17 /* Sources */,
+				9DC34C2F25000B0800B23A17 /* Frameworks */,
+				9DC34C3025000B0800B23A17 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ItlyCore_iOS;
+			productName = itlycore;
+			productReference = 9DC34C3225000B0800B23A17 /* ItlyCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9DE19614250675EF00966F06 /* ItlyCore_watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DE1961A250675EF00966F06 /* Build configuration list for PBXNativeTarget "ItlyCore_watchOS" */;
+			buildPhases = (
+				9DE19610250675EF00966F06 /* Headers */,
+				9DE19611250675EF00966F06 /* Sources */,
+				9DE19612250675EF00966F06 /* Frameworks */,
+				9DE19613250675EF00966F06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ItlyCore_watchOS;
+			productName = ItlyCore;
+			productReference = 9DE19615250675EF00966F06 /* ItlyCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9DE196212506761600966F06 /* ItlyCore_tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DE196272506761600966F06 /* Build configuration list for PBXNativeTarget "ItlyCore_tvOS" */;
+			buildPhases = (
+				9DE1961D2506761600966F06 /* Headers */,
+				9DE1961E2506761600966F06 /* Sources */,
+				9DE1961F2506761600966F06 /* Frameworks */,
+				9DE196202506761600966F06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ItlyCore_tvOS;
+			productName = ItlyCore;
+			productReference = 9DE196222506761600966F06 /* ItlyCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9DE1962E2506765B00966F06 /* ItlyCore_macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DE196342506765B00966F06 /* Build configuration list for PBXNativeTarget "ItlyCore_macOS" */;
+			buildPhases = (
+				9DE1962A2506765B00966F06 /* Headers */,
+				9DE1962B2506765B00966F06 /* Sources */,
+				9DE1962C2506765B00966F06 /* Frameworks */,
+				9DE1962D2506765B00966F06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ItlyCore_macOS;
+			productName = ItlyCore;
+			productReference = 9DE1962F2506765B00966F06 /* ItlyCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9DC34C2925000B0800B23A17 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "Konstantin Dorogan";
+				TargetAttributes = {
+					9DC34C3125000B0800B23A17 = {
+						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
+					};
+					9DE19614250675EF00966F06 = {
+						CreatedOnToolsVersion = 11.7;
+					};
+					9DE196212506761600966F06 = {
+						CreatedOnToolsVersion = 11.7;
+					};
+					9DE1962E2506765B00966F06 = {
+						CreatedOnToolsVersion = 11.7;
+					};
+				};
+			};
+			buildConfigurationList = 9DC34C2C25000B0800B23A17 /* Build configuration list for PBXProject "ItlyCore" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9DC34C2825000B0800B23A17;
+			productRefGroup = 9DC34C3325000B0800B23A17 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9DC34C3125000B0800B23A17 /* ItlyCore_iOS */,
+				9DE19614250675EF00966F06 /* ItlyCore_watchOS */,
+				9DE196212506761600966F06 /* ItlyCore_tvOS */,
+				9DE1962E2506765B00966F06 /* ItlyCore_macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9DC34C3025000B0800B23A17 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DE19613250675EF00966F06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DE196202506761600966F06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DE1962D2506765B00966F06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9DC34C2E25000B0800B23A17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DC34C5D25000B5F00B23A17 /* Validator.swift in Sources */,
+				9DC34C5025000B5F00B23A17 /* ItlyEvent.swift in Sources */,
+				9DC34C5325000B5F00B23A17 /* ItlyLogger.swift in Sources */,
+				9DC34C5825000B5F00B23A17 /* ItlyPlugin.swift in Sources */,
+				9DC34C5725000B5F00B23A17 /* ItlyCoreApi.swift in Sources */,
+				9DC34C5625000B5F00B23A17 /* ItlyProperties.swift in Sources */,
+				9DC34C5125000B5F00B23A17 /* ItlyValidationMode.swift in Sources */,
+				9DC34C5B25000B5F00B23A17 /* Tracker.swift in Sources */,
+				9DC34C5A25000B5F00B23A17 /* PluginManager.swift in Sources */,
+				9DC34C4F25000B5F00B23A17 /* ItlyInstance.swift in Sources */,
+				9DC34C5525000B5F00B23A17 /* ItlyDestination.swift in Sources */,
+				9DC34C5225000B5F00B23A17 /* ItlyEnvironment.swift in Sources */,
+				9DC34C5925000B5F00B23A17 /* PluginError.swift in Sources */,
+				9DC34C4E25000B5F00B23A17 /* GenericEvent.swift in Sources */,
+				9DC34C5425000B5F00B23A17 /* ItlySchemaValidator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DE19611250675EF00966F06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DE19640250677F700966F06 /* ItlyProperties.swift in Sources */,
+				9DE19641250677F700966F06 /* ItlyCoreApi.swift in Sources */,
+				9DE1963C250677F700966F06 /* ItlyEnvironment.swift in Sources */,
+				9DE1963D250677F700966F06 /* ItlyLogger.swift in Sources */,
+				9DE19643250677F700966F06 /* GenericEvent.swift in Sources */,
+				9DE19644250677F700966F06 /* ItlyInstance.swift in Sources */,
+				9DE19647250677F700966F06 /* Tracker.swift in Sources */,
+				9DE19648250677F700966F06 /* Validator.swift in Sources */,
+				9DE19646250677F700966F06 /* PluginManager.swift in Sources */,
+				9DE1963E250677F700966F06 /* ItlySchemaValidator.swift in Sources */,
+				9DE1963A250677F700966F06 /* ItlyEvent.swift in Sources */,
+				9DE1963F250677F700966F06 /* ItlyDestination.swift in Sources */,
+				9DE19645250677F700966F06 /* PluginError.swift in Sources */,
+				9DE1963B250677F700966F06 /* ItlyValidationMode.swift in Sources */,
+				9DE19642250677F700966F06 /* ItlyPlugin.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DE1961E2506761600966F06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DE1964F250677F800966F06 /* ItlyProperties.swift in Sources */,
+				9DE19650250677F800966F06 /* ItlyCoreApi.swift in Sources */,
+				9DE1964B250677F800966F06 /* ItlyEnvironment.swift in Sources */,
+				9DE1964C250677F800966F06 /* ItlyLogger.swift in Sources */,
+				9DE19652250677F800966F06 /* GenericEvent.swift in Sources */,
+				9DE19653250677F800966F06 /* ItlyInstance.swift in Sources */,
+				9DE19656250677F800966F06 /* Tracker.swift in Sources */,
+				9DE19657250677F800966F06 /* Validator.swift in Sources */,
+				9DE19655250677F800966F06 /* PluginManager.swift in Sources */,
+				9DE1964D250677F800966F06 /* ItlySchemaValidator.swift in Sources */,
+				9DE19649250677F800966F06 /* ItlyEvent.swift in Sources */,
+				9DE1964E250677F800966F06 /* ItlyDestination.swift in Sources */,
+				9DE19654250677F800966F06 /* PluginError.swift in Sources */,
+				9DE1964A250677F800966F06 /* ItlyValidationMode.swift in Sources */,
+				9DE19651250677F800966F06 /* ItlyPlugin.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DE1962B2506765B00966F06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DE1965E250677F800966F06 /* ItlyProperties.swift in Sources */,
+				9DE1965F250677F800966F06 /* ItlyCoreApi.swift in Sources */,
+				9DE1965A250677F800966F06 /* ItlyEnvironment.swift in Sources */,
+				9DE1965B250677F800966F06 /* ItlyLogger.swift in Sources */,
+				9DE19661250677F800966F06 /* GenericEvent.swift in Sources */,
+				9DE19662250677F800966F06 /* ItlyInstance.swift in Sources */,
+				9DE19665250677F800966F06 /* Tracker.swift in Sources */,
+				9DE19666250677F800966F06 /* Validator.swift in Sources */,
+				9DE19664250677F800966F06 /* PluginManager.swift in Sources */,
+				9DE1965C250677F800966F06 /* ItlySchemaValidator.swift in Sources */,
+				9DE19658250677F800966F06 /* ItlyEvent.swift in Sources */,
+				9DE1965D250677F800966F06 /* ItlyDestination.swift in Sources */,
+				9DE19663250677F800966F06 /* PluginError.swift in Sources */,
+				9DE19659250677F800966F06 /* ItlyValidationMode.swift in Sources */,
+				9DE19660250677F800966F06 /* ItlyPlugin.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9DC34C3825000B0800B23A17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9DC34C3925000B0800B23A17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9DC34C3B25000B0800B23A17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6H42BZC69T;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ItlyCore/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.itlycore;
+				PRODUCT_NAME = ItlyCore;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9DC34C3C25000B0800B23A17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6H42BZC69T;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ItlyCore/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.itlycore;
+				PRODUCT_NAME = ItlyCore;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9DE1961B250675EF00966F06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6H42BZC69T;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ItlyCore/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.ItlyCore;
+				PRODUCT_NAME = ItlyCore;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		9DE1961C250675EF00966F06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6H42BZC69T;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ItlyCore/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.ItlyCore;
+				PRODUCT_NAME = ItlyCore;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		9DE196282506761600966F06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6H42BZC69T;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ItlyCore/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.ItlyCore;
+				PRODUCT_NAME = ItlyCore;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.4;
+			};
+			name = Debug;
+		};
+		9DE196292506761600966F06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6H42BZC69T;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ItlyCore/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.ItlyCore;
+				PRODUCT_NAME = ItlyCore;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.4;
+			};
+			name = Release;
+		};
+		9DE196352506765B00966F06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6H42BZC69T;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ItlyCore/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.ItlyCore;
+				PRODUCT_NAME = ItlyCore;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		9DE196362506765B00966F06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6H42BZC69T;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ItlyCore/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.ItlyCore;
+				PRODUCT_NAME = ItlyCore;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9DC34C2C25000B0800B23A17 /* Build configuration list for PBXProject "ItlyCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DC34C3825000B0800B23A17 /* Debug */,
+				9DC34C3925000B0800B23A17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DC34C3A25000B0800B23A17 /* Build configuration list for PBXNativeTarget "ItlyCore_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DC34C3B25000B0800B23A17 /* Debug */,
+				9DC34C3C25000B0800B23A17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DE1961A250675EF00966F06 /* Build configuration list for PBXNativeTarget "ItlyCore_watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DE1961B250675EF00966F06 /* Debug */,
+				9DE1961C250675EF00966F06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DE196272506761600966F06 /* Build configuration list for PBXNativeTarget "ItlyCore_tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DE196282506761600966F06 /* Debug */,
+				9DE196292506761600966F06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DE196342506765B00966F06 /* Build configuration list for PBXNativeTarget "ItlyCore_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DE196352506765B00966F06 /* Debug */,
+				9DE196362506765B00966F06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9DC34C2925000B0800B23A17 /* Project object */;
+}
