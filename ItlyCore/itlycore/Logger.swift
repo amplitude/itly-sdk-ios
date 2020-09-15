@@ -1,6 +1,6 @@
 //
-//  ItlyLogger.swift
-//  Iteratively_example
+//  Logger.swift
+//  ItlyCore
 //
 //  Created by Konstantin Dorogan on 24.08.2020.
 //  Copyright © 2020 Konstantin Dorogan. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc public protocol ItlyLogger {
+@objc public protocol Logger {
     func debug(_ message: String)
     func info(_ message: String)
     func warn(_ message: String)

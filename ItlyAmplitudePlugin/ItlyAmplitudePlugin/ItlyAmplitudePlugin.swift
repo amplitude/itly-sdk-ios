@@ -1,6 +1,6 @@
 //
 //  ItlyAmplitudePlugin.swift
-//  Iteratively_example
+//  ItlyAmplitudePlugin
 //
 //  Created by Konstantin Dorogan on 03.09.2020.
 //  Copyright © 2020 Konstantin Dorogan. All rights reserved.
@@ -10,43 +10,32 @@ import Foundation
 import Amplitude
 import ItlyCore
 
-public class ItlyAmplitudePlugin: NSObject, ItlyPlugin, ItlyDestination {
+public class ItlyAmplitudePlugin: Plugin {
     private var amplitudeClient: Amplitude?
-    private var logger: ItlyLogger?
+    private weak var logger: Logger?
     private let apiKey: String
     
-    public func didPlugIntoInstance(_ instance: ItlyCoreApi) throws {
-        self.logger = instance.logger
-        logger?.debug("ItlyAmplitudePlugin load")
+    public override func load(_ options: Options) {
+        super.load(options)
+
+        self.logger = options.logger
+        logger?.debug("\(self.id) load")
         
         self.amplitudeClient = Amplitude.instance()
         amplitudeClient?.initializeApiKey(apiKey)
     }
     
-    public func reset() throws {
-        logger?.debug("ItlyAmplitudePlugin reset")
+    public override func reset() {
+        super.reset()
+        
+        logger?.debug("\(self.id) reset")
         amplitudeClient?.setUserId(nil, startNewSession: true)
     }
-    
-    public func flush() throws {
-        // do nothing
-    }
-    
-    public func shutdown() throws {
-        // do nothing
-    }
-    
-    public func alias(_ userId: String, previousId: String?) throws {
-        // do nothing
-    }
-    
-    public func group(_ userId: String?, groupId: String, properties: ItlyProperties?) throws {
-        // do nothing
-    }
 
-    
-    public func identify(_ userId: String?, properties: ItlyProperties?) throws {
-        logger?.debug("ItlyAmplitudePlugin identify(userId=\(userId), properties=\(properties?.properties)")
+    public override func identify(_ userId: String?, properties: Properties?) {
+        super.identify(userId, properties: properties)
+
+        logger?.debug("\(self.id) identify(userId=\(userId ?? ""), properties=\(properties?.properties ?? [:])")
         if userId != nil {
             amplitudeClient?.setUserId(userId, startNewSession: true)
         }
@@ -61,14 +50,16 @@ public class ItlyAmplitudePlugin: NSObject, ItlyPlugin, ItlyDestination {
         
         amplitudeClient?.identify(identifyArgs)
     }
+
+    public override func track(_ userId: String?, event: Event) {
+        super.track(userId, event: event)
         
-    public func track(_ userId: String?, event: ItlyEvent) throws {
-        logger?.debug("ItlyAmplitudePlugin track(userId = \(userId) event=\(event.name) properties=\(event.properties)")
+        logger?.debug("\(self.id) track(userId = \(userId ?? "") event=\(event.name) properties=\(event.properties)")
         amplitudeClient?.logEvent(event.name, withEventProperties: event.properties)
     }
-    
+        
     public init(apiKey: String) {
         self.apiKey = apiKey
-        super.init()
+        super.init(id: "ItlyAmplitudePlugin")
     }
 }

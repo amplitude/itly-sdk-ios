@@ -7,89 +7,74 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9DC34C4E25000B5F00B23A17 /* GenericEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3D25000B5F00B23A17 /* GenericEvent.swift */; };
-		9DC34C4F25000B5F00B23A17 /* ItlyInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3E25000B5F00B23A17 /* ItlyInstance.swift */; };
-		9DC34C5025000B5F00B23A17 /* ItlyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4025000B5F00B23A17 /* ItlyEvent.swift */; };
-		9DC34C5125000B5F00B23A17 /* ItlyValidationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4125000B5F00B23A17 /* ItlyValidationMode.swift */; };
-		9DC34C5225000B5F00B23A17 /* ItlyEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4225000B5F00B23A17 /* ItlyEnvironment.swift */; };
-		9DC34C5325000B5F00B23A17 /* ItlyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4325000B5F00B23A17 /* ItlyLogger.swift */; };
-		9DC34C5425000B5F00B23A17 /* ItlySchemaValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4425000B5F00B23A17 /* ItlySchemaValidator.swift */; };
-		9DC34C5525000B5F00B23A17 /* ItlyDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4525000B5F00B23A17 /* ItlyDestination.swift */; };
-		9DC34C5625000B5F00B23A17 /* ItlyProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4625000B5F00B23A17 /* ItlyProperties.swift */; };
-		9DC34C5725000B5F00B23A17 /* ItlyCoreApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4725000B5F00B23A17 /* ItlyCoreApi.swift */; };
-		9DC34C5825000B5F00B23A17 /* ItlyPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4825000B5F00B23A17 /* ItlyPlugin.swift */; };
-		9DC34C5925000B5F00B23A17 /* PluginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4925000B5F00B23A17 /* PluginError.swift */; };
-		9DC34C5A25000B5F00B23A17 /* PluginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4A25000B5F00B23A17 /* PluginManager.swift */; };
-		9DC34C5B25000B5F00B23A17 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4B25000B5F00B23A17 /* Tracker.swift */; };
-		9DC34C5D25000B5F00B23A17 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4D25000B5F00B23A17 /* Validator.swift */; };
+		9D345198250F8C9100022763 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D345197250F8C9100022763 /* Options.swift */; };
+		9D34519A250F97F500022763 /* ValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D345199250F97F500022763 /* ValidationResponse.swift */; };
+		9D34519C250F99A300022763 /* EventMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D34519B250F99A300022763 /* EventMetadata.swift */; };
+		9D34519D250F99A300022763 /* EventMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D34519B250F99A300022763 /* EventMetadata.swift */; };
+		9D34519E250F99A300022763 /* EventMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D34519B250F99A300022763 /* EventMetadata.swift */; };
+		9D34519F250F99A300022763 /* EventMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D34519B250F99A300022763 /* EventMetadata.swift */; };
+		9D5F294325110A7C00A8EB46 /* Sequence+Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F294225110A7C00A8EB46 /* Sequence+Plugin.swift */; };
+		9DC34C4E25000B5F00B23A17 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3D25000B5F00B23A17 /* Event.swift */; };
+		9DC34C4F25000B5F00B23A17 /* Itly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3E25000B5F00B23A17 /* Itly.swift */; };
+		9DC34C5125000B5F00B23A17 /* ValidationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4125000B5F00B23A17 /* ValidationOptions.swift */; };
+		9DC34C5225000B5F00B23A17 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4225000B5F00B23A17 /* Environment.swift */; };
+		9DC34C5325000B5F00B23A17 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4325000B5F00B23A17 /* Logger.swift */; };
+		9DC34C5625000B5F00B23A17 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4625000B5F00B23A17 /* Properties.swift */; };
+		9DC34C5825000B5F00B23A17 /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4825000B5F00B23A17 /* Plugin.swift */; };
+		9DD889FB25112C59005D8941 /* Sequence+ValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD889FA25112C59005D8941 /* Sequence+ValidationResponse.swift */; };
+		9DD889FC25112C59005D8941 /* Sequence+ValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD889FA25112C59005D8941 /* Sequence+ValidationResponse.swift */; };
+		9DD889FD25112C59005D8941 /* Sequence+ValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD889FA25112C59005D8941 /* Sequence+ValidationResponse.swift */; };
+		9DD889FE25112C59005D8941 /* Sequence+ValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD889FA25112C59005D8941 /* Sequence+ValidationResponse.swift */; };
+		9DD889FF25112CDF005D8941 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D345197250F8C9100022763 /* Options.swift */; };
+		9DD88A0025112CDF005D8941 /* ValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D345199250F97F500022763 /* ValidationResponse.swift */; };
+		9DD88A0125112CDF005D8941 /* Sequence+Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F294225110A7C00A8EB46 /* Sequence+Plugin.swift */; };
+		9DD88A0225112CDF005D8941 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D345197250F8C9100022763 /* Options.swift */; };
+		9DD88A0325112CDF005D8941 /* ValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D345199250F97F500022763 /* ValidationResponse.swift */; };
+		9DD88A0425112CDF005D8941 /* Sequence+Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F294225110A7C00A8EB46 /* Sequence+Plugin.swift */; };
+		9DD88A0525112CE0005D8941 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D345197250F8C9100022763 /* Options.swift */; };
+		9DD88A0625112CE0005D8941 /* ValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D345199250F97F500022763 /* ValidationResponse.swift */; };
+		9DD88A0725112CE0005D8941 /* Sequence+Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F294225110A7C00A8EB46 /* Sequence+Plugin.swift */; };
 		9DE19619250675EF00966F06 /* ItlyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DE19617250675EF00966F06 /* ItlyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9DE1963A250677F700966F06 /* ItlyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4025000B5F00B23A17 /* ItlyEvent.swift */; };
-		9DE1963B250677F700966F06 /* ItlyValidationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4125000B5F00B23A17 /* ItlyValidationMode.swift */; };
-		9DE1963C250677F700966F06 /* ItlyEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4225000B5F00B23A17 /* ItlyEnvironment.swift */; };
-		9DE1963D250677F700966F06 /* ItlyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4325000B5F00B23A17 /* ItlyLogger.swift */; };
-		9DE1963E250677F700966F06 /* ItlySchemaValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4425000B5F00B23A17 /* ItlySchemaValidator.swift */; };
-		9DE1963F250677F700966F06 /* ItlyDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4525000B5F00B23A17 /* ItlyDestination.swift */; };
-		9DE19640250677F700966F06 /* ItlyProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4625000B5F00B23A17 /* ItlyProperties.swift */; };
-		9DE19641250677F700966F06 /* ItlyCoreApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4725000B5F00B23A17 /* ItlyCoreApi.swift */; };
-		9DE19642250677F700966F06 /* ItlyPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4825000B5F00B23A17 /* ItlyPlugin.swift */; };
-		9DE19643250677F700966F06 /* GenericEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3D25000B5F00B23A17 /* GenericEvent.swift */; };
-		9DE19644250677F700966F06 /* ItlyInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3E25000B5F00B23A17 /* ItlyInstance.swift */; };
-		9DE19645250677F700966F06 /* PluginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4925000B5F00B23A17 /* PluginError.swift */; };
-		9DE19646250677F700966F06 /* PluginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4A25000B5F00B23A17 /* PluginManager.swift */; };
-		9DE19647250677F700966F06 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4B25000B5F00B23A17 /* Tracker.swift */; };
-		9DE19648250677F700966F06 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4D25000B5F00B23A17 /* Validator.swift */; };
-		9DE19649250677F800966F06 /* ItlyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4025000B5F00B23A17 /* ItlyEvent.swift */; };
-		9DE1964A250677F800966F06 /* ItlyValidationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4125000B5F00B23A17 /* ItlyValidationMode.swift */; };
-		9DE1964B250677F800966F06 /* ItlyEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4225000B5F00B23A17 /* ItlyEnvironment.swift */; };
-		9DE1964C250677F800966F06 /* ItlyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4325000B5F00B23A17 /* ItlyLogger.swift */; };
-		9DE1964D250677F800966F06 /* ItlySchemaValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4425000B5F00B23A17 /* ItlySchemaValidator.swift */; };
-		9DE1964E250677F800966F06 /* ItlyDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4525000B5F00B23A17 /* ItlyDestination.swift */; };
-		9DE1964F250677F800966F06 /* ItlyProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4625000B5F00B23A17 /* ItlyProperties.swift */; };
-		9DE19650250677F800966F06 /* ItlyCoreApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4725000B5F00B23A17 /* ItlyCoreApi.swift */; };
-		9DE19651250677F800966F06 /* ItlyPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4825000B5F00B23A17 /* ItlyPlugin.swift */; };
-		9DE19652250677F800966F06 /* GenericEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3D25000B5F00B23A17 /* GenericEvent.swift */; };
-		9DE19653250677F800966F06 /* ItlyInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3E25000B5F00B23A17 /* ItlyInstance.swift */; };
-		9DE19654250677F800966F06 /* PluginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4925000B5F00B23A17 /* PluginError.swift */; };
-		9DE19655250677F800966F06 /* PluginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4A25000B5F00B23A17 /* PluginManager.swift */; };
-		9DE19656250677F800966F06 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4B25000B5F00B23A17 /* Tracker.swift */; };
-		9DE19657250677F800966F06 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4D25000B5F00B23A17 /* Validator.swift */; };
-		9DE19658250677F800966F06 /* ItlyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4025000B5F00B23A17 /* ItlyEvent.swift */; };
-		9DE19659250677F800966F06 /* ItlyValidationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4125000B5F00B23A17 /* ItlyValidationMode.swift */; };
-		9DE1965A250677F800966F06 /* ItlyEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4225000B5F00B23A17 /* ItlyEnvironment.swift */; };
-		9DE1965B250677F800966F06 /* ItlyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4325000B5F00B23A17 /* ItlyLogger.swift */; };
-		9DE1965C250677F800966F06 /* ItlySchemaValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4425000B5F00B23A17 /* ItlySchemaValidator.swift */; };
-		9DE1965D250677F800966F06 /* ItlyDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4525000B5F00B23A17 /* ItlyDestination.swift */; };
-		9DE1965E250677F800966F06 /* ItlyProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4625000B5F00B23A17 /* ItlyProperties.swift */; };
-		9DE1965F250677F800966F06 /* ItlyCoreApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4725000B5F00B23A17 /* ItlyCoreApi.swift */; };
-		9DE19660250677F800966F06 /* ItlyPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4825000B5F00B23A17 /* ItlyPlugin.swift */; };
-		9DE19661250677F800966F06 /* GenericEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3D25000B5F00B23A17 /* GenericEvent.swift */; };
-		9DE19662250677F800966F06 /* ItlyInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3E25000B5F00B23A17 /* ItlyInstance.swift */; };
-		9DE19663250677F800966F06 /* PluginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4925000B5F00B23A17 /* PluginError.swift */; };
-		9DE19664250677F800966F06 /* PluginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4A25000B5F00B23A17 /* PluginManager.swift */; };
-		9DE19665250677F800966F06 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4B25000B5F00B23A17 /* Tracker.swift */; };
-		9DE19666250677F800966F06 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4D25000B5F00B23A17 /* Validator.swift */; };
+		9DE1963B250677F700966F06 /* ValidationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4125000B5F00B23A17 /* ValidationOptions.swift */; };
+		9DE1963C250677F700966F06 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4225000B5F00B23A17 /* Environment.swift */; };
+		9DE1963D250677F700966F06 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4325000B5F00B23A17 /* Logger.swift */; };
+		9DE19640250677F700966F06 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4625000B5F00B23A17 /* Properties.swift */; };
+		9DE19642250677F700966F06 /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4825000B5F00B23A17 /* Plugin.swift */; };
+		9DE19643250677F700966F06 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3D25000B5F00B23A17 /* Event.swift */; };
+		9DE19644250677F700966F06 /* Itly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3E25000B5F00B23A17 /* Itly.swift */; };
+		9DE1964A250677F800966F06 /* ValidationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4125000B5F00B23A17 /* ValidationOptions.swift */; };
+		9DE1964B250677F800966F06 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4225000B5F00B23A17 /* Environment.swift */; };
+		9DE1964C250677F800966F06 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4325000B5F00B23A17 /* Logger.swift */; };
+		9DE1964F250677F800966F06 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4625000B5F00B23A17 /* Properties.swift */; };
+		9DE19651250677F800966F06 /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4825000B5F00B23A17 /* Plugin.swift */; };
+		9DE19652250677F800966F06 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3D25000B5F00B23A17 /* Event.swift */; };
+		9DE19653250677F800966F06 /* Itly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3E25000B5F00B23A17 /* Itly.swift */; };
+		9DE19659250677F800966F06 /* ValidationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4125000B5F00B23A17 /* ValidationOptions.swift */; };
+		9DE1965A250677F800966F06 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4225000B5F00B23A17 /* Environment.swift */; };
+		9DE1965B250677F800966F06 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4325000B5F00B23A17 /* Logger.swift */; };
+		9DE1965E250677F800966F06 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4625000B5F00B23A17 /* Properties.swift */; };
+		9DE19660250677F800966F06 /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4825000B5F00B23A17 /* Plugin.swift */; };
+		9DE19661250677F800966F06 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3D25000B5F00B23A17 /* Event.swift */; };
+		9DE19662250677F800966F06 /* Itly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3E25000B5F00B23A17 /* Itly.swift */; };
 		9DE1973825069C7500966F06 /* ItlyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DE19617250675EF00966F06 /* ItlyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9DE1973925069C7600966F06 /* ItlyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DE19617250675EF00966F06 /* ItlyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9DE1973A25069C7600966F06 /* ItlyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DE19617250675EF00966F06 /* ItlyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D345197250F8C9100022763 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		9D345199250F97F500022763 /* ValidationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationResponse.swift; sourceTree = "<group>"; };
+		9D34519B250F99A300022763 /* EventMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMetadata.swift; sourceTree = "<group>"; };
+		9D5F294225110A7C00A8EB46 /* Sequence+Plugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Plugin.swift"; sourceTree = "<group>"; };
 		9DC34C3225000B0800B23A17 /* ItlyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ItlyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DC34C3D25000B5F00B23A17 /* GenericEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericEvent.swift; sourceTree = "<group>"; };
-		9DC34C3E25000B5F00B23A17 /* ItlyInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlyInstance.swift; sourceTree = "<group>"; };
-		9DC34C4025000B5F00B23A17 /* ItlyEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlyEvent.swift; sourceTree = "<group>"; };
-		9DC34C4125000B5F00B23A17 /* ItlyValidationMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlyValidationMode.swift; sourceTree = "<group>"; };
-		9DC34C4225000B5F00B23A17 /* ItlyEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlyEnvironment.swift; sourceTree = "<group>"; };
-		9DC34C4325000B5F00B23A17 /* ItlyLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlyLogger.swift; sourceTree = "<group>"; };
-		9DC34C4425000B5F00B23A17 /* ItlySchemaValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlySchemaValidator.swift; sourceTree = "<group>"; };
-		9DC34C4525000B5F00B23A17 /* ItlyDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlyDestination.swift; sourceTree = "<group>"; };
-		9DC34C4625000B5F00B23A17 /* ItlyProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlyProperties.swift; sourceTree = "<group>"; };
-		9DC34C4725000B5F00B23A17 /* ItlyCoreApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlyCoreApi.swift; sourceTree = "<group>"; };
-		9DC34C4825000B5F00B23A17 /* ItlyPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlyPlugin.swift; sourceTree = "<group>"; };
-		9DC34C4925000B5F00B23A17 /* PluginError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PluginError.swift; sourceTree = "<group>"; };
-		9DC34C4A25000B5F00B23A17 /* PluginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PluginManager.swift; sourceTree = "<group>"; };
-		9DC34C4B25000B5F00B23A17 /* Tracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
-		9DC34C4D25000B5F00B23A17 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		9DC34C3D25000B5F00B23A17 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		9DC34C3E25000B5F00B23A17 /* Itly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Itly.swift; sourceTree = "<group>"; };
+		9DC34C4125000B5F00B23A17 /* ValidationOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationOptions.swift; sourceTree = "<group>"; };
+		9DC34C4225000B5F00B23A17 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		9DC34C4325000B5F00B23A17 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		9DC34C4625000B5F00B23A17 /* Properties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
+		9DC34C4825000B5F00B23A17 /* Plugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
+		9DD889FA25112C59005D8941 /* Sequence+ValidationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+ValidationResponse.swift"; sourceTree = "<group>"; };
 		9DE19615250675EF00966F06 /* ItlyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ItlyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DE19617250675EF00966F06 /* ItlyCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItlyCore.h; sourceTree = "<group>"; };
 		9DE19618250675EF00966F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -152,31 +137,20 @@
 		9DC34C3425000B0800B23A17 /* itlycore */ = {
 			isa = PBXGroup;
 			children = (
-				9DC34C3F25000B5F00B23A17 /* API */,
-				9DC34C3D25000B5F00B23A17 /* GenericEvent.swift */,
-				9DC34C3E25000B5F00B23A17 /* ItlyInstance.swift */,
-				9DC34C4925000B5F00B23A17 /* PluginError.swift */,
-				9DC34C4A25000B5F00B23A17 /* PluginManager.swift */,
-				9DC34C4B25000B5F00B23A17 /* Tracker.swift */,
-				9DC34C4D25000B5F00B23A17 /* Validator.swift */,
+				9DC34C4225000B5F00B23A17 /* Environment.swift */,
+				9DC34C4125000B5F00B23A17 /* ValidationOptions.swift */,
+				9DC34C3D25000B5F00B23A17 /* Event.swift */,
+				9DC34C4325000B5F00B23A17 /* Logger.swift */,
+				9DC34C4825000B5F00B23A17 /* Plugin.swift */,
+				9D345197250F8C9100022763 /* Options.swift */,
+				9D345199250F97F500022763 /* ValidationResponse.swift */,
+				9DC34C4625000B5F00B23A17 /* Properties.swift */,
+				9DC34C3E25000B5F00B23A17 /* Itly.swift */,
+				9D34519B250F99A300022763 /* EventMetadata.swift */,
+				9D5F294225110A7C00A8EB46 /* Sequence+Plugin.swift */,
+				9DD889FA25112C59005D8941 /* Sequence+ValidationResponse.swift */,
 			);
 			path = itlycore;
-			sourceTree = "<group>";
-		};
-		9DC34C3F25000B5F00B23A17 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				9DC34C4025000B5F00B23A17 /* ItlyEvent.swift */,
-				9DC34C4125000B5F00B23A17 /* ItlyValidationMode.swift */,
-				9DC34C4225000B5F00B23A17 /* ItlyEnvironment.swift */,
-				9DC34C4325000B5F00B23A17 /* ItlyLogger.swift */,
-				9DC34C4425000B5F00B23A17 /* ItlySchemaValidator.swift */,
-				9DC34C4525000B5F00B23A17 /* ItlyDestination.swift */,
-				9DC34C4625000B5F00B23A17 /* ItlyProperties.swift */,
-				9DC34C4725000B5F00B23A17 /* ItlyCoreApi.swift */,
-				9DC34C4825000B5F00B23A17 /* ItlyPlugin.swift */,
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		9DE19616250675EF00966F06 /* ItlyCore */ = {
@@ -379,21 +353,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DC34C5D25000B5F00B23A17 /* Validator.swift in Sources */,
-				9DC34C5025000B5F00B23A17 /* ItlyEvent.swift in Sources */,
-				9DC34C5325000B5F00B23A17 /* ItlyLogger.swift in Sources */,
-				9DC34C5825000B5F00B23A17 /* ItlyPlugin.swift in Sources */,
-				9DC34C5725000B5F00B23A17 /* ItlyCoreApi.swift in Sources */,
-				9DC34C5625000B5F00B23A17 /* ItlyProperties.swift in Sources */,
-				9DC34C5125000B5F00B23A17 /* ItlyValidationMode.swift in Sources */,
-				9DC34C5B25000B5F00B23A17 /* Tracker.swift in Sources */,
-				9DC34C5A25000B5F00B23A17 /* PluginManager.swift in Sources */,
-				9DC34C4F25000B5F00B23A17 /* ItlyInstance.swift in Sources */,
-				9DC34C5525000B5F00B23A17 /* ItlyDestination.swift in Sources */,
-				9DC34C5225000B5F00B23A17 /* ItlyEnvironment.swift in Sources */,
-				9DC34C5925000B5F00B23A17 /* PluginError.swift in Sources */,
-				9DC34C4E25000B5F00B23A17 /* GenericEvent.swift in Sources */,
-				9DC34C5425000B5F00B23A17 /* ItlySchemaValidator.swift in Sources */,
+				9DC34C5325000B5F00B23A17 /* Logger.swift in Sources */,
+				9DC34C5825000B5F00B23A17 /* Plugin.swift in Sources */,
+				9D5F294325110A7C00A8EB46 /* Sequence+Plugin.swift in Sources */,
+				9DC34C5625000B5F00B23A17 /* Properties.swift in Sources */,
+				9DC34C5125000B5F00B23A17 /* ValidationOptions.swift in Sources */,
+				9D34519C250F99A300022763 /* EventMetadata.swift in Sources */,
+				9DD889FB25112C59005D8941 /* Sequence+ValidationResponse.swift in Sources */,
+				9DC34C4F25000B5F00B23A17 /* Itly.swift in Sources */,
+				9DC34C5225000B5F00B23A17 /* Environment.swift in Sources */,
+				9DC34C4E25000B5F00B23A17 /* Event.swift in Sources */,
+				9D34519A250F97F500022763 /* ValidationResponse.swift in Sources */,
+				9D345198250F8C9100022763 /* Options.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,21 +372,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DE19640250677F700966F06 /* ItlyProperties.swift in Sources */,
-				9DE19641250677F700966F06 /* ItlyCoreApi.swift in Sources */,
-				9DE1963C250677F700966F06 /* ItlyEnvironment.swift in Sources */,
-				9DE1963D250677F700966F06 /* ItlyLogger.swift in Sources */,
-				9DE19643250677F700966F06 /* GenericEvent.swift in Sources */,
-				9DE19644250677F700966F06 /* ItlyInstance.swift in Sources */,
-				9DE19647250677F700966F06 /* Tracker.swift in Sources */,
-				9DE19648250677F700966F06 /* Validator.swift in Sources */,
-				9DE19646250677F700966F06 /* PluginManager.swift in Sources */,
-				9DE1963E250677F700966F06 /* ItlySchemaValidator.swift in Sources */,
-				9DE1963A250677F700966F06 /* ItlyEvent.swift in Sources */,
-				9DE1963F250677F700966F06 /* ItlyDestination.swift in Sources */,
-				9DE19645250677F700966F06 /* PluginError.swift in Sources */,
-				9DE1963B250677F700966F06 /* ItlyValidationMode.swift in Sources */,
-				9DE19642250677F700966F06 /* ItlyPlugin.swift in Sources */,
+				9DE19640250677F700966F06 /* Properties.swift in Sources */,
+				9DE1963C250677F700966F06 /* Environment.swift in Sources */,
+				9DE1963D250677F700966F06 /* Logger.swift in Sources */,
+				9DD88A0125112CDF005D8941 /* Sequence+Plugin.swift in Sources */,
+				9DE19643250677F700966F06 /* Event.swift in Sources */,
+				9DD88A0025112CDF005D8941 /* ValidationResponse.swift in Sources */,
+				9DE19644250677F700966F06 /* Itly.swift in Sources */,
+				9DE1963B250677F700966F06 /* ValidationOptions.swift in Sources */,
+				9DD889FC25112C59005D8941 /* Sequence+ValidationResponse.swift in Sources */,
+				9DE19642250677F700966F06 /* Plugin.swift in Sources */,
+				9DD889FF25112CDF005D8941 /* Options.swift in Sources */,
+				9D34519D250F99A300022763 /* EventMetadata.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,21 +391,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DE1964F250677F800966F06 /* ItlyProperties.swift in Sources */,
-				9DE19650250677F800966F06 /* ItlyCoreApi.swift in Sources */,
-				9DE1964B250677F800966F06 /* ItlyEnvironment.swift in Sources */,
-				9DE1964C250677F800966F06 /* ItlyLogger.swift in Sources */,
-				9DE19652250677F800966F06 /* GenericEvent.swift in Sources */,
-				9DE19653250677F800966F06 /* ItlyInstance.swift in Sources */,
-				9DE19656250677F800966F06 /* Tracker.swift in Sources */,
-				9DE19657250677F800966F06 /* Validator.swift in Sources */,
-				9DE19655250677F800966F06 /* PluginManager.swift in Sources */,
-				9DE1964D250677F800966F06 /* ItlySchemaValidator.swift in Sources */,
-				9DE19649250677F800966F06 /* ItlyEvent.swift in Sources */,
-				9DE1964E250677F800966F06 /* ItlyDestination.swift in Sources */,
-				9DE19654250677F800966F06 /* PluginError.swift in Sources */,
-				9DE1964A250677F800966F06 /* ItlyValidationMode.swift in Sources */,
-				9DE19651250677F800966F06 /* ItlyPlugin.swift in Sources */,
+				9DE1964F250677F800966F06 /* Properties.swift in Sources */,
+				9DE1964B250677F800966F06 /* Environment.swift in Sources */,
+				9DE1964C250677F800966F06 /* Logger.swift in Sources */,
+				9DD88A0425112CDF005D8941 /* Sequence+Plugin.swift in Sources */,
+				9DE19652250677F800966F06 /* Event.swift in Sources */,
+				9DD88A0325112CDF005D8941 /* ValidationResponse.swift in Sources */,
+				9DE19653250677F800966F06 /* Itly.swift in Sources */,
+				9DE1964A250677F800966F06 /* ValidationOptions.swift in Sources */,
+				9DD889FD25112C59005D8941 /* Sequence+ValidationResponse.swift in Sources */,
+				9DE19651250677F800966F06 /* Plugin.swift in Sources */,
+				9DD88A0225112CDF005D8941 /* Options.swift in Sources */,
+				9D34519E250F99A300022763 /* EventMetadata.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,21 +410,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DE1965E250677F800966F06 /* ItlyProperties.swift in Sources */,
-				9DE1965F250677F800966F06 /* ItlyCoreApi.swift in Sources */,
-				9DE1965A250677F800966F06 /* ItlyEnvironment.swift in Sources */,
-				9DE1965B250677F800966F06 /* ItlyLogger.swift in Sources */,
-				9DE19661250677F800966F06 /* GenericEvent.swift in Sources */,
-				9DE19662250677F800966F06 /* ItlyInstance.swift in Sources */,
-				9DE19665250677F800966F06 /* Tracker.swift in Sources */,
-				9DE19666250677F800966F06 /* Validator.swift in Sources */,
-				9DE19664250677F800966F06 /* PluginManager.swift in Sources */,
-				9DE1965C250677F800966F06 /* ItlySchemaValidator.swift in Sources */,
-				9DE19658250677F800966F06 /* ItlyEvent.swift in Sources */,
-				9DE1965D250677F800966F06 /* ItlyDestination.swift in Sources */,
-				9DE19663250677F800966F06 /* PluginError.swift in Sources */,
-				9DE19659250677F800966F06 /* ItlyValidationMode.swift in Sources */,
-				9DE19660250677F800966F06 /* ItlyPlugin.swift in Sources */,
+				9DE1965E250677F800966F06 /* Properties.swift in Sources */,
+				9DE1965A250677F800966F06 /* Environment.swift in Sources */,
+				9DE1965B250677F800966F06 /* Logger.swift in Sources */,
+				9DD88A0725112CE0005D8941 /* Sequence+Plugin.swift in Sources */,
+				9DE19661250677F800966F06 /* Event.swift in Sources */,
+				9DD88A0625112CE0005D8941 /* ValidationResponse.swift in Sources */,
+				9DE19662250677F800966F06 /* Itly.swift in Sources */,
+				9DE19659250677F800966F06 /* ValidationOptions.swift in Sources */,
+				9DD889FE25112C59005D8941 /* Sequence+ValidationResponse.swift in Sources */,
+				9DE19660250677F800966F06 /* Plugin.swift in Sources */,
+				9DD88A0525112CE0005D8941 /* Options.swift in Sources */,
+				9D34519F250F99A300022763 /* EventMetadata.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

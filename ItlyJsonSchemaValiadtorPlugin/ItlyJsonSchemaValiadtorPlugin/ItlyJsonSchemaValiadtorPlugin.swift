@@ -1,6 +1,6 @@
 //
 //  ItlyJsonSchemaValiadtorPlugin.swift
-//  Iteratively_example
+//  ItlyJsonSchemaValiadtorPlugin
 //
 //  Created by Konstantin Dorogan on 03.09.2020.
 //  Copyright © 2020 Konstantin Dorogan. All rights reserved.
@@ -10,42 +10,38 @@ import Foundation
 import ItlyCore
 import DSJSONSchemaValidation
 
-class ItlyJsonSchemaValiadtorPlugin: NSObject, ItlyPlugin, ItlySchemaValidator {
+public class ItlyJsonSchemaValiadtorPlugin: Plugin {
     private let validatorsMap: [String: DSJSONSchema]
-    private var logger: ItlyLogger?
+    private weak var logger: Logger?
     
-    func didPlugIntoInstance(_ instance: ItlyCoreApi) throws {
-        logger = instance.logger
-        logger?.debug("ItlyJsonSchemaValiadtorPlugin load")
+    public override func load(_ options: Options) {
+        super.load(options)
+        
+        logger = options.logger
+        logger?.debug("\(self.id) load")
     }
-    
-    func reset() throws {
-        // do nothing
-    }
-    
-    func flush() throws {
-        // do nothing
-    }
-    
-    func shutdown() throws {
-        // do nothing
-    }
-    
-    func validateEvent(_ event: ItlyEvent) throws {
-        logger?.debug("ItlyJsonSchemaValiadtorPlugin validate(event=\(event.name))")
+
+    public override func validate(_ event: Event) -> ValidationResponse {
+        logger?.debug("\(self.id()) validate(event=\(event.name))")
         guard let validator = validatorsMap[event.name] else {
             // no validator found
-            return
+            return ValidationResponse(valid: true)
         }
         
-        logger?.debug("ItlyJsonSchemaValiadtorPlugin validator=\(validator)")
-        try validator.validate(event.properties)
+        logger?.debug("\(self.id) validator=\(validator)")
+        do {
+            try validator.validate(event.properties)
+        } catch let error {
+            return ValidationResponse(valid: false, message: error.localizedDescription, pluginId: self.id())
+        }
+
+        return ValidationResponse(valid: true, pluginId: self.id())
     }
-    
+        
     public init(schemasMap: [String: Data]) throws {
         self.validatorsMap = try schemasMap.mapValues{ data -> DSJSONSchema in
             return try DSJSONSchema(data: data, baseURI: nil, referenceStorage: nil, specification: .draft7(), options: DSJSONSchemaValidationOptions())
         }
-        super.init()
+        super.init(id: "ItlyJsonSchemaValiadtorPlugin")
     }
 }
