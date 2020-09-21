@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc public class Event: NSObject, Properties {
+@objc open class Event: NSObject, Properties {
     public let name: String
     public let properties: [String : Any]
     public let metadata: EventMetadata

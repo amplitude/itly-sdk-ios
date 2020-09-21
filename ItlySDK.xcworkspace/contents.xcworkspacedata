@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ItlyIterativelyPlugin/ItlyIterativelyPlugin.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ItlyMixpanelPlugin/ItlyMixpanelPlugin.xcodeproj">
    </FileRef>
    <FileRef
