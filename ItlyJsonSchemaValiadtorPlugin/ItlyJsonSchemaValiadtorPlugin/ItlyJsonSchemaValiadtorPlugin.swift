@@ -22,7 +22,7 @@ public class ItlyJsonSchemaValiadtorPlugin: Plugin {
     }
 
     public override func validate(_ event: Event) -> ValidationResponse {
-        logger?.debug("\(self.id()) validate(event=\(event.name))")
+        logger?.debug("\(self.id) validate(event=\(event.name))")
         guard let validator = validatorsMap[event.name] else {
             // no validator found
             return ValidationResponse(valid: true)
@@ -32,10 +32,10 @@ public class ItlyJsonSchemaValiadtorPlugin: Plugin {
         do {
             try validator.validate(event.properties)
         } catch let error {
-            return ValidationResponse(valid: false, message: error.localizedDescription, pluginId: self.id())
+            return ValidationResponse(valid: false, message: error.localizedDescription, pluginId: self.id)
         }
 
-        return ValidationResponse(valid: true, pluginId: self.id())
+        return ValidationResponse(valid: true, pluginId: self.id)
     }
         
     public init(schemasMap: [String: Data]) throws {

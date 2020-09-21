@@ -12,14 +12,16 @@ import Foundation
     private var config: Options!
     private var context: Event!
 
+    private var isDisabled: Bool { config?.disabled ?? true }
+    
     public func alias(_ userId: String, previousId: String?) {
-        guard !config.disabled else { return }
+        guard !isDisabled else { return }
         
         self.config.plugins.alias(userId, previousId: previousId)
     }
     
     public func identify(_ userId: String?, properties: Properties?) {
-        guard !config.disabled else { return }
+        guard !isDisabled else { return }
 
         let event = Event(name: "identify", properties: properties?.properties)
         let validation = validate(event)
@@ -32,7 +34,7 @@ import Foundation
     }
     
     public func group(_ userId: String?, groupId: String, properties: Properties?) {
-        guard !config.disabled else { return }
+        guard !isDisabled else { return }
 
         let event = Event(name: "group", properties: properties?.properties)
         let validation = validate(event)
@@ -45,7 +47,7 @@ import Foundation
     }
     
     public func track(_ userId: String?, event: Event) {
-        guard !config.disabled else { return }
+        guard !isDisabled else { return }
 
         let validation = validateContextWithEvent(event)
         
@@ -58,19 +60,19 @@ import Foundation
     }
     
     public func reset() {
-        guard !config.disabled else { return }
+        guard !isDisabled else { return }
 
         config.plugins.reset()
     }
     
     public func flush() {
-        guard !config.disabled else { return }
+        guard !isDisabled else { return }
 
         config.plugins.flush()
     }
     
     public func shutdown() {
-        guard !config.disabled else { return }
+        guard !isDisabled else { return }
 
         config.plugins.shutdown()
     }

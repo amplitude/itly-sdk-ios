@@ -21,6 +21,13 @@
 		9DC34C5325000B5F00B23A17 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4325000B5F00B23A17 /* Logger.swift */; };
 		9DC34C5625000B5F00B23A17 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4625000B5F00B23A17 /* Properties.swift */; };
 		9DC34C5825000B5F00B23A17 /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4825000B5F00B23A17 /* Plugin.swift */; };
+		9DD2DF1925190182000C613D /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2DF1825190182000C613D /* EventTests.swift */; };
+		9DD2DF20251904C2000C613D /* PluginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2DF1F251904C2000C613D /* PluginTests.swift */; };
+		9DD2DF2C2519070E000C613D /* ItlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2DF2B2519070E000C613D /* ItlyTests.swift */; };
+		9DD2DF3325192EA5000C613D /* PropertiesWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2DF3225192EA5000C613D /* PropertiesWrapper.swift */; };
+		9DD2DF3425192EA5000C613D /* PropertiesWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2DF3225192EA5000C613D /* PropertiesWrapper.swift */; };
+		9DD2DF3525192EA5000C613D /* PropertiesWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2DF3225192EA5000C613D /* PropertiesWrapper.swift */; };
+		9DD2DF3625192EA5000C613D /* PropertiesWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2DF3225192EA5000C613D /* PropertiesWrapper.swift */; };
 		9DD889FB25112C59005D8941 /* Sequence+ValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD889FA25112C59005D8941 /* Sequence+ValidationResponse.swift */; };
 		9DD889FC25112C59005D8941 /* Sequence+ValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD889FA25112C59005D8941 /* Sequence+ValidationResponse.swift */; };
 		9DD889FD25112C59005D8941 /* Sequence+ValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD889FA25112C59005D8941 /* Sequence+ValidationResponse.swift */; };
@@ -59,7 +66,18 @@
 		9DE1973825069C7500966F06 /* ItlyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DE19617250675EF00966F06 /* ItlyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9DE1973925069C7600966F06 /* ItlyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DE19617250675EF00966F06 /* ItlyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9DE1973A25069C7600966F06 /* ItlyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DE19617250675EF00966F06 /* ItlyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DE237C42518FEAE00ABDCF1 /* ItlyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC34C3225000B0800B23A17 /* ItlyCore.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9DE237C52518FEAE00ABDCF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DC34C2925000B0800B23A17 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DC34C3125000B0800B23A17;
+			remoteInfo = ItlyCore_iOS;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9D345197250F8C9100022763 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
@@ -74,12 +92,18 @@
 		9DC34C4325000B5F00B23A17 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		9DC34C4625000B5F00B23A17 /* Properties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
 		9DC34C4825000B5F00B23A17 /* Plugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
+		9DD2DF1825190182000C613D /* EventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
+		9DD2DF1F251904C2000C613D /* PluginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginTests.swift; sourceTree = "<group>"; };
+		9DD2DF2B2519070E000C613D /* ItlyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItlyTests.swift; sourceTree = "<group>"; };
+		9DD2DF3225192EA5000C613D /* PropertiesWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesWrapper.swift; sourceTree = "<group>"; };
 		9DD889FA25112C59005D8941 /* Sequence+ValidationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+ValidationResponse.swift"; sourceTree = "<group>"; };
 		9DE19615250675EF00966F06 /* ItlyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ItlyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DE19617250675EF00966F06 /* ItlyCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItlyCore.h; sourceTree = "<group>"; };
 		9DE19618250675EF00966F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DE196222506761600966F06 /* ItlyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ItlyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DE1962F2506765B00966F06 /* ItlyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ItlyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DE237BF2518FEAE00ABDCF1 /* ItlyCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItlyCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DE237C32518FEAE00ABDCF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +135,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9DE237BC2518FEAE00ABDCF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DE237C42518FEAE00ABDCF1 /* ItlyCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -119,6 +151,7 @@
 			children = (
 				9DC34C3425000B0800B23A17 /* itlycore */,
 				9DE19616250675EF00966F06 /* ItlyCore */,
+				9DE237C02518FEAE00ABDCF1 /* ItlyCoreTests */,
 				9DC34C3325000B0800B23A17 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,6 +163,7 @@
 				9DE19615250675EF00966F06 /* ItlyCore.framework */,
 				9DE196222506761600966F06 /* ItlyCore.framework */,
 				9DE1962F2506765B00966F06 /* ItlyCore.framework */,
+				9DE237BF2518FEAE00ABDCF1 /* ItlyCoreTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,6 +183,7 @@
 				9D34519B250F99A300022763 /* EventMetadata.swift */,
 				9D5F294225110A7C00A8EB46 /* Sequence+Plugin.swift */,
 				9DD889FA25112C59005D8941 /* Sequence+ValidationResponse.swift */,
+				9DD2DF3225192EA5000C613D /* PropertiesWrapper.swift */,
 			);
 			path = itlycore;
 			sourceTree = "<group>";
@@ -160,6 +195,17 @@
 				9DE19618250675EF00966F06 /* Info.plist */,
 			);
 			path = ItlyCore;
+			sourceTree = "<group>";
+		};
+		9DE237C02518FEAE00ABDCF1 /* ItlyCoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				9DD2DF2B2519070E000C613D /* ItlyTests.swift */,
+				9DD2DF1F251904C2000C613D /* PluginTests.swift */,
+				9DD2DF1825190182000C613D /* EventTests.swift */,
+				9DE237C32518FEAE00ABDCF1 /* Info.plist */,
+			);
+			path = ItlyCoreTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,12 +318,31 @@
 			productReference = 9DE1962F2506765B00966F06 /* ItlyCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		9DE237BE2518FEAE00ABDCF1 /* ItlyCoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DE237C72518FEAE00ABDCF1 /* Build configuration list for PBXNativeTarget "ItlyCoreTests" */;
+			buildPhases = (
+				9DE237BB2518FEAE00ABDCF1 /* Sources */,
+				9DE237BC2518FEAE00ABDCF1 /* Frameworks */,
+				9DE237BD2518FEAE00ABDCF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9DE237C62518FEAE00ABDCF1 /* PBXTargetDependency */,
+			);
+			name = ItlyCoreTests;
+			productName = ItlyCoreTests;
+			productReference = 9DE237BF2518FEAE00ABDCF1 /* ItlyCoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		9DC34C2925000B0800B23A17 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Konstantin Dorogan";
 				TargetAttributes = {
@@ -293,6 +358,9 @@
 					};
 					9DE1962E2506765B00966F06 = {
 						CreatedOnToolsVersion = 11.7;
+					};
+					9DE237BE2518FEAE00ABDCF1 = {
+						CreatedOnToolsVersion = 12.0;
 					};
 				};
 			};
@@ -313,6 +381,7 @@
 				9DE19614250675EF00966F06 /* ItlyCore_watchOS */,
 				9DE196212506761600966F06 /* ItlyCore_tvOS */,
 				9DE1962E2506765B00966F06 /* ItlyCore_macOS */,
+				9DE237BE2518FEAE00ABDCF1 /* ItlyCoreTests */,
 			);
 		};
 /* End PBXProject section */
@@ -346,6 +415,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9DE237BD2518FEAE00ABDCF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -353,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DD2DF3325192EA5000C613D /* PropertiesWrapper.swift in Sources */,
 				9DC34C5325000B5F00B23A17 /* Logger.swift in Sources */,
 				9DC34C5825000B5F00B23A17 /* Plugin.swift in Sources */,
 				9D5F294325110A7C00A8EB46 /* Sequence+Plugin.swift in Sources */,
@@ -372,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DD2DF3425192EA5000C613D /* PropertiesWrapper.swift in Sources */,
 				9DE19640250677F700966F06 /* Properties.swift in Sources */,
 				9DE1963C250677F700966F06 /* Environment.swift in Sources */,
 				9DE1963D250677F700966F06 /* Logger.swift in Sources */,
@@ -391,6 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DD2DF3525192EA5000C613D /* PropertiesWrapper.swift in Sources */,
 				9DE1964F250677F800966F06 /* Properties.swift in Sources */,
 				9DE1964B250677F800966F06 /* Environment.swift in Sources */,
 				9DE1964C250677F800966F06 /* Logger.swift in Sources */,
@@ -410,6 +489,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DD2DF3625192EA5000C613D /* PropertiesWrapper.swift in Sources */,
 				9DE1965E250677F800966F06 /* Properties.swift in Sources */,
 				9DE1965A250677F800966F06 /* Environment.swift in Sources */,
 				9DE1965B250677F800966F06 /* Logger.swift in Sources */,
@@ -425,7 +505,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9DE237BB2518FEAE00ABDCF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DD2DF1925190182000C613D /* EventTests.swift in Sources */,
+				9DD2DF2C2519070E000C613D /* ItlyTests.swift in Sources */,
+				9DD2DF20251904C2000C613D /* PluginTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9DE237C62518FEAE00ABDCF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9DC34C3125000B0800B23A17 /* ItlyCore_iOS */;
+			targetProxy = 9DE237C52518FEAE00ABDCF1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9DC34C3825000B0800B23A17 /* Debug */ = {
@@ -759,6 +857,44 @@
 			};
 			name = Release;
 		};
+		9DE237C82518FEAE00ABDCF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ItlyCoreTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ly.iterative.ItlyCoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9DE237C92518FEAE00ABDCF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ItlyCoreTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ly.iterative.ItlyCoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -803,6 +939,15 @@
 			buildConfigurations = (
 				9DE196352506765B00966F06 /* Debug */,
 				9DE196362506765B00966F06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DE237C72518FEAE00ABDCF1 /* Build configuration list for PBXNativeTarget "ItlyCoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DE237C82518FEAE00ABDCF1 /* Debug */,
+				9DE237C92518FEAE00ABDCF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

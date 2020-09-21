@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9DD2DF4325193415000C613D /* ItlyJsonSchemaValiadtorPluginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2DF4225193415000C613D /* ItlyJsonSchemaValiadtorPluginTests.swift */; };
+		9DD2DF4525193415000C613D /* ItlyJsonSchemaValiadtorPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE195D3250648AE00966F06 /* ItlyJsonSchemaValiadtorPlugin.framework */; };
 		9DE195D8250648AE00966F06 /* ItlyJsonSchemaValiadtorPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DE195D6250648AE00966F06 /* ItlyJsonSchemaValiadtorPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9DE195F62506524600966F06 /* ItlyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE195F52506524600966F06 /* ItlyCore.framework */; };
 		9DE19605250667D800966F06 /* ItlyJsonSchemaValiadtorPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE19604250667D800966F06 /* ItlyJsonSchemaValiadtorPlugin.swift */; };
@@ -21,7 +23,23 @@
 		9DE1969425067BF200966F06 /* ItlyJsonSchemaValiadtorPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DE195D6250648AE00966F06 /* ItlyJsonSchemaValiadtorPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9DD2DF4625193415000C613D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DE195CA250648AE00966F06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DE195D2250648AE00966F06;
+			remoteInfo = ItlyJsonSchemaValiadtorPlugin_iOS;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		9DD2DF4025193415000C613D /* ItlyJsonSchemaValiadtorPluginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItlyJsonSchemaValiadtorPluginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DD2DF4225193415000C613D /* ItlyJsonSchemaValiadtorPluginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItlyJsonSchemaValiadtorPluginTests.swift; sourceTree = "<group>"; };
+		9DD2DF4425193415000C613D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DD2DF5325193506000C613D /* ItlyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ItlyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DD2DF5F25193BCF000C613D /* input.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = input.xcfilelist; sourceTree = "<group>"; };
+		9DD2DF6025193BDF000C613D /* output.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = output.xcfilelist; sourceTree = "<group>"; };
 		9DE195D3250648AE00966F06 /* ItlyJsonSchemaValiadtorPlugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ItlyJsonSchemaValiadtorPlugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DE195D6250648AE00966F06 /* ItlyJsonSchemaValiadtorPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItlyJsonSchemaValiadtorPlugin.h; sourceTree = "<group>"; };
 		9DE195D7250648AE00966F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,6 +55,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9DD2DF3D25193415000C613D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DD2DF4525193415000C613D /* ItlyJsonSchemaValiadtorPlugin.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9DE195D0250648AE00966F06 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -67,10 +93,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9DD2DF4125193415000C613D /* ItlyJsonSchemaValiadtorPluginTests */ = {
+			isa = PBXGroup;
+			children = (
+				9DD2DF4225193415000C613D /* ItlyJsonSchemaValiadtorPluginTests.swift */,
+				9DD2DF4425193415000C613D /* Info.plist */,
+				9DD2DF5F25193BCF000C613D /* input.xcfilelist */,
+				9DD2DF6025193BDF000C613D /* output.xcfilelist */,
+			);
+			path = ItlyJsonSchemaValiadtorPluginTests;
+			sourceTree = "<group>";
+		};
 		9DE195C9250648AE00966F06 = {
 			isa = PBXGroup;
 			children = (
 				9DE195D5250648AE00966F06 /* ItlyJsonSchemaValiadtorPlugin */,
+				9DD2DF4125193415000C613D /* ItlyJsonSchemaValiadtorPluginTests */,
 				9DE195D4250648AE00966F06 /* Products */,
 				9DE195F42506524600966F06 /* Frameworks */,
 			);
@@ -82,6 +120,7 @@
 				9DE195D3250648AE00966F06 /* ItlyJsonSchemaValiadtorPlugin.framework */,
 				9DE1966C2506796E00966F06 /* ItlyJsonSchemaValiadtorPlugin.framework */,
 				9DE1967925067A1A00966F06 /* ItlyJsonSchemaValiadtorPlugin.framework */,
+				9DD2DF4025193415000C613D /* ItlyJsonSchemaValiadtorPluginTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +138,7 @@
 		9DE195F42506524600966F06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9DD2DF5325193506000C613D /* ItlyCore.framework */,
 				9DE1969125067BA000966F06 /* ItlyCore.framework */,
 				9DE1968D25067B5C00966F06 /* ItlyCore.framework */,
 				9DE196062506689000966F06 /* DSJSONSchemaValidation.framework */,
@@ -139,6 +179,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		9DD2DF3F25193415000C613D /* ItlyJsonSchemaValiadtorPluginTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DD2DF4A25193415000C613D /* Build configuration list for PBXNativeTarget "ItlyJsonSchemaValiadtorPluginTests" */;
+			buildPhases = (
+				9DD2DF3C25193415000C613D /* Sources */,
+				9DD2DF5E2519378C000C613D /* Copy frameworks */,
+				9DD2DF3D25193415000C613D /* Frameworks */,
+				9DD2DF3E25193415000C613D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9DD2DF4725193415000C613D /* PBXTargetDependency */,
+			);
+			name = ItlyJsonSchemaValiadtorPluginTests;
+			productName = ItlyJsonSchemaValiadtorPluginTests;
+			productReference = 9DD2DF4025193415000C613D /* ItlyJsonSchemaValiadtorPluginTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		9DE195D2250648AE00966F06 /* ItlyJsonSchemaValiadtorPlugin_iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DE195DB250648AE00966F06 /* Build configuration list for PBXNativeTarget "ItlyJsonSchemaValiadtorPlugin_iOS" */;
@@ -202,9 +261,13 @@
 		9DE195CA250648AE00966F06 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1170;
 				ORGANIZATIONNAME = "Konstantin Dorogan";
 				TargetAttributes = {
+					9DD2DF3F25193415000C613D = {
+						CreatedOnToolsVersion = 12.0;
+					};
 					9DE195D2250648AE00966F06 = {
 						CreatedOnToolsVersion = 11.7;
 						LastSwiftMigration = 1170;
@@ -233,11 +296,19 @@
 				9DE195D2250648AE00966F06 /* ItlyJsonSchemaValiadtorPlugin_iOS */,
 				9DE1966B2506796E00966F06 /* ItlyJsonSchemaValiadtorPlugin_tvOS */,
 				9DE1967825067A1A00966F06 /* ItlyJsonSchemaValiadtorPlugin_macOS */,
+				9DD2DF3F25193415000C613D /* ItlyJsonSchemaValiadtorPluginTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9DD2DF3E25193415000C613D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9DE195D1250648AE00966F06 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -262,6 +333,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		9DD2DF5E2519378C000C613D /* Copy frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/DSJSONSchemaValidation.framework",
+			);
+			name = "Copy frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/DSJSONSchemaValidation.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
 		9DE197472506ADF500966F06 /* Carthage Deps */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -319,6 +410,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9DD2DF3C25193415000C613D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DD2DF4325193415000C613D /* ItlyJsonSchemaValiadtorPluginTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9DE195CF250648AE00966F06 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -345,7 +444,61 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		9DD2DF4725193415000C613D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9DE195D2250648AE00966F06 /* ItlyJsonSchemaValiadtorPlugin_iOS */;
+			targetProxy = 9DD2DF4625193415000C613D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		9DD2DF4825193415000C613D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = ItlyJsonSchemaValiadtorPluginTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ly.iterative.ItlyJsonSchemaValiadtorPluginTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9DD2DF4925193415000C613D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = ItlyJsonSchemaValiadtorPluginTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ly.iterative.ItlyJsonSchemaValiadtorPluginTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		9DE195D9250648AE00966F06 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -652,6 +805,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9DD2DF4A25193415000C613D /* Build configuration list for PBXNativeTarget "ItlyJsonSchemaValiadtorPluginTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DD2DF4825193415000C613D /* Debug */,
+				9DD2DF4925193415000C613D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9DE195CD250648AE00966F06 /* Build configuration list for PBXProject "ItlyJsonSchemaValiadtorPlugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

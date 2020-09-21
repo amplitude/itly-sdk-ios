@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 @objc open class Options: NSObject {
     public let context: Properties?
     public let environment: Environment
@@ -16,14 +17,14 @@ import Foundation
     public let validation: ValidationOptions
     public let logger: Logger?
     
-    public init(context: Properties? = nil,
+    public init(context: [String: Any]? = nil,
                 environment: Environment = .development,
                 disabled: Bool = false,
                 plugins: [Plugin] = [],
                 validation: ValidationOptions? = nil,
                 logger: Logger?
     ) {
-        self.context = context
+        self.context = context.map{ PropertiesWrapper(properties: $0) }
         self.environment = environment
         self.disabled = disabled
         self.plugins = plugins
