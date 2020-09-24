@@ -42,7 +42,10 @@ class DefaultClientApi: ClientApi {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
         do {
-            request.httpBody = try JSONEncoder().encode(batch)
+            struct Body: Encodable {
+                var objects: [TrackModel]
+            }
+            request.httpBody = try JSONEncoder().encode(Body(objects: batch))
         } catch {
             completion(.failure(.internalError(error)))
             return

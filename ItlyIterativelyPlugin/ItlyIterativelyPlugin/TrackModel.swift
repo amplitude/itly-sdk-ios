@@ -21,7 +21,7 @@ extension Validation: Encodable {}
 
 struct TrackModel {
     var type: TrackType
-    var dateSent: String = {ISO8601DateFormatter().string(from: Date())}()
+    var dateSent: String
     var eventId: String?
     var eventSchemaVersion: String?
     var eventName: String?

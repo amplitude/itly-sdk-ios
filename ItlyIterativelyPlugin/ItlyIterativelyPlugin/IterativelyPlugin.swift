@@ -47,6 +47,7 @@ public class IterativelyPlugin: Plugin {
         
         let model = trackModelBuilder.buildTrackModelForType(.track,
                                                              event: event,
+                                                             properties: event,
                                                              validation: validationResults.first{ !$0.valid })
         queue?.pushTrackModel(model)
     }

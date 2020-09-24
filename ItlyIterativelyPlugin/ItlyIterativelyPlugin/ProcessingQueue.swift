@@ -24,7 +24,7 @@ class DefaultProcessingQueue {
     private func _pushTrackModel(_ model: TrackModel) {
         pendingItems.append(model)
 
-        if pendingItems.count > flushQueueSize {
+        if pendingItems.count >= flushQueueSize {
             // send the client
             _flush()
         }

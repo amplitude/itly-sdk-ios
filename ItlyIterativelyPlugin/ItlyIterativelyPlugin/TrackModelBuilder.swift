@@ -19,7 +19,12 @@ extension TrackModelBuilder {
 
 }
 
+protocol TrackModelDateFormatter {
+    func string(from date: Date) -> String
+}
+
 class DefaultTrackModelBuilder: TrackModelBuilder {
+    private let dateFormatter: TrackModelDateFormatter
     private let omitValues: Bool
     
     func buildTrackModelForType(_ type: TrackType, event: Event?, properties: Properties?, validation: ValidationResponse?) -> TrackModel {
@@ -29,6 +34,7 @@ class DefaultTrackModelBuilder: TrackModelBuilder {
 
         return TrackModel(
             type: type,
+            dateSent: dateFormatter.string(from: Date()),
             eventId: event?.id,
             eventSchemaVersion: event?.version,
             eventName: event?.name,
@@ -38,8 +44,9 @@ class DefaultTrackModelBuilder: TrackModelBuilder {
         )
     }
     
-    init(omitValues: Bool) {
+    init(dateFormatter: TrackModelDateFormatter, omitValues: Bool) {
         self.omitValues = omitValues
+        self.dateFormatter = dateFormatter
     }
 }
 

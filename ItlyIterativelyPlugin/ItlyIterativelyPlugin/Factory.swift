@@ -27,7 +27,7 @@ struct MainFactory {
 
 extension MainFactory: TrackModelBuilderFactory {
     func createTrackModelBuilder() throws -> TrackModelBuilder {
-        return DefaultTrackModelBuilder(omitValues: config.omitValues)
+        return DefaultTrackModelBuilder(dateFormatter: ISO8601DateFormatter(), omitValues: config.omitValues)
     }
 }
 
