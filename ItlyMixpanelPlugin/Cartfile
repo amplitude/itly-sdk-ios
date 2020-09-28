@@ -1,1 +1,1 @@
-github "mixpanel/mixpanel-swift"
+github "mixpanel/mixpanel-swift" ~> 2.7

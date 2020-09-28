@@ -15,7 +15,7 @@
 		9DD2E07F251CCD2C000C613D /* ISO8601DateFormatter+TrackModelDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2E07B251CCD2C000C613D /* ISO8601DateFormatter+TrackModelDateFormatter.swift */; };
 		9DD2E086251CDDD6000C613D /* ProcessingQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2E085251CDDD6000C613D /* ProcessingQueueTests.swift */; };
 		9DD2E08D251CDE2E000C613D /* ClientApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2E08C251CDE2E000C613D /* ClientApiTests.swift */; };
-		9DD2E132251D0053000C613D /* ItlyIterativelyPlugin_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE692C72514E9A3007AD6FD /* ItlyIterativelyPlugin_iOS.framework */; };
+		9DD2E132251D0053000C613D /* ItlyIterativelyPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE692C72514E9A3007AD6FD /* ItlyIterativelyPlugin.framework */; };
 		9DD2E147251D0072000C613D /* ItlyIterativelyPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE692E72514EA11007AD6FD /* ItlyIterativelyPlugin.framework */; };
 		9DE237892518F2CA00ABDCF1 /* TrackModel+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE237882518F2CA00ABDCF1 /* TrackModel+Encodable.swift */; };
 		9DE2378A2518F2CA00ABDCF1 /* TrackModel+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE237882518F2CA00ABDCF1 /* TrackModel+Encodable.swift */; };
@@ -96,7 +96,7 @@
 		9DE237882518F2CA00ABDCF1 /* TrackModel+Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrackModel+Encodable.swift"; sourceTree = "<group>"; };
 		9DE237952518F50200ABDCF1 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		9DE2379E2518F72400ABDCF1 /* QueueRetrySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueRetrySettings.swift; sourceTree = "<group>"; };
-		9DE692C72514E9A3007AD6FD /* ItlyIterativelyPlugin_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ItlyIterativelyPlugin_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DE692C72514E9A3007AD6FD /* ItlyIterativelyPlugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ItlyIterativelyPlugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DE692CA2514E9A3007AD6FD /* ItlyIterativelyPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItlyIterativelyPlugin.h; sourceTree = "<group>"; };
 		9DE692CB2514E9A3007AD6FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DE692D82514E9FC007AD6FD /* ItlyIterativelyPlugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ItlyIterativelyPlugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,7 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DD2E132251D0053000C613D /* ItlyIterativelyPlugin_iOS.framework in Frameworks */,
+				9DD2E132251D0053000C613D /* ItlyIterativelyPlugin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +198,7 @@
 		9DE692C82514E9A3007AD6FD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9DE692C72514E9A3007AD6FD /* ItlyIterativelyPlugin_iOS.framework */,
+				9DE692C72514E9A3007AD6FD /* ItlyIterativelyPlugin.framework */,
 				9DE692D82514E9FC007AD6FD /* ItlyIterativelyPlugin.framework */,
 				9DE692E72514EA11007AD6FD /* ItlyIterativelyPlugin.framework */,
 				9DE692F72514EA27007AD6FD /* ItlyIterativelyPlugin.framework */,
@@ -346,7 +346,7 @@
 			);
 			name = ItlyIterativelyPlugin_iOS;
 			productName = ItlyIterativelyPlugin;
-			productReference = 9DE692C72514E9A3007AD6FD /* ItlyIterativelyPlugin_iOS.framework */;
+			productReference = 9DE692C72514E9A3007AD6FD /* ItlyIterativelyPlugin.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9DE692D72514E9FC007AD6FD /* ItlyIterativelyPlugin_watchOS */ = {
@@ -874,7 +874,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ly.iterative.ItlyIterativelyPlugin;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = ItlyIterativelyPlugin;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -899,7 +899,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ly.iterative.ItlyIterativelyPlugin;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = ItlyIterativelyPlugin;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -15,7 +15,7 @@ import Foundation
     public var id: String? { properties["id"] as? String }
     public var version: String? { properties["version"] as? String }
 
-    init(name: String, id: String? = nil, version: String? = nil, properties: [String : Any]? = nil, metadata: EventMetadata? = nil) {
+    public init(name: String, id: String? = nil, version: String? = nil, properties: [String : Any]? = nil, metadata: EventMetadata? = nil) {
         self.name = name
         
         var props = properties ?? [:]

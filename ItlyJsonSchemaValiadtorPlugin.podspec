@@ -12,8 +12,7 @@ Pod::Spec.new do |spec|
   #spec.source       = { :git => "https://github.com/iterativelyhq/itly-sdk-ios.git", :tag => "v#{spec.version}" }
   spec.source       = { :git => "/Users/saydex/Documents/iteratively_repos/itly-sdk-ios", :tag => "v#{spec.version}" }
 
-  spec.ios.deployment_target = '9.0'
-  spec.osx.deployment_target = '10.10'
+  spec.platform = :ios, '9.0'
   
   spec.source_files   = 'ItlyJsonSchemaValiadtorPlugin/ItlyJsonSchemaValiadtorPlugin/**/*.{h,swift}'
   spec.framework  = "Foundation"

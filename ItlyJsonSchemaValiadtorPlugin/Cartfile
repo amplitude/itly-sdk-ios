@@ -1,1 +1,1 @@
-github "dashevo/JSONSchemaValidation"
+github "dashevo/JSONSchemaValidation" ~> 2.0

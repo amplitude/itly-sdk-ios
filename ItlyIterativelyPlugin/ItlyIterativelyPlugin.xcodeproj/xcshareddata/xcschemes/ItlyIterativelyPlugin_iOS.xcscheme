@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9DE692C62514E9A3007AD6FD"
-               BuildableName = "ItlyIterativelyPlugin_iOS.framework"
+               BuildableName = "ItlyIterativelyPlugin.framework"
                BlueprintName = "ItlyIterativelyPlugin_iOS"
                ReferencedContainer = "container:ItlyIterativelyPlugin.xcodeproj">
             </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9DE692C62514E9A3007AD6FD"
-            BuildableName = "ItlyIterativelyPlugin_iOS.framework"
+            BuildableName = "ItlyIterativelyPlugin.framework"
             BlueprintName = "ItlyIterativelyPlugin_iOS"
             ReferencedContainer = "container:ItlyIterativelyPlugin.xcodeproj">
          </BuildableReference>
