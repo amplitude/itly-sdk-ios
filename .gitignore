@@ -2,3 +2,7 @@
 **/Carthage/Build
 **/.DS_Store
 **/xcuserdata
+
+SampleApp/Pods
+SampleApp/Podfile.lock
+SampleApp/Cartfile.resolved

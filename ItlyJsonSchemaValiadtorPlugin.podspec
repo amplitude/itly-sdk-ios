@@ -9,14 +9,18 @@ Pod::Spec.new do |spec|
   spec.homepage     = "https://iterative.ly"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author             = { "Konstantin Dorogan" => "sayd3x@users.noreply.github.com" }
-  #spec.source       = { :git => "https://github.com/iterativelyhq/itly-sdk-ios.git", :tag => "v#{spec.version}" }
-  spec.source       = { :git => "/Users/saydex/Documents/iteratively_repos/itly-sdk-ios", :tag => "v#{spec.version}" }
+  spec.source       = { :git => "https://github.com/iterativelyhq/itly-sdk-ios.git", :tag => "v#{spec.version}" }
 
-  spec.platform = :ios, '9.0'
+  spec.platform = :ios, '11.0'
   
   spec.source_files   = 'ItlyJsonSchemaValiadtorPlugin/ItlyJsonSchemaValiadtorPlugin/**/*.{h,swift}'
   spec.framework  = "Foundation"
   spec.dependency "DSJSONSchemaValidation", "~> 2.0"
   spec.dependency "ItlyCore"
 
+  spec.swift_version = '5.3'
+
+  spec.test_spec do |test_spec|
+    test_spec.source_files = 'ItlyJsonSchemaValiadtorPlugin/ItlyJsonSchemaValiadtorPluginTests/**/*.{h,swift}'
+  end
 end

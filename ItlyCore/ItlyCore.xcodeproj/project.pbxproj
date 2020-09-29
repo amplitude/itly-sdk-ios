@@ -1070,7 +1070,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.ItlyCore;
 				PRODUCT_NAME = ItlyCore;
 				SDKROOT = macosx;
@@ -1096,7 +1096,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.ItlyCore;
 				PRODUCT_NAME = ItlyCore;
 				SDKROOT = macosx;
