@@ -34,8 +34,6 @@ Examples of intergation can be found in the **SampleApp** directory
 - Build and run
 
 ### CocoaPods integration:
-If the podspecs aren't published yet it's possible to use [Private Spec Repo](https://guides.cocoapods.org/making/private-cocoapods.html) to test the integration. After creating the Private Spec Repo, uncomment the *source* lines of the *SampleApp/Podfile* file replacing the first with a path to the private spec repo.
-
 - Go to **SampleApp** directory
 - Run `pod install`
 - Open the SampleApp_CocoaPods.xcworkspace

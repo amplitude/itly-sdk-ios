@@ -6,9 +6,9 @@
 //
 
 import UIKit
-import ItlyCore
+import ItlySdk
 import ItlyIterativelyPlugin
-import ItlyJsonSchemaValiadtorPlugin
+import ItlySchemaValidatorPlugin
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                                                   batchSize: 1,
                                                                                   flushQueueSize: 1))
 
-        let validatorPlugin = try! ItlyJsonSchemaValiadtorPlugin()
+        let validatorPlugin = try! ItlySchemaValidatorPlugin()
         
         Itly.shared.load(Options(context: Context(requiredString: "Required string").properties,
                                  plugins: [iterativelyPlugin,

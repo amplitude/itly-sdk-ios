@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
 
   spec.framework  = "Foundation"
   spec.dependency "Analytics", "~> 4.0"
-  spec.dependency "ItlyCore"
+  spec.dependency "ItlySdk"
 
   spec.swift_version = '5.3'
 

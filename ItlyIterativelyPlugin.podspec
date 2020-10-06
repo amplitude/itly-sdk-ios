@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
 
   spec.source_files   = 'IterativelyPlugin/IterativelyPlugin/**/*.{h,swift}'
   spec.framework  = "Foundation"
-  spec.dependency "ItlyCore"
+  spec.dependency "ItlySdk"
 
   spec.swift_version = '5.3'
 

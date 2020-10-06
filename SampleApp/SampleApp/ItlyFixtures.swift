@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import ItlyCore
-import ItlyJsonSchemaValiadtorPlugin
+import ItlySdk
+import ItlySchemaValidatorPlugin
 
 extension Itly {
     static let shared = Itly()
@@ -33,7 +33,7 @@ class ConsoleLogger: Logger {
 
 
 
-extension ItlyJsonSchemaValiadtorPlugin {
+extension ItlySchemaValidatorPlugin {
     convenience init() throws {
         let schemas: [String: Data] = [
             "context" : "{\"$id\":\"https://iterative.ly/company/77b37977-cb3a-42eb-bce3-09f5f7c3adb7/context\",\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"title\":\"Context\",\"description\":\"\",\"type\":\"object\",\"properties\":{\"requiredString\":{\"description\":\"description for context requiredString\",\"type\":\"string\"},\"optionalEnum\":{\"description\":\"description for context optionalEnum\",\"enum\":[\"Value 1\",\"Value 2\"]}},\"additionalProperties\":false,\"required\":[\"requiredString\"]}",

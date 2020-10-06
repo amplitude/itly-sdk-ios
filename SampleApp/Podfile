@@ -1,10 +1,6 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-# Uncomment couple lines above if you're using you own specs repository
-source '/Users/saydex/Documents/iteratively_repos/specs.git'
-source 'https://cdn.cocoapods.org/'
-
 target 'SampleApp_CocoaPods' do
   project "SampleApp_CocoaPods"
 
@@ -12,10 +8,11 @@ target 'SampleApp_CocoaPods' do
   use_frameworks!
 
   # Pods for SampleApp_CocoaPods
-  pod "ItlyAmplitudePlugin"
-  pod "ItlyIterativelyPlugin"
-  pod "ItlyJsonSchemaValiadtorPlugin"
-  pod "ItlyMixpanelPlugin"
-  pod "ItlySegmentPlugin"
+  pod "ItlySdk", :path => '..'
+  pod "ItlyAmplitudePlugin", :path => '..'
+  pod "ItlyIterativelyPlugin", :path => '..'
+  pod "ItlySchemaValidatorPlugin", :path => '..'
+  pod "ItlyMixpanelPlugin", :path => '..'
+  pod "ItlySegmentPlugin", :path => '..'
 
 end
