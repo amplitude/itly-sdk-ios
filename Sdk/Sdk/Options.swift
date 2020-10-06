@@ -9,7 +9,7 @@
 import Foundation
 
 
-@objc (ItlySdkOptions) open class Options: NSObject {
+@objc (ITLSdkOptions) open class Options: NSObject {
     public let context: Properties?
     public let environment: Environment
     public let disabled: Bool
