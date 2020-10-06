@@ -42,7 +42,7 @@ public class ItlyMixpanelPlugin: Plugin {
         mixpanelClient?.createAlias(userId, distinctId: previousId ?? mixpanelClient.distinctId)
     }
     
-    public override func identify(_ userId: String?, properties: ItlyCore.Properties?) {
+    public override func identify(_ userId: String?, properties: ItlySdk.Properties?) {
         super.identify(userId, properties: properties)
         
         logger?.debug("\(self.id) identify(userId=\(userId ?? ""), properties=\(properties?.properties ?? [:]))")

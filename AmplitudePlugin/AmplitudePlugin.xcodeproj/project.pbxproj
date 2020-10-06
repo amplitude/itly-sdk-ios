@@ -280,7 +280,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage bootstrap --platform iOS --cache-builds\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage bootstrap --platform iOS --cache-builds --no-use-binaries\n";
 		};
 		9DE197452506ADA700966F06 /* Carthage Deps */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -298,7 +298,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage bootstrap --platform OSX --cache-builds\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage bootstrap --platform OSX --cache-builds --no-use-binaries\n";
 		};
 		9DE197462506ADB900966F06 /* Carthage Deps */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -316,7 +316,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage bootstrap --platform tvOS --cache-builds\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage bootstrap --platform tvOS --cache-builds --no-use-binaries\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
