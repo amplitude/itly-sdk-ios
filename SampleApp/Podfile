@@ -2,8 +2,8 @@
 # platform :ios, '9.0'
 
 # Uncomment couple lines above if you're using you own specs repository
-#source '/path/to/specs.git'
-#source 'https://cdn.cocoapods.org/'
+source '/Users/saydex/Documents/iteratively_repos/specs.git'
+source 'https://cdn.cocoapods.org/'
 
 target 'SampleApp_CocoaPods' do
   project "SampleApp_CocoaPods"

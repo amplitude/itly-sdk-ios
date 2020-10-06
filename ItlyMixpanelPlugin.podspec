@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   spec.osx.deployment_target = "10.12"
   spec.watchos.deployment_target = "6.2"
 
-  spec.source_files   = 'ItlyMixpanelPlugin/ItlyMixpanelPlugin/**/*.{h,swift}'
+  spec.source_files   = 'MixpanelPlugin/ItlyMixpanelPlugin/**/*.{h,swift}'
   spec.frameworks  = "Foundation"
   spec.dependency "Mixpanel-swift", "~> 2.7"
   spec.dependency "ItlyCore"

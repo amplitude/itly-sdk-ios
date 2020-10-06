@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   spec.author             = { "Konstantin Dorogan" => "sayd3x@users.noreply.github.com" }
   spec.source       = { :git => "https://github.com/iterativelyhq/itly-sdk-ios.git", :tag => "v#{spec.version}" }
 
-  spec.source_files   = 'ItlySegmentPlugin/ItlySegmentPlugin/**/*.{h,swift}'
+  spec.source_files   = 'SegmentPlugin/SegmentPlugin/**/*.{h,swift}'
 
   spec.ios.deployment_target = '11.0'
   spec.tvos.deployment_target = '13.4'

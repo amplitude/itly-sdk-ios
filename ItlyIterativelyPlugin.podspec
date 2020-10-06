@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   spec.watchos.deployment_target = "3.0"
   spec.osx.deployment_target = "10.12"
 
-  spec.source_files   = 'ItlyIterativelyPlugin/ItlyIterativelyPlugin/**/*.{h,swift}'
+  spec.source_files   = 'IterativelyPlugin/IterativelyPlugin/**/*.{h,swift}'
   spec.framework  = "Foundation"
   spec.dependency "ItlyCore"
 
@@ -28,7 +28,7 @@ Pod::Spec.new do |spec|
     test_spec.osx.deployment_target = "10.12"
     test_spec.tvos.deployment_target = "10.0"
 
-    test_spec.source_files = 'ItlyIterativelyPlugin/ItlyIterativelyPluginTests/**/*.{h,swift}'
+    test_spec.source_files = 'IterativelyPlugin/IterativelyPluginTests/**/*.{h,swift}'
   end
 
 end

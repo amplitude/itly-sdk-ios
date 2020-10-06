@@ -1,5 +1,5 @@
 Pod::Spec.new do |spec|
-  spec.name         = "ItlyAmplitudePlugin"
+  spec.name         = "ItlySchemaValidatorPlugin"
   spec.version      = "0.0.1"
   spec.summary      = "Iteratively Analytics SDK for iOS — Swift & Objective-C"
   spec.description  = <<-DESC
@@ -11,15 +11,16 @@ Pod::Spec.new do |spec|
   spec.author             = { "Konstantin Dorogan" => "sayd3x@users.noreply.github.com" }
   spec.source       = { :git => "https://github.com/iterativelyhq/itly-sdk-ios.git", :tag => "v#{spec.version}" }
 
-  spec.ios.deployment_target = "11.0"
-  spec.tvos.deployment_target = "11.0"
-  spec.osx.deployment_target = "10.10"
-
-  spec.source_files   = 'AmplitudePlugin/AmplitudePlugin/**/*.{h,swift}'
+  spec.platform = :ios, '11.0'
+  
+  spec.source_files   = 'SchemaValidatorPlugin/SchemaValidatorPlugin/**/*.{h,swift}'
   spec.framework  = "Foundation"
-  spec.dependency "Amplitude", "~> 6.0"
+  spec.dependency "DSJSONSchemaValidation", "~> 2.0"
   spec.dependency "ItlyCore"
 
   spec.swift_version = '5.3'
 
+  spec.test_spec do |test_spec|
+    test_spec.source_files = 'SchemaValidatorPlugin/SchemaValidatorPluginTests/**/*.{h,swift}'
+  end
 end
