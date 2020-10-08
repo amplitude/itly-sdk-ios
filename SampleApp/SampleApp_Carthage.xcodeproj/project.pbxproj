@@ -15,12 +15,12 @@
 		9DA6B13C2523A6DA00EBD8F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA6B1382523A6DA00EBD8F4 /* AppDelegate.swift */; };
 		9DA6B13D2523A6DA00EBD8F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA6B1392523A6DA00EBD8F4 /* SceneDelegate.swift */; };
 		9DF666182522741F00F0BE77 /* ItlyIterativelyPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF6660E2522741F00F0BE77 /* ItlyIterativelyPlugin.framework */; };
-		9DF666192522741F00F0BE77 /* ItlyJsonSchemaValiadtorPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF6660F2522741F00F0BE77 /* ItlyJsonSchemaValiadtorPlugin.framework */; };
+		9DF666192522741F00F0BE77 /* ItlySchemaValidatorPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF6660F2522741F00F0BE77 /* ItlySchemaValidatorPlugin.framework */; };
 		9DF6661A2522741F00F0BE77 /* Amplitude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF666102522741F00F0BE77 /* Amplitude.framework */; };
 		9DF6661B2522741F00F0BE77 /* ItlyAmplitudePlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF666112522741F00F0BE77 /* ItlyAmplitudePlugin.framework */; };
 		9DF6661C2522741F00F0BE77 /* Analytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF666122522741F00F0BE77 /* Analytics.framework */; };
 		9DF6661D2522741F00F0BE77 /* DSJSONSchemaValidation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF666132522741F00F0BE77 /* DSJSONSchemaValidation.framework */; };
-		9DF6661E2522741F00F0BE77 /* ItlyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF666142522741F00F0BE77 /* ItlyCore.framework */; };
+		9DF6661E2522741F00F0BE77 /* ItlySdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF666142522741F00F0BE77 /* ItlySdk.framework */; };
 		9DF6661F2522741F00F0BE77 /* ItlyMixpanelPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF666152522741F00F0BE77 /* ItlyMixpanelPlugin.framework */; };
 		9DF666202522741F00F0BE77 /* Mixpanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF666162522741F00F0BE77 /* Mixpanel.framework */; };
 		9DF666212522741F00F0BE77 /* ItlySegmentPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF666172522741F00F0BE77 /* ItlySegmentPlugin.framework */; };
@@ -50,12 +50,12 @@
 		9DA6B1382523A6DA00EBD8F4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DA6B1392523A6DA00EBD8F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9DF6660E2522741F00F0BE77 /* ItlyIterativelyPlugin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ItlyIterativelyPlugin.framework; path = Carthage/Build/iOS/ItlyIterativelyPlugin.framework; sourceTree = "<group>"; };
-		9DF6660F2522741F00F0BE77 /* ItlyJsonSchemaValiadtorPlugin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ItlyJsonSchemaValiadtorPlugin.framework; path = Carthage/Build/iOS/ItlyJsonSchemaValiadtorPlugin.framework; sourceTree = "<group>"; };
+		9DF6660F2522741F00F0BE77 /* ItlySchemaValidatorPlugin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ItlySchemaValidatorPlugin.framework; path = Carthage/Build/iOS/ItlySchemaValidatorPlugin.framework; sourceTree = "<group>"; };
 		9DF666102522741F00F0BE77 /* Amplitude.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Amplitude.framework; path = Carthage/Build/iOS/Amplitude.framework; sourceTree = "<group>"; };
 		9DF666112522741F00F0BE77 /* ItlyAmplitudePlugin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ItlyAmplitudePlugin.framework; path = Carthage/Build/iOS/ItlyAmplitudePlugin.framework; sourceTree = "<group>"; };
 		9DF666122522741F00F0BE77 /* Analytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Analytics.framework; path = Carthage/Build/iOS/Analytics.framework; sourceTree = "<group>"; };
 		9DF666132522741F00F0BE77 /* DSJSONSchemaValidation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DSJSONSchemaValidation.framework; path = Carthage/Build/iOS/DSJSONSchemaValidation.framework; sourceTree = "<group>"; };
-		9DF666142522741F00F0BE77 /* ItlyCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ItlyCore.framework; path = Carthage/Build/iOS/ItlyCore.framework; sourceTree = "<group>"; };
+		9DF666142522741F00F0BE77 /* ItlySdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ItlySdk.framework; path = Carthage/Build/iOS/ItlySdk.framework; sourceTree = "<group>"; };
 		9DF666152522741F00F0BE77 /* ItlyMixpanelPlugin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ItlyMixpanelPlugin.framework; path = Carthage/Build/iOS/ItlyMixpanelPlugin.framework; sourceTree = "<group>"; };
 		9DF666162522741F00F0BE77 /* Mixpanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mixpanel.framework; path = Carthage/Build/iOS/Mixpanel.framework; sourceTree = "<group>"; };
 		9DF666172522741F00F0BE77 /* ItlySegmentPlugin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ItlySegmentPlugin.framework; path = Carthage/Build/iOS/ItlySegmentPlugin.framework; sourceTree = "<group>"; };
@@ -66,13 +66,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DF6661E2522741F00F0BE77 /* ItlyCore.framework in Frameworks */,
+				9DF6661E2522741F00F0BE77 /* ItlySdk.framework in Frameworks */,
 				9DF666202522741F00F0BE77 /* Mixpanel.framework in Frameworks */,
 				9DF6661C2522741F00F0BE77 /* Analytics.framework in Frameworks */,
 				9DF666212522741F00F0BE77 /* ItlySegmentPlugin.framework in Frameworks */,
 				9DF666182522741F00F0BE77 /* ItlyIterativelyPlugin.framework in Frameworks */,
 				9DF6661D2522741F00F0BE77 /* DSJSONSchemaValidation.framework in Frameworks */,
-				9DF666192522741F00F0BE77 /* ItlyJsonSchemaValiadtorPlugin.framework in Frameworks */,
+				9DF666192522741F00F0BE77 /* ItlySchemaValidatorPlugin.framework in Frameworks */,
 				9DF6661A2522741F00F0BE77 /* Amplitude.framework in Frameworks */,
 				9DF6661B2522741F00F0BE77 /* ItlyAmplitudePlugin.framework in Frameworks */,
 				9DF6661F2522741F00F0BE77 /* ItlyMixpanelPlugin.framework in Frameworks */,
@@ -118,9 +118,9 @@
 				9DF666122522741F00F0BE77 /* Analytics.framework */,
 				9DF666132522741F00F0BE77 /* DSJSONSchemaValidation.framework */,
 				9DF666112522741F00F0BE77 /* ItlyAmplitudePlugin.framework */,
-				9DF666142522741F00F0BE77 /* ItlyCore.framework */,
+				9DF666142522741F00F0BE77 /* ItlySdk.framework */,
 				9DF6660E2522741F00F0BE77 /* ItlyIterativelyPlugin.framework */,
-				9DF6660F2522741F00F0BE77 /* ItlyJsonSchemaValiadtorPlugin.framework */,
+				9DF6660F2522741F00F0BE77 /* ItlySchemaValidatorPlugin.framework */,
 				9DF666152522741F00F0BE77 /* ItlyMixpanelPlugin.framework */,
 				9DF666172522741F00F0BE77 /* ItlySegmentPlugin.framework */,
 				9DF666162522741F00F0BE77 /* Mixpanel.framework */,
@@ -219,9 +219,9 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Analytics.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/DSJSONSchemaValidation.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ItlyAmplitudePlugin.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ItlyCore.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ItlySdk.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ItlyIterativelyPlugin.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ItlyJsonSchemaValiadtorPlugin.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ItlySchemaValidatorPlugin.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ItlyMixpanelPlugin.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ItlySegmentPlugin.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Mixpanel.framework",
@@ -234,9 +234,9 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Analytics.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/DSJSONSchemaValidation.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ItlyAmplitudePlugin.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ItlyCore.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ItlySdk.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ItlyIterativelyPlugin.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ItlyJsonSchemaValiadtorPlugin.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ItlySchemaValidatorPlugin.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ItlyMixpanelPlugin.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ItlySegmentPlugin.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Mixpanel.framework",

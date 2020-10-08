@@ -25,7 +25,7 @@ public class IterativelyPlugin: Plugin {
         super.load(options)
         
         do {
-            queue = try factory.createProcessingQueue()
+            queue = try factory.createProcessingQueueWithLogger(options.logger)
         } catch {
             options.logger?.error("Error on createProcessingQueue(): \(error.localizedDescription)")
         }

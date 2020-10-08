@@ -1,1 +1,2 @@
-github "iterativelyhq/itly-sdk-ios"
+#github "iterativelyhq/itly-sdk-ios"
+git ".." "feature"

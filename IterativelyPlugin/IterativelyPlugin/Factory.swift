@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import ItlySdk
 
 protocol ProcessingQueueFactory {
-    func createProcessingQueue() throws -> ProcessingQueue
+    func createProcessingQueueWithLogger(_ logger: Logger?) throws -> ProcessingQueue
 }
 
 protocol ClientApiFactory {
@@ -39,7 +40,7 @@ extension MainFactory: ClientApiFactory {
 }
 
 extension MainFactory: ProcessingQueueFactory {
-    func createProcessingQueue() throws -> ProcessingQueue {
+    func createProcessingQueueWithLogger(_ logger: Logger?) throws -> ProcessingQueue {
         let clientApi = try createClientApi()
         
         return DefaultProcessingQueue(client: clientApi,
@@ -47,6 +48,7 @@ extension MainFactory: ProcessingQueueFactory {
                                       flushIntervalMs: config.flushIntervalMs,
                                       retries: QueueRetrySettings(maxRetries: config.maxRetries,
                                                                   delayInitialMs: config.delayInitialMillis,
-                                                                  delayMaximumMs: config.delayMaximumMillis))
+                                                                  delayMaximumMs: config.delayMaximumMillis),
+                                      logger: logger)
     }
 }

@@ -31,6 +31,7 @@ class DefaultProcessingQueue {
     }
     
     private func _flush() {
+        logger?.debug("ItlyIterativelyPlugin: Flush")
         let itemsToUpload = pendingItems
         pendingItems = []
         _uploadItems(itemsToUpload, maxAttempts: retries.maxRetries)
@@ -39,12 +40,13 @@ class DefaultProcessingQueue {
     private func _uploadItems(_ items: [TrackModel], maxAttempts: Int) {
         guard items.count > 0 else {
             // nothing to send
+            logger?.debug("ItlyIterativelyPlugin: Requested sending an empty list.")
             return
         }
         
         guard maxAttempts > 0 else {
             // failed to send
-            logger?.debug("Failed to upload \(items.count) events. Maximum attempts exceeded.")
+            logger?.debug("ItlyIterativelyPlugin: Failed to upload \(items.count) events. Maximum attempts exceeded.")
             return
         }
         
@@ -54,23 +56,23 @@ class DefaultProcessingQueue {
             self?.queue.async {
                 switch(result) {
                 case .failure(let error):
+                    logger?.debug("ItlyIterativelyPlugin: Failed to upload (\(error.localizedDescription))")
                     if error.shouldRetry {
                         let delay = retries.calculateDelayMs(maxAttempts)
-                        logger?.debug("Retry upload (delay=\(delay) ms).")
+                        logger?.debug("ItlyIterativelyPlugin: Retry upload (delay=\(delay) ms).")
                         self?.queue.asyncAfter(deadline: .now() + .milliseconds(delay)) {
                             self?._uploadItems(items, maxAttempts: maxAttempts - 1)
                         }
-                    } else {
-                        logger?.debug("Upload failed due to unhandled error.")
                     }
                 case .success:
-                    logger?.debug("Upload complete")
+                    logger?.debug("ItlyIterativelyPlugin: Upload complete")
                 }
             }
         }
     }
 
     private func scheduleFlushInterval(_ flushIntervalMs: Int) {
+        logger?.debug("ItlyIterativelyPlugin: Scheduled autoflush (delay=\(flushIntervalMs) ms).")
         queue.asyncAfter(deadline: .now() + .milliseconds(flushIntervalMs)) { [weak self] in
             self?._flush()
             self?.scheduleFlushInterval(flushIntervalMs)

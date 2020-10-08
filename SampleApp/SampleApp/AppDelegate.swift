@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let iterativelyPlugin = try! IterativelyPlugin(apiKey: "api-key",
-                                                       config: IterativelyOptions(url: "https://localhost:4201/t/version/company_name",
+                                                       config: IterativelyOptions(url: "http://localhost:8080/test",
                                                                                   batchSize: 1,
                                                                                   flushQueueSize: 1))
 

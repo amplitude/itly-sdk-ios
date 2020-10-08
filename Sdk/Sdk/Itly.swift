@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc (ITLSdk) public class Itly: NSObject {
+@objc (ITLItly) public class Itly: NSObject {
     private var config: Options!
     private var context: Event!
 
