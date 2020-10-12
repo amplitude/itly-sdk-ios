@@ -10,9 +10,10 @@
 		9D1D914D25223CEC001BD8E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1D914B25223CEC001BD8E8 /* Main.storyboard */; };
 		9D1D914F25223CED001BD8E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D1D914E25223CED001BD8E8 /* Assets.xcassets */; };
 		9D1D915225223CED001BD8E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1D915025223CED001BD8E8 /* LaunchScreen.storyboard */; };
+		9D1DAB43252F8499002BCA6E /* AppDelegateObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB583E252F79F5006D2354 /* AppDelegateObjC.m */; };
+		9D1DAB45252F857A002BCA6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1DAB44252F857A002BCA6E /* main.m */; };
 		9DA6B13A2523A6DA00EBD8F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA6B1362523A6DA00EBD8F4 /* ViewController.swift */; };
 		9DA6B13B2523A6DA00EBD8F4 /* ItlyFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA6B1372523A6DA00EBD8F4 /* ItlyFixtures.swift */; };
-		9DA6B13C2523A6DA00EBD8F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA6B1382523A6DA00EBD8F4 /* AppDelegate.swift */; };
 		9DA6B13D2523A6DA00EBD8F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA6B1392523A6DA00EBD8F4 /* SceneDelegate.swift */; };
 		9DF666182522741F00F0BE77 /* ItlyIterativelyPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF6660E2522741F00F0BE77 /* ItlyIterativelyPlugin.framework */; };
 		9DF666192522741F00F0BE77 /* ItlySchemaValidatorPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF6660F2522741F00F0BE77 /* ItlySchemaValidatorPlugin.framework */; };
@@ -45,6 +46,7 @@
 		9D1D914E25223CED001BD8E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D1D915125223CED001BD8E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D1D915325223CED001BD8E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D1DAB44252F857A002BCA6E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9DA6B1362523A6DA00EBD8F4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9DA6B1372523A6DA00EBD8F4 /* ItlyFixtures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlyFixtures.swift; sourceTree = "<group>"; };
 		9DA6B1382523A6DA00EBD8F4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,9 @@
 		9DF666152522741F00F0BE77 /* ItlyMixpanelPlugin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ItlyMixpanelPlugin.framework; path = Carthage/Build/iOS/ItlyMixpanelPlugin.framework; sourceTree = "<group>"; };
 		9DF666162522741F00F0BE77 /* Mixpanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mixpanel.framework; path = Carthage/Build/iOS/Mixpanel.framework; sourceTree = "<group>"; };
 		9DF666172522741F00F0BE77 /* ItlySegmentPlugin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ItlySegmentPlugin.framework; path = Carthage/Build/iOS/ItlySegmentPlugin.framework; sourceTree = "<group>"; };
+		9DFB583D252F79F4006D2354 /* SampleApp_Carthage-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SampleApp_Carthage-Bridging-Header.h"; sourceTree = "<group>"; };
+		9DFB583E252F79F5006D2354 /* AppDelegateObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateObjC.m; sourceTree = "<group>"; };
+		9DFB5840252F7A15006D2354 /* AppDelegateObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateObjC.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,13 +133,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9D1DAB46252F8635002BCA6E /* ObjC */ = {
+			isa = PBXGroup;
+			children = (
+				9D1DAB44252F857A002BCA6E /* main.m */,
+				9DFB583E252F79F5006D2354 /* AppDelegateObjC.m */,
+				9DFB5840252F7A15006D2354 /* AppDelegateObjC.h */,
+			);
+			path = ObjC;
+			sourceTree = "<group>";
+		};
 		9DA6B1352523A6DA00EBD8F4 /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				9D1DAB46252F8635002BCA6E /* ObjC */,
 				9DA6B1362523A6DA00EBD8F4 /* ViewController.swift */,
 				9DA6B1372523A6DA00EBD8F4 /* ItlyFixtures.swift */,
 				9DA6B1382523A6DA00EBD8F4 /* AppDelegate.swift */,
 				9DA6B1392523A6DA00EBD8F4 /* SceneDelegate.swift */,
+				9DFB583D252F79F4006D2354 /* SampleApp_Carthage-Bridging-Header.h */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -172,6 +189,7 @@
 				TargetAttributes = {
 					9D1D914125223CEC001BD8E8 = {
 						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -252,9 +270,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DA6B13C2523A6DA00EBD8F4 /* AppDelegate.swift in Sources */,
+				9D1DAB45252F857A002BCA6E /* main.m in Sources */,
 				9DA6B13A2523A6DA00EBD8F4 /* ViewController.swift in Sources */,
 				9DA6B13B2523A6DA00EBD8F4 /* ItlyFixtures.swift in Sources */,
+				9D1DAB43252F8499002BCA6E /* AppDelegateObjC.m in Sources */,
 				9DA6B13D2523A6DA00EBD8F4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,6 +421,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -415,6 +435,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.iterative.SampleApp-Carthage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SampleApp/SampleApp_Carthage-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -425,6 +447,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -438,6 +461,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.iterative.SampleApp-Carthage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SampleApp/SampleApp_Carthage-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

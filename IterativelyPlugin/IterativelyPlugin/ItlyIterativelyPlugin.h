@@ -14,5 +14,3 @@ FOUNDATION_EXPORT double ItlyIterativelyPluginVersionNumber;
 FOUNDATION_EXPORT const unsigned char ItlyIterativelyPluginVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <ItlyIterativelyPlugin/PublicHeader.h>
-
-

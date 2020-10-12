@@ -10,12 +10,12 @@ import Foundation
 import Amplitude
 import ItlySdk
 
-public class ItlyAmplitudePlugin: Plugin {
+@objc(ITLAmplitudePlugin) public class ItlyAmplitudePlugin: Plugin {
     private var amplitudeClient: Amplitude?
     private weak var logger: Logger?
     private let apiKey: String
     
-    public init(apiKey: String) {
+    @objc public init(apiKey: String) {
         self.apiKey = apiKey
         super.init(id: "ItlyAmplitudePlugin")
     }

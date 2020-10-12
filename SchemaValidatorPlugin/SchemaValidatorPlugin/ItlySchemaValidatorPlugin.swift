@@ -10,11 +10,11 @@ import Foundation
 import ItlySdk
 import DSJSONSchemaValidation
 
-public class ItlySchemaValidatorPlugin: Plugin {
+@objc(ITLSchemaValidatorPlugin) public class ItlySchemaValidatorPlugin: Plugin {
     private let validatorsMap: [String: DSJSONSchema]
     private weak var logger: Logger?
     
-    public init(schemasMap: [String: Data]) throws {
+    @objc public init(schemasMap: [String: Data]) throws {
         self.validatorsMap = try schemasMap.mapValues{ data -> DSJSONSchema in
             return try DSJSONSchema(data: data, baseURI: nil, referenceStorage: nil, specification: .draft7(), options: DSJSONSchemaValidationOptions())
         }

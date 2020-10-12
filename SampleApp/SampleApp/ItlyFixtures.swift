@@ -9,32 +9,32 @@ import Foundation
 import ItlySdk
 import ItlySchemaValidatorPlugin
 
-extension Itly {
-    static let shared = Itly()
+@objc extension Itly {
+    @objc static let shared = Itly()
 }
 
-class ConsoleLogger: Logger {
-    func debug(_ message: String) {
+@objc public class ConsoleLogger: NSObject, Logger {
+    public func debug(_ message: String) {
         print("ITLY [debug]: \(message)")
     }
     
-    func info(_ message: String) {
+    public func info(_ message: String) {
         print("ITLY [info]: \(message)")
     }
     
-    func warn(_ message: String) {
+    public func warn(_ message: String) {
         print("ITLY [warn]: \(message)")
     }
     
-    func error(_ message: String) {
+    public func error(_ message: String) {
         print("ITLY [error]: \(message)")
     }
 }
 
 
 
-extension ItlySchemaValidatorPlugin {
-    convenience init() throws {
+@objc extension ItlySchemaValidatorPlugin {
+    @objc convenience init() throws {
         let schemas: [String: Data] = [
             "context" : "{\"$id\":\"https://iterative.ly/company/77b37977-cb3a-42eb-bce3-09f5f7c3adb7/context\",\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"title\":\"Context\",\"description\":\"\",\"type\":\"object\",\"properties\":{\"requiredString\":{\"description\":\"description for context requiredString\",\"type\":\"string\"},\"optionalEnum\":{\"description\":\"description for context optionalEnum\",\"enum\":[\"Value 1\",\"Value 2\"]}},\"additionalProperties\":false,\"required\":[\"requiredString\"]}",
             "group" : "{\"$id\":\"https://iterative.ly/company/77b37977-cb3a-42eb-bce3-09f5f7c3adb7/group\",\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"title\":\"Group\",\"description\":\"\",\"type\":\"object\",\"properties\":{\"requiredBoolean\":{\"description\":\"Description for group requiredBoolean\",\"type\":\"boolean\"},\"optionalString\":{\"description\":\"Description for group optionalString\",\"type\":\"string\"}},\"additionalProperties\":false,\"required\":[\"requiredBoolean\"]}",
@@ -44,10 +44,10 @@ extension ItlySchemaValidatorPlugin {
     }
 }
 
-class Context: Event {
-    static let VALID_ONLY_REQUIRED_PROPS = Context(requiredString: "Required context string")
-    static let VALID_ALL_PROPS = Context(requiredString: "Required context string", optionalEnum: .value1)
-    static let INVALID_NO_PROPS = Event(name: "context")
+@objc class Context: Event {
+    @objc static let VALID_ONLY_REQUIRED_PROPS = Context(requiredString: "Required context string")
+    @objc static let VALID_ALL_PROPS = Context(requiredString: "Required context string", optionalEnum: .value1)
+    @objc static let INVALID_NO_PROPS = Event(name: "context")
     
     enum OptionalEnum: String {
         case value1 = "Value 1"
@@ -59,10 +59,10 @@ class Context: Event {
     }
 }
 
-class Identify: Event {
-    static let VALID_ALL_PROPS = Identify(requiredNumber: 2.0, optionalArray: ["optional"])
+@objc class Identify: Event {
+    @objc static let VALID_ALL_PROPS = Identify(requiredNumber: 2.0, optionalArray: ["optional"])
     
-    init(requiredNumber: Double, optionalArray: [String]? = nil) {
+    @objc init(requiredNumber: Double, optionalArray: [String]? = nil) {
         var dict:[String:Any] = ["requiredNumber": requiredNumber]
         if let optionalArray = optionalArray {
             dict["optionalArray"] = optionalArray
@@ -71,11 +71,11 @@ class Identify: Event {
     }
 }
 
-class Group: Event {
-    static let VALID_ALL_PROPS = Group(requiredBoolean: false, optionalString: "I'm optional!")
+@objc class Group: Event {
+    @objc static let VALID_ALL_PROPS = Group(requiredBoolean: false, optionalString: "I'm optional!")
     
     
-    init(requiredBoolean: Bool, optionalString: String? = nil) {
+    @objc init(requiredBoolean: Bool, optionalString: String? = nil) {
         var dict:[String:Any] = ["requiredBoolean": requiredBoolean]
         if let optionalString = optionalString {
             dict["optionalString"] = optionalString
@@ -84,8 +84,8 @@ class Group: Event {
     }
 }
 
-class EventNoProperties: Event {
-    init() {
+@objc class EventNoProperties: Event {
+    @objc init() {
         super.init(name: "Event No Properties")
     }
 }

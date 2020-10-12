@@ -1,2 +1,1 @@
-#github "iterativelyhq/itly-sdk-ios"
-git ".." "feature"
+git "/Users/saydex/iteratively_repos/itly-sdk-ios" "feature"

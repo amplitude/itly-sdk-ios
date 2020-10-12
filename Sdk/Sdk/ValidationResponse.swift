@@ -9,11 +9,11 @@
 import Foundation
 
 @objc (ITLValidationResponse) public class ValidationResponse: NSObject {
-    public let valid: Bool
-    public let message: String?
-    public let pluginId: String?
+    @objc public let valid: Bool
+    @objc public let message: String?
+    @objc public let pluginId: String?
     
-    public init(valid: Bool, message: String? = nil, pluginId: String? = nil) {
+    @objc public init(valid: Bool, message: String? = nil, pluginId: String? = nil) {
         self.valid = valid
         self.message = message
         self.pluginId = pluginId

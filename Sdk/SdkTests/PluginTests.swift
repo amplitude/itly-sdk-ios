@@ -13,7 +13,7 @@ class PluginTests: XCTestCase {
 
     func testExample() throws {
         class CustomPlugin: Plugin {
-            init() {
+            override init() {
                 super.init(id: "CustomPluginId")
             }
         }

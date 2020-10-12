@@ -10,12 +10,12 @@ import Foundation
 import Mixpanel
 import ItlySdk
 
-public class ItlyMixpanelPlugin: Plugin {
+@objc(ITLMixpanelPlugin) public class ItlyMixpanelPlugin: Plugin {
     private var mixpanelClient: MixpanelInstance!
     private weak var logger: Logger?
     private var token: String
     
-    public init(token: String) {
+    @objc public init(token: String) {
         self.token = token
         super.init(id: "ItlyMixpanelPlugin")
     }

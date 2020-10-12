@@ -10,12 +10,12 @@ import Foundation
 import Analytics
 import ItlySdk
 
-public class ItlySegmentPlugin: Plugin {
+@objc(ITLSegmentPlugin) public class ItlySegmentPlugin: Plugin {
     private var segmentClient: Analytics?
     private weak var logger: Logger?
     private var writeKey: String
     
-    public init(writeKey: String) {
+    @objc public init(writeKey: String) {
         self.writeKey = writeKey
         super.init(id: "ItlySegmentPlugin")
     }

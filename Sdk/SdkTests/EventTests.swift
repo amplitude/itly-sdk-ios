@@ -28,8 +28,8 @@ class EventTests: XCTestCase {
         class CustomEvent: Event {
             var customProperty: String? { properties["customProperty"] as? String }
             
-            init(customProperty: String) {
-                super.init(name: "customEvent", properties: ["customProperty": customProperty])
+            convenience init(customProperty: String) {
+                self.init(name: "customEvent", properties: ["customProperty": customProperty])
             }
         }
         

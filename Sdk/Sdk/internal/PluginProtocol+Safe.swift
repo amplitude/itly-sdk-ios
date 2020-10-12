@@ -1,5 +1,5 @@
 //
-//  Plugin+Safe.swift
+//  PluginProtocol+Safe.swift
 //  ItlyCore
 //
 //  Created by Konstantin Dorogan on 06.10.2020.

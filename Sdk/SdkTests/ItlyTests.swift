@@ -74,7 +74,7 @@ class ItlyTests: XCTestCase {
             self.shutdownCount += 1
         }
         
-        init() {
+        override init() {
             super.init(id: "CustomPluginId")
         }
     }
@@ -351,7 +351,7 @@ class ItlyTests: XCTestCase {
                 XCTAssertEqual(event.properties["contextProperty"] as! String, "contextPropertyVal")
             }
             
-            init() {
+            override init() {
                 super.init(id: "TestContextPlugin")
             }
         }

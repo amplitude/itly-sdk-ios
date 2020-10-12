@@ -12,18 +12,18 @@ public let MS_IN_S: Int = 1000
 public let S_IN_M: Int = 60
 public let M_IN_H: Int = 60
 
-@objc public class IterativelyOptions: NSObject {
-    let url: String
-    let environment: Environment
-    let omitValues: Bool
-    let batchSize: Int
-    let flushQueueSize: Int
-    let flushIntervalMs: Int
-    let maxRetries: Int
-    let delayInitialMillis: Int
-    let delayMaximumMillis: Int
+@objc(ITLIterativelyOptions) public class IterativelyOptions: NSObject {
+    @objc public let url: String
+    @objc public let environment: Environment
+    @objc public let omitValues: Bool
+    @objc public let batchSize: Int
+    @objc public let flushQueueSize: Int
+    @objc public let flushIntervalMs: Int
+    @objc public let maxRetries: Int
+    @objc public let delayInitialMillis: Int
+    @objc public let delayMaximumMillis: Int
     
-    public init(url: String,
+    @objc public init(url: String,
                 environment: Environment = .development,
                 omitValues: Bool = false,
                 batchSize: Int = 100,

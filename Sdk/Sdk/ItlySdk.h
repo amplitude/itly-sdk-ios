@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "ObjC.h"
+#import "ITLPlugin.h"
+#import "ITLEvent.h"
+#import "ITLEventMetadata.h"
 
 //! Project version number for itlycore.
 FOUNDATION_EXPORT double ItlySdkVersionNumber;
@@ -16,5 +19,3 @@ FOUNDATION_EXPORT double ItlySdkVersionNumber;
 FOUNDATION_EXPORT const unsigned char ItlySdkVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <itlycore/PublicHeader.h>
-
-

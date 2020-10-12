@@ -1,5 +1,5 @@
 //
-//  Sequence+Plugin.swift
+//  Sequence+PluginProtocol.swift
 //  ItlyCore
 //
 //  Created by Konstantin Dorogan on 15.09.2020.

@@ -14,13 +14,13 @@ import Foundation
 
     private var isDisabled: Bool { config?.disabled ?? true }
     
-    public func alias(_ userId: String, previousId: String?) {
+    @objc public func alias(_ userId: String, previousId: String?) {
         guard !isDisabled else { return }
         
         self.config.plugins.alias(userId, previousId: previousId, options: config!)
     }
     
-    public func identify(_ userId: String?, properties: Properties?) {
+    @objc public func identify(_ userId: String?, properties: Properties?) {
         guard !isDisabled else { return }
 
         let event = Event(name: "identify", properties: properties?.properties)
@@ -33,7 +33,7 @@ import Foundation
         }
     }
     
-    public func group(_ userId: String?, groupId: String, properties: Properties?) {
+    @objc public func group(_ userId: String?, groupId: String, properties: Properties?) {
         guard !isDisabled else { return }
 
         let event = Event(name: "group", properties: properties?.properties)
@@ -46,7 +46,7 @@ import Foundation
         }
     }
     
-    public func track(_ userId: String?, event: Event) {
+    @objc public func track(_ userId: String?, event: Event) {
         guard !isDisabled else { return }
 
         let validation = validateContextWithEvent(event)
@@ -59,25 +59,25 @@ import Foundation
         }
     }
     
-    public func reset() {
+    @objc public func reset() {
         guard !isDisabled else { return }
 
         config.plugins.reset(options: config!)
     }
     
-    public func flush() {
+    @objc public func flush() {
         guard !isDisabled else { return }
 
         config.plugins.flush(options: config!)
     }
     
-    public func shutdown() {
+    @objc public func shutdown() {
         guard !isDisabled else { return }
 
         config.plugins.shutdown(options: config!)
     }
 
-    public func load(_ options: Options) {
+    @objc public func load(_ options: Options) {
         guard !options.disabled else {
             options.logger?.info("Itly disabled = true")
             return
