@@ -47,6 +47,7 @@
 		9D1D915125223CED001BD8E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D1D915325223CED001BD8E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D1DAB44252F857A002BCA6E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9D74B109252FB134009BA14D /* SampleApp_Carthage copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SampleApp_Carthage copy-Info.plist"; path = "/Users/saydex/Documents/iteratively_repos/itly-sdk-ios/SampleApp/SampleApp_Carthage copy-Info.plist"; sourceTree = "<absolute>"; };
 		9DA6B1362523A6DA00EBD8F4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9DA6B1372523A6DA00EBD8F4 /* ItlyFixtures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlyFixtures.swift; sourceTree = "<group>"; };
 		9DA6B1382523A6DA00EBD8F4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +95,7 @@
 				9D1D914425223CEC001BD8E8 /* SampleApp_Carthage */,
 				9D1D914325223CEC001BD8E8 /* Products */,
 				9D1D916D25225DF3001BD8E8 /* Frameworks */,
+				9D74B109252FB134009BA14D /* SampleApp_Carthage copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
