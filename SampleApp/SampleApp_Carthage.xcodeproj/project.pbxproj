@@ -10,8 +10,7 @@
 		9D1D914D25223CEC001BD8E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1D914B25223CEC001BD8E8 /* Main.storyboard */; };
 		9D1D914F25223CED001BD8E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D1D914E25223CED001BD8E8 /* Assets.xcassets */; };
 		9D1D915225223CED001BD8E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1D915025223CED001BD8E8 /* LaunchScreen.storyboard */; };
-		9D1DAB43252F8499002BCA6E /* AppDelegateObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB583E252F79F5006D2354 /* AppDelegateObjC.m */; };
-		9D1DAB45252F857A002BCA6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1DAB44252F857A002BCA6E /* main.m */; };
+		9D7A249B25365A310080FD76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA6B1382523A6DA00EBD8F4 /* AppDelegate.swift */; };
 		9DA6B13A2523A6DA00EBD8F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA6B1362523A6DA00EBD8F4 /* ViewController.swift */; };
 		9DA6B13B2523A6DA00EBD8F4 /* ItlyFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA6B1372523A6DA00EBD8F4 /* ItlyFixtures.swift */; };
 		9DA6B13D2523A6DA00EBD8F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA6B1392523A6DA00EBD8F4 /* SceneDelegate.swift */; };
@@ -46,8 +45,6 @@
 		9D1D914E25223CED001BD8E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D1D915125223CED001BD8E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D1D915325223CED001BD8E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D1DAB44252F857A002BCA6E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9D74B109252FB134009BA14D /* SampleApp_Carthage copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SampleApp_Carthage copy-Info.plist"; path = "/Users/saydex/Documents/iteratively_repos/itly-sdk-ios/SampleApp/SampleApp_Carthage copy-Info.plist"; sourceTree = "<absolute>"; };
 		9DA6B1362523A6DA00EBD8F4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9DA6B1372523A6DA00EBD8F4 /* ItlyFixtures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItlyFixtures.swift; sourceTree = "<group>"; };
 		9DA6B1382523A6DA00EBD8F4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,8 +60,6 @@
 		9DF666162522741F00F0BE77 /* Mixpanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mixpanel.framework; path = Carthage/Build/iOS/Mixpanel.framework; sourceTree = "<group>"; };
 		9DF666172522741F00F0BE77 /* ItlySegmentPlugin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ItlySegmentPlugin.framework; path = Carthage/Build/iOS/ItlySegmentPlugin.framework; sourceTree = "<group>"; };
 		9DFB583D252F79F4006D2354 /* SampleApp_Carthage-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SampleApp_Carthage-Bridging-Header.h"; sourceTree = "<group>"; };
-		9DFB583E252F79F5006D2354 /* AppDelegateObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateObjC.m; sourceTree = "<group>"; };
-		9DFB5840252F7A15006D2354 /* AppDelegateObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateObjC.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +90,6 @@
 				9D1D914425223CEC001BD8E8 /* SampleApp_Carthage */,
 				9D1D914325223CEC001BD8E8 /* Products */,
 				9D1D916D25225DF3001BD8E8 /* Frameworks */,
-				9D74B109252FB134009BA14D /* SampleApp_Carthage copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,20 +129,9 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9D1DAB46252F8635002BCA6E /* ObjC */ = {
-			isa = PBXGroup;
-			children = (
-				9D1DAB44252F857A002BCA6E /* main.m */,
-				9DFB583E252F79F5006D2354 /* AppDelegateObjC.m */,
-				9DFB5840252F7A15006D2354 /* AppDelegateObjC.h */,
-			);
-			path = ObjC;
-			sourceTree = "<group>";
-		};
 		9DA6B1352523A6DA00EBD8F4 /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				9D1DAB46252F8635002BCA6E /* ObjC */,
 				9DA6B1362523A6DA00EBD8F4 /* ViewController.swift */,
 				9DA6B1372523A6DA00EBD8F4 /* ItlyFixtures.swift */,
 				9DA6B1382523A6DA00EBD8F4 /* AppDelegate.swift */,
@@ -272,10 +255,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D1DAB45252F857A002BCA6E /* main.m in Sources */,
+				9D7A249B25365A310080FD76 /* AppDelegate.swift in Sources */,
 				9DA6B13A2523A6DA00EBD8F4 /* ViewController.swift in Sources */,
 				9DA6B13B2523A6DA00EBD8F4 /* ItlyFixtures.swift in Sources */,
-				9D1DAB43252F8499002BCA6E /* AppDelegateObjC.m in Sources */,
 				9DA6B13D2523A6DA00EBD8F4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
