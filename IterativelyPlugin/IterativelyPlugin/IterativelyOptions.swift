@@ -13,7 +13,6 @@ public let S_IN_M: Int = 60
 public let M_IN_H: Int = 60
 
 @objc(ITLIterativelyOptions) public class IterativelyOptions: NSObject {
-    @objc public let url: String
     @objc public let environment: Environment
     @objc public let omitValues: Bool
     @objc public let batchSize: Int
@@ -23,8 +22,7 @@ public let M_IN_H: Int = 60
     @objc public let delayInitialMillis: Int
     @objc public let delayMaximumMillis: Int
     
-    @objc public init(url: String,
-                environment: Environment = .development,
+    @objc public init(environment: Environment = .development,
                 omitValues: Bool = false,
                 batchSize: Int = 100,
                 flushQueueSize: Int = 10,
@@ -33,7 +31,6 @@ public let M_IN_H: Int = 60
                 delayInitialMillis: Int = 10 * MS_IN_S, // 10 seconds
                 delayMaximumMillis: Int = 1 * MS_IN_S * S_IN_M * M_IN_H // = 1 hr
                 ) {
-        self.url = url
         self.environment = environment
         self.omitValues = omitValues
         self.batchSize = batchSize

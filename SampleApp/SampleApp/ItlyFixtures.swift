@@ -31,8 +31,6 @@ import ItlySchemaValidatorPlugin
     }
 }
 
-
-
 @objc extension ItlySchemaValidatorPlugin {
     @objc override convenience init() {
         let schemas: [String: Data] = [
@@ -42,6 +40,10 @@ import ItlySchemaValidatorPlugin
         ].compactMapValues{ $0.data(using: .utf8) }
         try! self.init(schemasMap: schemas)
     }
+}
+
+extension Sequence where Self == [String: Any?] {
+    var asProperties: [String: Any] { self.compactMapValues{ $0 } }
 }
 
 @objc class Context: Event {
@@ -55,7 +57,10 @@ import ItlySchemaValidatorPlugin
     }
     
     convenience init(requiredString: String, optionalEnum: OptionalEnum? = nil) {
-        self.init(name: "context", properties: ["requiredString": requiredString, "optionalEnum": optionalEnum?.rawValue].compactMapValues{ $0 })
+        let dict: [String:Any?] = ["requiredString": requiredString,
+                                   "optionalEnum": optionalEnum?.rawValue]
+        self.init(name: "context",
+                  properties: dict.asProperties)
     }
 }
 
@@ -63,24 +68,20 @@ import ItlySchemaValidatorPlugin
     @objc static let VALID_ALL_PROPS = Identify(requiredNumber: 2.0, optionalArray: ["optional"])
     
     @objc convenience init(requiredNumber: Double, optionalArray: [String]? = nil) {
-        var dict:[String:Any] = ["requiredNumber": requiredNumber]
-        if let optionalArray = optionalArray {
-            dict["optionalArray"] = optionalArray
-        }
-        self.init(name: "identify", properties: dict)
+        let dict:[String:Any?] = ["requiredNumber": requiredNumber,
+                                  "optionalArray": optionalArray]
+        self.init(name: "identify",
+                  properties: dict.asProperties)
     }
 }
 
 @objc class Group: Event {
     @objc static let VALID_ALL_PROPS = Group(requiredBoolean: false, optionalString: "I'm optional!")
     
-    
     @objc convenience init(requiredBoolean: Bool, optionalString: String? = nil) {
-        var dict:[String:Any] = ["requiredBoolean": requiredBoolean]
-        if let optionalString = optionalString {
-            dict["optionalString"] = optionalString
-        }
-        self.init(name: "group", properties: dict)
+        let dict:[String:Any?] = ["requiredBoolean": requiredBoolean,
+                                 "optionalString": optionalString]
+        self.init(name: "group", properties: dict.asProperties)
     }
 }
 

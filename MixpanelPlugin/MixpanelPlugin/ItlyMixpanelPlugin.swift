@@ -15,7 +15,7 @@ import ItlySdk
     private weak var logger: Logger?
     private var token: String
     
-    @objc public init(token: String) {
+    @objc public init(_ token: String) {
         self.token = token
         super.init(id: "ItlyMixpanelPlugin")
     }

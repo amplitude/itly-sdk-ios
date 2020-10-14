@@ -24,6 +24,7 @@ protocol TrackModelBuilderFactory {
 struct MainFactory {
     let config: IterativelyOptions
     let apiKey: String
+    let url: String
 }
 
 extension MainFactory: TrackModelBuilderFactory {
@@ -34,7 +35,7 @@ extension MainFactory: TrackModelBuilderFactory {
 
 extension MainFactory: ClientApiFactory {
     func createClientApi() throws -> ClientApi {
-        return DefaultClientApi(baseUrl: URL(string: config.url)!,
+        return DefaultClientApi(baseUrl: URL(string: self.url)!,
                                 apiKey: apiKey)
     }
 }

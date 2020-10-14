@@ -15,7 +15,7 @@ import ItlySdk
     private weak var logger: Logger?
     private var writeKey: String
     
-    @objc public init(writeKey: String) {
+    @objc public init(_ writeKey: String) {
         self.writeKey = writeKey
         super.init(id: "ItlySegmentPlugin")
     }

@@ -15,7 +15,7 @@ import ItlySdk
     private weak var logger: Logger?
     private let apiKey: String
     
-    @objc public init(apiKey: String) {
+    @objc public init(_ apiKey: String) {
         self.apiKey = apiKey
         super.init(id: "ItlyAmplitudePlugin")
     }

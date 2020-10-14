@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Foundation/NSObjCRuntime.h>
 #import "ITLEventMetadata.h"
 
 @protocol ITLProperties;
@@ -19,7 +20,6 @@ NS_SWIFT_NAME(Event)
 @property (readonly, copy, nonnull) ITLEventMetadata* metadata;
 @property (readonly, copy, nonnull) NSString* eventId NS_SWIFT_NAME(id);
 @property (readonly, copy, nonnull) NSString* version;
-
 
 -(instancetype _Nonnull )initWithName:(NSString * _Nonnull)nameParam
                         properties:(NSDictionary<NSString*, id>* _Nullable)propertiesParam

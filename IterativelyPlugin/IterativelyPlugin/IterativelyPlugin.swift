@@ -13,8 +13,8 @@ import ItlySdk
     private let trackModelBuilder: TrackModelBuilder
     private var queue: ProcessingQueue?
     
-    @objc public init(apiKey: String, config: IterativelyOptions) throws {
-        let mainFactory = MainFactory(config: config, apiKey: apiKey)
+    @objc public init(_ apiKey: String, url: String, config: IterativelyOptions) throws {
+        let mainFactory = MainFactory(config: config, apiKey: apiKey, url: url)
         self.factory = mainFactory
         self.trackModelBuilder = try mainFactory.createTrackModelBuilder()
         super.init(id: "IterativelyPlugin")

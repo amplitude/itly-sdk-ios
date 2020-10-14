@@ -16,12 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let iterativelyPlugin = try! IterativelyPlugin(apiKey: "api-key",
-                                                       config: IterativelyOptions(url: "http://localhost:8080/test",
-                                                                                  batchSize: 1,
+        let iterativelyPlugin = try! IterativelyPlugin("api-key",
+                                                       url: "http://localhost:8080/test",
+                                                       config: IterativelyOptions(batchSize: 1,
                                                                                   flushQueueSize: 1))
 
-        let validatorPlugin = try! ItlySchemaValidatorPlugin()
+        let validatorPlugin = ItlySchemaValidatorPlugin()
         
         Itly.shared.load(Options(context: Context(requiredString: "Required string").properties,
                                  plugins: [iterativelyPlugin,
