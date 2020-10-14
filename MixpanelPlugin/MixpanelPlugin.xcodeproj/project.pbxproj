@@ -332,7 +332,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage bootstrap --platform iOS --cache-builds --no-use-binaries\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PROJECT_DIR}/../carthage.sh bootstrap --platform iOS --cache-builds --no-use-binaries\n";
 		};
 		9DE1973C2506AB9500966F06 /* Carthage Deps */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -350,7 +350,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage bootstrap --platform OSX --cache-builds --no-use-binaries\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PROJECT_DIR}/../carthage.sh bootstrap --platform OSX --cache-builds --no-use-binaries\n";
 		};
 		9DE1973D2506ABD400966F06 /* Carthage Deps */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -368,7 +368,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage bootstrap --platform tvOS --cache-builds --no-use-binaries\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PROJECT_DIR}/../carthage.sh bootstrap --platform tvOS --cache-builds --no-use-binaries\n";
 		};
 		9DE1973E2506AC4300966F06 /* Carthage Deps */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -386,7 +386,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage bootstrap --platform watchOS --cache-builds --no-use-binaries\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PROJECT_DIR}/../carthage.sh bootstrap --platform watchOS --cache-builds --no-use-binaries\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
