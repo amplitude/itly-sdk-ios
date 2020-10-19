@@ -57,10 +57,9 @@ extension Sequence where Self == [String: Any?] {
     }
     
     convenience init(requiredString: String, optionalEnum: OptionalEnum? = nil) {
-        let dict: [String:Any?] = ["requiredString": requiredString,
-                                   "optionalEnum": optionalEnum?.rawValue]
         self.init(name: "context",
-                  properties: dict.asProperties)
+                  properties: Properties(["requiredString": requiredString,
+                                                "optionalEnum": optionalEnum?.rawValue]))
     }
 }
 
@@ -68,10 +67,9 @@ extension Sequence where Self == [String: Any?] {
     @objc static let VALID_ALL_PROPS = Identify(requiredNumber: 2.0, optionalArray: ["optional"])
     
     @objc convenience init(requiredNumber: Double, optionalArray: [String]? = nil) {
-        let dict:[String:Any?] = ["requiredNumber": requiredNumber,
-                                  "optionalArray": optionalArray]
         self.init(name: "identify",
-                  properties: dict.asProperties)
+                  properties: Properties(["requiredNumber": requiredNumber,
+                                                "optionalArray": optionalArray]))
     }
 }
 
@@ -79,9 +77,8 @@ extension Sequence where Self == [String: Any?] {
     @objc static let VALID_ALL_PROPS = Group(requiredBoolean: false, optionalString: "I'm optional!")
     
     @objc convenience init(requiredBoolean: Bool, optionalString: String? = nil) {
-        let dict:[String:Any?] = ["requiredBoolean": requiredBoolean,
-                                 "optionalString": optionalString]
-        self.init(name: "group", properties: dict.asProperties)
+        self.init(name: "group", properties: Properties(["requiredBoolean": requiredBoolean,
+                                                               "optionalString": optionalString]))
     }
 }
 

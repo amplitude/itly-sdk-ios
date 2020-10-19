@@ -28,11 +28,11 @@
     
 }
 
-- (void)group:(NSString * _Nullable)userId groupId:(NSString * _Nonnull)groupId properties:(id<ITLProperties> _Nullable)properties {
+- (void)group:(NSString * _Nullable)userId groupId:(NSString * _Nonnull)groupId properties:(ITLProperties* _Nullable)properties {
     
 }
 
-- (void)identify:(NSString * _Nullable)userId properties:(id<ITLProperties> _Nullable)properties {
+- (void)identify:(NSString * _Nullable)userId properties:(ITLProperties* _Nullable)properties {
     
 }
 
@@ -44,11 +44,11 @@
     
 }
 
-- (void)postGroup:(NSString * _Nullable)userId groupId:(NSString * _Nonnull)groupId properties:(id<ITLProperties> _Nullable)properties validationResults:(NSArray<ITLValidationResponse *> * _Nonnull)validationResults {
+- (void)postGroup:(NSString * _Nullable)userId groupId:(NSString * _Nonnull)groupId properties:(ITLProperties* _Nullable)properties validationResults:(NSArray<ITLValidationResponse *> * _Nonnull)validationResults {
     
 }
 
-- (void)postIdentify:(NSString * _Nullable)userId properties:(id<ITLProperties> _Nullable)properties validationResults:(NSArray<ITLValidationResponse *> * _Nonnull)validationResults {
+- (void)postIdentify:(NSString * _Nullable)userId properties:(ITLProperties* _Nullable)properties validationResults:(NSArray<ITLValidationResponse *> * _Nonnull)validationResults {
     
 }
 

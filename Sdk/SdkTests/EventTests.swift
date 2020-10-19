@@ -29,7 +29,8 @@ class EventTests: XCTestCase {
             var customProperty: String? { properties["customProperty"] as? String }
             
             convenience init(customProperty: String) {
-                self.init(name: "customEvent", properties: ["customProperty": customProperty])
+                self.init(name: "customEvent",
+                          properties: Properties( ["customProperty": customProperty]))
             }
         }
         

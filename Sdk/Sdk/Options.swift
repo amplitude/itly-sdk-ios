@@ -9,21 +9,18 @@
 import Foundation
 
 @objc (ITLItlyOptions) open class Options: NSObject {
-    @objc public let context: Properties?
     @objc public let environment: Environment
     @objc public let disabled: Bool
     @objc public let plugins: [Plugin]
     @objc public let validation: ValidationOptions
     @objc public let logger: Logger?
     
-    @objc public init(context: [String: Any]? = nil,
-                environment: Environment = .development,
+    @objc public init(environment: Environment = .development,
                 disabled: Bool = false,
                 plugins: [Plugin] = [],
                 validation: ValidationOptions? = nil,
                 logger: Logger?
     ) {
-        self.context = context.map{ PropertiesWrapper(properties: $0) }
         self.environment = environment
         self.disabled = disabled
         self.plugins = plugins

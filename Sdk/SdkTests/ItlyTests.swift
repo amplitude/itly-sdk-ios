@@ -84,8 +84,7 @@ class ItlyTests: XCTestCase {
         
         let itlyCore = Itly()
         
-        let options = Options(context: nil,
-                              environment: .development,
+        let options = Options(environment: .development,
                               disabled: false,
                               plugins: [plugin],
                               validation: nil,
@@ -105,11 +104,11 @@ class ItlyTests: XCTestCase {
         XCTAssertEqual(plugin.flushCount, 0)
         XCTAssertEqual(plugin.shutdownCount, 0)
 
-        itlyCore.load(options)
+        itlyCore.load(nil, options: options)
         itlyCore.alias("", previousId: "")
         itlyCore.identify("", properties: nil)
-        itlyCore.group("", groupId: "", properties: nil)
-        itlyCore.track("", event: Event(name: ""))
+        itlyCore.group("", properties: nil)
+        itlyCore.track(Event(name: ""))
         itlyCore.flush()
         itlyCore.reset()
         itlyCore.shutdown()
@@ -133,8 +132,7 @@ class ItlyTests: XCTestCase {
         
         let itlyCore = Itly()
         
-        let options = Options(context: nil,
-                              environment: .development,
+        let options = Options(environment: .development,
                               disabled: true,
                               plugins: [plugin],
                               validation: nil,
@@ -154,11 +152,11 @@ class ItlyTests: XCTestCase {
         XCTAssertEqual(plugin.flushCount, 0)
         XCTAssertEqual(plugin.shutdownCount, 0)
 
-        itlyCore.load(options)
+        itlyCore.load(nil, options: options)
         itlyCore.alias("", previousId: "")
         itlyCore.identify("", properties: nil)
-        itlyCore.group("", groupId: "", properties: nil)
-        itlyCore.track("", event: Event(name: ""))
+        itlyCore.group("", properties: nil)
+        itlyCore.track(Event(name: ""))
         itlyCore.flush()
         itlyCore.reset()
         itlyCore.shutdown()
@@ -184,8 +182,7 @@ class ItlyTests: XCTestCase {
         validationPlugin.alwaysInvalid = true
         
         let itlyCore = Itly()
-        let options = Options(context: nil,
-                              environment: .development,
+        let options = Options(environment: .development,
                               disabled: false,
                               plugins: [plugin, validationPlugin],
                               validation: ValidationOptions(disabled: false, trackInvalid: true, errorOnInvalid: false),
@@ -205,11 +202,11 @@ class ItlyTests: XCTestCase {
         XCTAssertEqual(plugin.flushCount, 0)
         XCTAssertEqual(plugin.shutdownCount, 0)
 
-        itlyCore.load(options)
+        itlyCore.load(nil, options: options)
         itlyCore.alias("", previousId: "")
         itlyCore.identify("", properties: nil)
-        itlyCore.group("", groupId: "", properties: nil)
-        itlyCore.track("", event: Event(name: ""))
+        itlyCore.group("", properties: nil)
+        itlyCore.track(Event(name: ""))
         itlyCore.flush()
         itlyCore.reset()
         itlyCore.shutdown()
@@ -236,8 +233,7 @@ class ItlyTests: XCTestCase {
         validationPlugin.alwaysInvalid = true
         
         let itlyCore = Itly()
-        let options = Options(context: nil,
-                              environment: .development,
+        let options = Options(environment: .development,
                               disabled: false,
                               plugins: [plugin, validationPlugin],
                               validation: ValidationOptions(disabled: false, trackInvalid: false, errorOnInvalid: false),
@@ -257,11 +253,11 @@ class ItlyTests: XCTestCase {
         XCTAssertEqual(plugin.flushCount, 0)
         XCTAssertEqual(plugin.shutdownCount, 0)
 
-        itlyCore.load(options)
+        itlyCore.load(nil, options: options)
         itlyCore.alias("", previousId: "")
         itlyCore.identify("", properties: nil)
-        itlyCore.group("", groupId: "", properties: nil)
-        itlyCore.track("", event: Event(name: ""))
+        itlyCore.group("", properties: nil)
+        itlyCore.track(Event(name: ""))
         itlyCore.flush()
         itlyCore.reset()
         itlyCore.shutdown()
@@ -288,8 +284,7 @@ class ItlyTests: XCTestCase {
         validationPlugin.alwaysInvalid = true
         
         let itlyCore = Itly()
-        let options = Options(context: nil,
-                              environment: .development,
+        let options = Options(environment: .development,
                               disabled: false,
                               plugins: [plugin, validationPlugin],
                               validation: ValidationOptions(disabled: true, trackInvalid: false, errorOnInvalid: false),
@@ -309,11 +304,11 @@ class ItlyTests: XCTestCase {
         XCTAssertEqual(plugin.flushCount, 0)
         XCTAssertEqual(plugin.shutdownCount, 0)
 
-        itlyCore.load(options)
+        itlyCore.load(nil, options: options)
         itlyCore.alias("", previousId: "")
         itlyCore.identify("", properties: nil)
-        itlyCore.group("", groupId: "", properties: nil)
-        itlyCore.track("", event: Event(name: ""))
+        itlyCore.group("", properties: nil)
+        itlyCore.track(Event(name: ""))
         itlyCore.flush()
         itlyCore.reset()
         itlyCore.shutdown()
@@ -359,8 +354,7 @@ class ItlyTests: XCTestCase {
 
         let plugin = TestContextPlugin()
         let itlyCore = Itly()
-        let options = Options(context: ["contextProperty": "contextPropertyVal"],
-                              environment: .development,
+        let options = Options(environment: .development,
                               disabled: false,
                               plugins: [plugin],
                               validation: ValidationOptions(disabled: true, trackInvalid: false, errorOnInvalid: false),
@@ -370,8 +364,9 @@ class ItlyTests: XCTestCase {
         XCTAssertEqual(plugin.trackCounter, 0)
         XCTAssertEqual(plugin.postTrackCounter, 0)
 
-        itlyCore.load(options)
-        itlyCore.track("", event: Event(name: "test", properties: ["eventProperty": "eventPropertyVal"]))
+        itlyCore.load(Event(name: "context", properties: Properties( ["contextProperty": "contextPropertyVal"]), id: nil, version: nil),
+                      options: options)
+        itlyCore.track(Event(name: "test", properties: Properties( ["eventProperty": "eventPropertyVal"])))
 
         XCTAssertEqual(plugin.trackCounter, 1)
         XCTAssertEqual(plugin.postTrackCounter, 1)

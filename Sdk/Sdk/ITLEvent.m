@@ -12,22 +12,20 @@
 #import "ITLEventMetadata.h"
 
 @implementation ITLEvent
-
 @synthesize name;
-@synthesize properties;
 @synthesize metadata;
 @synthesize eventId;
 @synthesize version;
 
+
 -(instancetype _Nonnull )initWithName:(NSString * _Nonnull)nameParam
-                        properties:(NSDictionary<NSString*, id>* _Nullable)propertiesParam
+                        propertiesDict:(NSDictionary<NSString*, id>* _Nullable)propertiesDictParam
                         id:(NSString * _Nullable)idParam
                         version:(NSString * _Nullable)versionParam
-                        metadata:(ITLEventMetadata* _Nullable)metadataParam;
+                        metadata:(ITLEventMetadata* _Nullable)metadataParam
 {
-    self = [super init];
+    self = [super init:propertiesDictParam];
     name = nameParam;
-    properties = propertiesParam;
     eventId = idParam;
     version = versionParam;
     metadata = metadataParam;

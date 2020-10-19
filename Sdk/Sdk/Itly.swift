@@ -23,7 +23,7 @@ import Foundation
     @objc public func identify(_ userId: String?, properties: Properties?) {
         guard !isDisabled else { return }
 
-        let event = Event(name: "identify", properties: properties?.properties)
+        let event = Event(name: "identify", properties: properties)
         let validation = validate(event)
         
         config.plugins.identify(userId, properties: event, validationResults: validation, options: config!)
@@ -33,26 +33,26 @@ import Foundation
         }
     }
     
-    @objc public func group(_ userId: String?, groupId: String, properties: Properties?) {
+    @objc public func group(_ groupId: String, properties: Properties?) {
         guard !isDisabled else { return }
 
-        let event = Event(name: "group", properties: properties?.properties)
+        let event = Event(name: "group", properties: properties)
         let validation = validate(event)
         
-        config.plugins.group(userId, groupId: groupId, properties: event, validationResults: validation, options: config!)
+        config.plugins.group(nil, groupId: groupId, properties: event, validationResults: validation, options: config!)
 
         validation.filter{ !$0.valid }.forEach{ invalidResult in
             config.logger?.error("Itly Error in tracker.group(): \(invalidResult.message ?? "")")
         }
     }
     
-    @objc public func track(_ userId: String?, event: Event) {
+    @objc public func track(_ event: Event) {
         guard !isDisabled else { return }
 
         let validation = validateContextWithEvent(event)
         
         let combinedEvent = event.mergeProperties(context)
-        config.plugins.track(userId, event: combinedEvent, validationResults: validation, options: config!)
+        config.plugins.track(nil, event: combinedEvent, validationResults: validation, options: config!)
 
         validation.filter{ !$0.valid }.forEach{ invalidResult in
             config.logger?.error("Itly Error in tracker.track(\(event.name)): \(invalidResult.message ?? "")")
@@ -77,14 +77,14 @@ import Foundation
         config.plugins.shutdown(options: config!)
     }
 
-    @objc public func load(_ options: Options) {
+    @objc public func load(_ context: Properties?, options: Options) {
         guard !options.disabled else {
             options.logger?.info("Itly disabled = true")
             return
         }
         
         self.config = options
-        self.context = Event(name: "context", properties: options.context?.properties)
+        self.context = Event(name: "context", properties: context)
         
         self.config.logger?.debug("Itly load")
         self.config.logger?.debug("Itly \(config.plugins.count) plugins are enabled")

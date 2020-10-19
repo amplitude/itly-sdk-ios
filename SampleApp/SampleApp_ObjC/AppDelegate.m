@@ -21,9 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    
-    ITLIterativelyOptions* iterativelyPluginOptions = [[ITLIterativelyOptions alloc] initWithUrl:@"http://localhost:8080/test"
-                                                                                     environment:ITLEnvironmentDevelopment
+    ITLIterativelyOptions* iterativelyPluginOptions = [[ITLIterativelyOptions alloc] initWithEnvironment:ITLEnvironmentDevelopment
                                                                                       omitValues:FALSE
                                                                                        batchSize:1
                                                                                   flushQueueSize:1
@@ -34,9 +32,10 @@
     
     // Create plugins
     NSError* error;
-    ITLIterativelyPlugin* iterativelyPlugin = [[ITLIterativelyPlugin alloc] initWithApiKey:@"api-key"
-                                                                                    config:iterativelyPluginOptions
-                                                                                     error:&error];
+    ITLIterativelyPlugin* iterativelyPlugin = [[ITLIterativelyPlugin alloc] init:@"api-key"
+                                                                             url:@"http://localhost:8080/test"
+                                                                          config:iterativelyPluginOptions
+                                                                           error:&error];
 
     ITLSchemaValidatorPlugin* validationPlugin = [[ITLSchemaValidatorPlugin alloc] initWithSchemasMap:ITLSchemaValidatorPlugin.defaultSchema
                                                                                                 error:&error];
@@ -47,15 +46,15 @@
                                                                               errorOnInvalid:false];
     
     
-    ITLItlyOptions* itlyOptions = [[ITLItlyOptions alloc] initWithContext:[[Context alloc] initWithRequiredString:@"Required string" optionalEnum:nil].properties
-                                                              environment:ITLEnvironmentDevelopment
+    ITLItlyOptions* itlyOptions = [[ITLItlyOptions alloc] initWithEnvironment:ITLEnvironmentDevelopment
                                                                  disabled:false
                                                                   plugins:@[iterativelyPlugin,
                                                                             validationPlugin]
                                                                validation:validationOptions
                                                                    logger:[ConsoleLogger new]];
     
-    [ITLItly.shared load:itlyOptions];
+    [ITLItly.shared load:[[Context alloc] initWithRequiredString:@"Required string" optionalEnum:nil]
+                 options:itlyOptions];
 
     
     
@@ -64,12 +63,10 @@
     [ITLItly.shared identify:userId
                   properties: [[Identify alloc] initWithRequiredNumber:@42.0 optionalArray:nil]];
     
-    [ITLItly.shared group:userId
-                  groupId:@"groupId"
+    [ITLItly.shared group:@"groupId"
                properties:[[Group alloc] initWithRequiredBoolean:@YES optionalString:nil]];
     
-    [ITLItly.shared track:userId
-                    event:[EventNoProperties new]];
+    [ITLItly.shared track:[EventNoProperties new]];
     
     return YES;
 }

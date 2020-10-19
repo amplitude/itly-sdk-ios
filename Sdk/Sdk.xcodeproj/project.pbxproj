@@ -30,6 +30,14 @@
 		9D3D9F522534ED5D00602A29 /* ITLEventMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D3D9F482534ED4300602A29 /* ITLEventMetadata.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D3D9F532534ED5D00602A29 /* ITLEventMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D3D9F482534ED4300602A29 /* ITLEventMetadata.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D5F294325110A7C00A8EB46 /* Sequence+PluginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F294225110A7C00A8EB46 /* Sequence+PluginProtocol.swift */; };
+		9D694970253E2F4A00A396A7 /* ITLProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D69496F253E2F4A00A396A7 /* ITLProperties.m */; };
+		9D694971253E2F4A00A396A7 /* ITLProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D69496F253E2F4A00A396A7 /* ITLProperties.m */; };
+		9D694972253E2F4A00A396A7 /* ITLProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D69496F253E2F4A00A396A7 /* ITLProperties.m */; };
+		9D694973253E2F4A00A396A7 /* ITLProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D69496F253E2F4A00A396A7 /* ITLProperties.m */; };
+		9D694982253E2F4F00A396A7 /* ITLProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D69496E253E2ECC00A396A7 /* ITLProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D69498A253E2F4F00A396A7 /* ITLProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D69496E253E2ECC00A396A7 /* ITLProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D694992253E2F4F00A396A7 /* ITLProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D69496E253E2ECC00A396A7 /* ITLProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D69499A253E2F5000A396A7 /* ITLProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D69496E253E2ECC00A396A7 /* ITLProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D6C6417252C848F00A44CB1 /* PluginProtocol+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C6416252C848F00A44CB1 /* PluginProtocol+Safe.swift */; };
 		9D6C6418252C848F00A44CB1 /* PluginProtocol+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C6416252C848F00A44CB1 /* PluginProtocol+Safe.swift */; };
 		9D6C6419252C848F00A44CB1 /* PluginProtocol+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C6416252C848F00A44CB1 /* PluginProtocol+Safe.swift */; };
@@ -51,11 +59,6 @@
 		9DC34C5125000B5F00B23A17 /* ValidationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4125000B5F00B23A17 /* ValidationOptions.swift */; };
 		9DC34C5225000B5F00B23A17 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4225000B5F00B23A17 /* Environment.swift */; };
 		9DC34C5325000B5F00B23A17 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4325000B5F00B23A17 /* Logger.swift */; };
-		9DC34C5625000B5F00B23A17 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4625000B5F00B23A17 /* Properties.swift */; };
-		9DD2DF3325192EA5000C613D /* PropertiesWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2DF3225192EA5000C613D /* PropertiesWrapper.swift */; };
-		9DD2DF3425192EA5000C613D /* PropertiesWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2DF3225192EA5000C613D /* PropertiesWrapper.swift */; };
-		9DD2DF3525192EA5000C613D /* PropertiesWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2DF3225192EA5000C613D /* PropertiesWrapper.swift */; };
-		9DD2DF3625192EA5000C613D /* PropertiesWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2DF3225192EA5000C613D /* PropertiesWrapper.swift */; };
 		9DD2E09C251CFEA0000C613D /* ItlySdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE1962F2506765B00966F06 /* ItlySdk.framework */; };
 		9DD2E0B0251CFEF9000C613D /* ItlySdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC34C3225000B0800B23A17 /* ItlySdk.framework */; };
 		9DD2E0C5251CFF49000C613D /* ItlySdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE196222506761600966F06 /* ItlySdk.framework */; };
@@ -84,19 +87,16 @@
 		9DE1963B250677F700966F06 /* ValidationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4125000B5F00B23A17 /* ValidationOptions.swift */; };
 		9DE1963C250677F700966F06 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4225000B5F00B23A17 /* Environment.swift */; };
 		9DE1963D250677F700966F06 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4325000B5F00B23A17 /* Logger.swift */; };
-		9DE19640250677F700966F06 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4625000B5F00B23A17 /* Properties.swift */; };
 		9DE19643250677F700966F06 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3D25000B5F00B23A17 /* Event.swift */; };
 		9DE19644250677F700966F06 /* Itly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3E25000B5F00B23A17 /* Itly.swift */; };
 		9DE1964A250677F800966F06 /* ValidationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4125000B5F00B23A17 /* ValidationOptions.swift */; };
 		9DE1964B250677F800966F06 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4225000B5F00B23A17 /* Environment.swift */; };
 		9DE1964C250677F800966F06 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4325000B5F00B23A17 /* Logger.swift */; };
-		9DE1964F250677F800966F06 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4625000B5F00B23A17 /* Properties.swift */; };
 		9DE19652250677F800966F06 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3D25000B5F00B23A17 /* Event.swift */; };
 		9DE19653250677F800966F06 /* Itly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3E25000B5F00B23A17 /* Itly.swift */; };
 		9DE19659250677F800966F06 /* ValidationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4125000B5F00B23A17 /* ValidationOptions.swift */; };
 		9DE1965A250677F800966F06 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4225000B5F00B23A17 /* Environment.swift */; };
 		9DE1965B250677F800966F06 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4325000B5F00B23A17 /* Logger.swift */; };
-		9DE1965E250677F800966F06 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4625000B5F00B23A17 /* Properties.swift */; };
 		9DE19661250677F800966F06 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3D25000B5F00B23A17 /* Event.swift */; };
 		9DE19662250677F800966F06 /* Itly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C3E25000B5F00B23A17 /* Itly.swift */; };
 		9DF393C42534C1A900F62177 /* ITLPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DF393BC2534C14800F62177 /* ITLPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -138,6 +138,8 @@
 		9D3D9F3C2534EB2400602A29 /* ITLEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITLEvent.m; sourceTree = "<group>"; };
 		9D3D9F482534ED4300602A29 /* ITLEventMetadata.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITLEventMetadata.h; sourceTree = "<group>"; };
 		9D5F294225110A7C00A8EB46 /* Sequence+PluginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+PluginProtocol.swift"; sourceTree = "<group>"; };
+		9D69496E253E2ECC00A396A7 /* ITLProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITLProperties.h; sourceTree = "<group>"; };
+		9D69496F253E2F4A00A396A7 /* ITLProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITLProperties.m; sourceTree = "<group>"; };
 		9D6C6416252C848F00A44CB1 /* PluginProtocol+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PluginProtocol+Safe.swift"; sourceTree = "<group>"; };
 		9D6C6422252C85AB00A44CB1 /* ObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjC.h; sourceTree = "<group>"; };
 		9D6C6423252C85EE00A44CB1 /* ObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjC.m; sourceTree = "<group>"; };
@@ -149,11 +151,9 @@
 		9DC34C4125000B5F00B23A17 /* ValidationOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationOptions.swift; sourceTree = "<group>"; };
 		9DC34C4225000B5F00B23A17 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		9DC34C4325000B5F00B23A17 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		9DC34C4625000B5F00B23A17 /* Properties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
 		9DD2DF1825190182000C613D /* EventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
 		9DD2DF1F251904C2000C613D /* PluginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginTests.swift; sourceTree = "<group>"; };
 		9DD2DF2B2519070E000C613D /* ItlyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItlyTests.swift; sourceTree = "<group>"; };
-		9DD2DF3225192EA5000C613D /* PropertiesWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesWrapper.swift; sourceTree = "<group>"; };
 		9DD2E097251CFEA0000C613D /* ItlySdkTests_OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItlySdkTests_OSX.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD2E0AB251CFEF9000C613D /* ItlySdkTests_iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItlySdkTests_iOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD2E0C0251CFF49000C613D /* ItlySdkTests_tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItlySdkTests_tvOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,7 +224,6 @@
 		9D72379D252C78C100DFB51D /* internal */ = {
 			isa = PBXGroup;
 			children = (
-				9DD2DF3225192EA5000C613D /* PropertiesWrapper.swift */,
 				9DD889FA25112C59005D8941 /* Sequence+ValidationResponse.swift */,
 				9D5F294225110A7C00A8EB46 /* Sequence+PluginProtocol.swift */,
 				9D6C6416252C848F00A44CB1 /* PluginProtocol+Safe.swift */,
@@ -268,7 +267,6 @@
 				9DC34C4325000B5F00B23A17 /* Logger.swift */,
 				9D345197250F8C9100022763 /* Options.swift */,
 				9D345199250F97F500022763 /* ValidationResponse.swift */,
-				9DC34C4625000B5F00B23A17 /* Properties.swift */,
 				9DC34C3E25000B5F00B23A17 /* Itly.swift */,
 				9D34519B250F99A300022763 /* EventMetadata.swift */,
 				9DC34C3D25000B5F00B23A17 /* Event.swift */,
@@ -277,6 +275,8 @@
 				9D3D9F142534E90F00602A29 /* ITLEvent.h */,
 				9D3D9F3C2534EB2400602A29 /* ITLEvent.m */,
 				9D3D9F482534ED4300602A29 /* ITLEventMetadata.h */,
+				9D69496E253E2ECC00A396A7 /* ITLProperties.h */,
+				9D69496F253E2F4A00A396A7 /* ITLProperties.m */,
 			);
 			path = Sdk;
 			sourceTree = "<group>";
@@ -304,6 +304,7 @@
 				9D3D9F492534ED5C00602A29 /* ITLEventMetadata.h in Headers */,
 				9D6C64A4252CB64800A44CB1 /* ItlySdk.h in Headers */,
 				9D3D9F152534EAE100602A29 /* ITLEvent.h in Headers */,
+				9D694982253E2F4F00A396A7 /* ITLProperties.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +317,7 @@
 				9D3D9F512534ED5C00602A29 /* ITLEventMetadata.h in Headers */,
 				9D6C64A5252CB64800A44CB1 /* ItlySdk.h in Headers */,
 				9D3D9F1D2534EAE100602A29 /* ITLEvent.h in Headers */,
+				9D69498A253E2F4F00A396A7 /* ITLProperties.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +330,7 @@
 				9D3D9F522534ED5D00602A29 /* ITLEventMetadata.h in Headers */,
 				9D6C64A6252CB64800A44CB1 /* ItlySdk.h in Headers */,
 				9D3D9F1E2534EAE100602A29 /* ITLEvent.h in Headers */,
+				9D694992253E2F4F00A396A7 /* ITLProperties.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +343,7 @@
 				9D3D9F532534ED5D00602A29 /* ITLEventMetadata.h in Headers */,
 				9D6C64A7252CB64800A44CB1 /* ItlySdk.h in Headers */,
 				9D3D9F1F2534EAE200602A29 /* ITLEvent.h in Headers */,
+				9D69499A253E2F5000A396A7 /* ITLProperties.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,10 +594,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DD2DF3325192EA5000C613D /* PropertiesWrapper.swift in Sources */,
+				9D694970253E2F4A00A396A7 /* ITLProperties.m in Sources */,
 				9DC34C5325000B5F00B23A17 /* Logger.swift in Sources */,
 				9D5F294325110A7C00A8EB46 /* Sequence+PluginProtocol.swift in Sources */,
-				9DC34C5625000B5F00B23A17 /* Properties.swift in Sources */,
 				9D6C6424252C85EE00A44CB1 /* ObjC.m in Sources */,
 				9DC34C5125000B5F00B23A17 /* ValidationOptions.swift in Sources */,
 				9D34519C250F99A300022763 /* EventMetadata.swift in Sources */,
@@ -643,8 +646,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DD2DF3425192EA5000C613D /* PropertiesWrapper.swift in Sources */,
-				9DE19640250677F700966F06 /* Properties.swift in Sources */,
+				9D694971253E2F4A00A396A7 /* ITLProperties.m in Sources */,
 				9DE1963C250677F700966F06 /* Environment.swift in Sources */,
 				9DE1963D250677F700966F06 /* Logger.swift in Sources */,
 				9DD88A0125112CDF005D8941 /* Sequence+PluginProtocol.swift in Sources */,
@@ -666,8 +668,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DD2DF3525192EA5000C613D /* PropertiesWrapper.swift in Sources */,
-				9DE1964F250677F800966F06 /* Properties.swift in Sources */,
+				9D694972253E2F4A00A396A7 /* ITLProperties.m in Sources */,
 				9DE1964B250677F800966F06 /* Environment.swift in Sources */,
 				9DE1964C250677F800966F06 /* Logger.swift in Sources */,
 				9DD88A0425112CDF005D8941 /* Sequence+PluginProtocol.swift in Sources */,
@@ -689,8 +690,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DD2DF3625192EA5000C613D /* PropertiesWrapper.swift in Sources */,
-				9DE1965E250677F800966F06 /* Properties.swift in Sources */,
+				9D694973253E2F4A00A396A7 /* ITLProperties.m in Sources */,
 				9DE1965A250677F800966F06 /* Environment.swift in Sources */,
 				9DE1965B250677F800966F06 /* Logger.swift in Sources */,
 				9DD88A0725112CE0005D8941 /* Sequence+PluginProtocol.swift in Sources */,

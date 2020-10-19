@@ -23,17 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let validatorPlugin = ItlySchemaValidatorPlugin()
         
-        Itly.shared.load(Options(context: Context(requiredString: "Required string").properties,
-                                 plugins: [iterativelyPlugin,
-                                           validatorPlugin],
-                                 validation: ValidationOptions(trackInvalid: true,
-                                                               errorOnInvalid: false),
-                                 logger: ConsoleLogger()))
+        Itly.shared.load(Context(requiredString: "Required string"),
+                         options: Options(plugins: [iterativelyPlugin, validatorPlugin],
+                                          validation: ValidationOptions(trackInvalid: true,
+                                                                        errorOnInvalid: false),
+                                          logger: ConsoleLogger()))
 
         let userId = "userId"
         Itly.shared.identify(userId, properties: Identify(requiredNumber: 42.0))
-        Itly.shared.group(userId, groupId: "groupId", properties: Group(requiredBoolean: true))
-        Itly.shared.track(userId, event: EventNoProperties())
+        Itly.shared.group("groupId", properties: Group(requiredBoolean: true))
+        Itly.shared.track(EventNoProperties())
         
         return true
     }

@@ -11,6 +11,7 @@
 #import "ITLPlugin.h"
 #import "ITLEvent.h"
 #import "ITLEventMetadata.h"
+//#import "ITLProperties.h"
 
 //! Project version number for itlycore.
 FOUNDATION_EXPORT double ItlySdkVersionNumber;

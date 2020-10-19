@@ -7,7 +7,7 @@
 //
 #import <Foundation/Foundation.h>
 
-@protocol ITLProperties;
+@class ITLProperties;
 @class ITLItlyOptions;
 @class ITLValidationResponse;
 @class ITLEvent;
@@ -23,11 +23,11 @@ NS_SWIFT_NAME(Plugin)
 -(void)alias:(NSString * _Nonnull)userId previousId:(NSString * _Nullable)previousId;
 - (void)postAlias:(NSString * _Nonnull)userId previousId:(NSString * _Nullable)previousId;
 
-- (void)group:(NSString * _Nullable)userId groupId:(NSString * _Nonnull)groupId properties:(id<ITLProperties> _Nullable)properties;
-- (void)postGroup:(NSString * _Nullable)userId groupId:(NSString * _Nonnull)groupId properties:(id<ITLProperties> _Nullable)properties validationResults:(NSArray<ITLValidationResponse *> * _Nonnull)validationResults;
+- (void)group:(NSString * _Nullable)userId groupId:(NSString * _Nonnull)groupId properties:(ITLProperties* _Nullable)properties;
+- (void)postGroup:(NSString * _Nullable)userId groupId:(NSString * _Nonnull)groupId properties:(ITLProperties* _Nullable)properties validationResults:(NSArray<ITLValidationResponse *> * _Nonnull)validationResults;
 
-- (void)identify:(NSString * _Nullable)userId properties:(id<ITLProperties> _Nullable)properties;
-- (void)postIdentify:(NSString * _Nullable)userId properties:(id<ITLProperties> _Nullable)properties validationResults:(NSArray<ITLValidationResponse *> * _Nonnull)validationResults;
+- (void)identify:(NSString * _Nullable)userId properties:(ITLProperties* _Nullable)properties;
+- (void)postIdentify:(NSString * _Nullable)userId properties:(ITLProperties* _Nullable)properties validationResults:(NSArray<ITLValidationResponse *> * _Nonnull)validationResults;
 
 - (void)track:(NSString * _Nullable)userId event:(ITLEvent * _Nonnull)event;
 - (void)postTrack:(NSString * _Nullable)userId event:(ITLEvent * _Nonnull)event validationResults:(NSArray<ITLValidationResponse *> * _Nonnull)validationResults;

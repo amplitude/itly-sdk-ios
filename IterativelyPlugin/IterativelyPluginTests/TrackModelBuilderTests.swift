@@ -17,7 +17,7 @@ class TrackModelBuilderTests: XCTestCase {
     }
     
     let formatter = MockedTrackModelDateFormatter()
-    let testEvent = Event(name: "test", properties: ["property1": "value1", "property2": "value2"], id: "test_id", version: "mocked_version")
+    let testEvent = Event(name: "test", properties: Properties( ["property1": "value1", "property2": "value2"]), id: "test_id", version: "mocked_version")
     
     func testTrackModelTypes() throws {
         let builder = DefaultTrackModelBuilder(dateFormatter: formatter, omitValues: false)

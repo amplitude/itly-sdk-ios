@@ -8,17 +8,24 @@
 
 import Foundation
 
-
 @objc public extension Event {
-    convenience init(name: String, properties: [String : Any]? = nil, id: String? = nil, version: String? = nil) {
-        self.init(name: name, properties: properties, id: id, version: version, metadata: nil)
+    convenience init(name: String) {
+        self.init(name: name, propertiesDict: nil, id: nil, version: nil, metadata: nil)
+    }
+    
+    convenience init(name: String, id: String? = nil, version: String? = nil) {
+        self.init(name: name, propertiesDict: nil, id: id, version: version, metadata: nil)
+    }
+    
+    convenience init(name: String, properties: Properties?, id: String? = nil, version: String? = nil) {
+        self.init(name: name, propertiesDict: properties?.properties, id: id, version: version, metadata: nil)
     }
 
 
-    @objc func mergeProperties(_ properties: Properties) -> Event {        
+    @objc func mergeProperties(_ properties: Properties) -> Event {
         return Event(
             name: self.name,
-            properties: self.properties.merging(properties.properties, uniquingKeysWith: { left, right in right }),
+            propertiesDict: self.properties.merging(properties.properties, uniquingKeysWith: { left, right in right }),
             id: self.id,
             version: self.version,
             metadata: self.metadata

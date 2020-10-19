@@ -74,12 +74,8 @@ NSString* ContextOptionalEnumValue2 = @"Value 2";
 }
 
 -(instancetype)initWithRequiredString:(NSString* _Nonnull)requiredString optionalEnum:(NSString* _Nullable)optionalEnum {
-    NSDictionary* dict = optionalEnum != nil ?
-        @{@"requiredString": requiredString, @"optionalEnum": optionalEnum} :
-        @{@"requiredString": requiredString};
-
     self = [super initWithName:@"context"
-                    properties:dict
+                    properties:[[ITLProperties alloc] init:@{@"requiredString": requiredString, @"optionalEnum": optionalEnum != nil ? optionalEnum : NSNull.null}]
                             id:nil
                        version:nil];
     return self;
@@ -92,12 +88,8 @@ NSString* ContextOptionalEnumValue2 = @"Value 2";
 }
 
 -(instancetype)initWithRequiredNumber:(NSValue* _Nonnull)requiredNumber optionalArray:(NSArray<NSString*>* _Nullable)optionalArray {
-    NSDictionary* dict = optionalArray != nil ?
-        @{@"requiredNumber": requiredNumber, @"optionalArray": optionalArray} :
-        @{@"requiredNumber": requiredNumber};
-
     self = [super initWithName:@"identify"
-                    properties:dict
+                    properties:[[ITLProperties alloc] init:@{@"requiredNumber": requiredNumber, @"optionalArray": optionalArray != nil ? optionalArray : NSNull.null}]
                             id:nil
                        version:nil];
     return self;
@@ -110,12 +102,8 @@ NSString* ContextOptionalEnumValue2 = @"Value 2";
 }
 
 -(instancetype)initWithRequiredBoolean:(NSValue* _Nonnull)requiredBoolean optionalString:(NSString* _Nullable)optionalString {
-    NSDictionary* dict = optionalString != nil ?
-        @{@"requiredBoolean": requiredBoolean, @"optionalString": optionalString} :
-        @{@"requiredBoolean": requiredBoolean};
-
     self = [super initWithName:@"group"
-                    properties:dict
+                    properties:[[ITLProperties alloc] init:@{@"requiredBoolean": requiredBoolean, @"optionalString": optionalString != nil ? optionalString : NSNull.null}]
                             id:nil
                        version:nil];
     return self;

@@ -31,7 +31,8 @@ class ItlySchemaValidatorPluginTests: XCTestCase {
         var optionalEnum: OptionalEnum? { OptionalEnum(rawValue: properties["optionalEnum"] as! String) }
         
         convenience init(requiredString: String, optionalEnum: OptionalEnum? = nil) {
-            self.init(name: "context", properties: ["requiredString": requiredString, "optionalEnum": optionalEnum?.rawValue].compactMapValues{ $0 })
+            self.init(name: "context",
+                      properties: Properties( ["requiredString": requiredString, "optionalEnum": optionalEnum?.rawValue]))
         }
     }
     
