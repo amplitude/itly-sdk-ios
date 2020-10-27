@@ -6,3 +6,5 @@
 SampleApp/Pods
 SampleApp/Podfile.lock
 SampleApp/Cartfile.resolved
+
+.idea
