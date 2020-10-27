@@ -9,14 +9,14 @@ import Foundation
 import ItlySdk
 
 @objc(ITLIterativelyPlugin) public class IterativelyPlugin: Plugin {
-    private let factory: ProcessingQueueFactory
-    private let trackModelBuilder: TrackModelBuilder
+    private var trackModelBuilder: TrackModelBuilder!
     private var queue: ProcessingQueue?
+    private let createFactory: ((Logger?) -> MainFactory)
     
     @objc public init(_ apiKey: String, url: String, config: IterativelyOptions) throws {
-        let mainFactory = MainFactory(config: config, apiKey: apiKey, url: url)
-        self.factory = mainFactory
-        self.trackModelBuilder = try mainFactory.createTrackModelBuilder()
+        self.createFactory = { logger in
+            return MainFactory(config: config, apiKey: apiKey, url: url, logger: logger)
+        }
         super.init(id: "IterativelyPlugin")
     }
 
@@ -24,7 +24,9 @@ import ItlySdk
         super.load(options)
         
         do {
-            queue = try factory.createProcessingQueueWithLogger(options.logger)
+            let mainFactory = createFactory(options.logger)
+            self.trackModelBuilder = try mainFactory.createTrackModelBuilder()
+            self.queue = try mainFactory.createProcessingQueue()
         } catch {
             options.logger?.error("Error on createProcessingQueue(): \(error.localizedDescription)")
         }

@@ -71,6 +71,10 @@
 		9DD2E105251CFF6C000C613D /* PluginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2DF1F251904C2000C613D /* PluginTests.swift */; };
 		9DD2E106251CFF6C000C613D /* ItlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2DF2B2519070E000C613D /* ItlyTests.swift */; };
 		9DD2E107251CFF6C000C613D /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2DF1825190182000C613D /* EventTests.swift */; };
+		9DD7A69F2546F1F100A5165B /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD7A69E2546F1F100A5165B /* Properties.swift */; };
+		9DD7A6A02546F1F100A5165B /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD7A69E2546F1F100A5165B /* Properties.swift */; };
+		9DD7A6A12546F1F100A5165B /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD7A69E2546F1F100A5165B /* Properties.swift */; };
+		9DD7A6A22546F1F100A5165B /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD7A69E2546F1F100A5165B /* Properties.swift */; };
 		9DD889FB25112C59005D8941 /* Sequence+ValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD889FA25112C59005D8941 /* Sequence+ValidationResponse.swift */; };
 		9DD889FC25112C59005D8941 /* Sequence+ValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD889FA25112C59005D8941 /* Sequence+ValidationResponse.swift */; };
 		9DD889FD25112C59005D8941 /* Sequence+ValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD889FA25112C59005D8941 /* Sequence+ValidationResponse.swift */; };
@@ -157,6 +161,7 @@
 		9DD2E097251CFEA0000C613D /* ItlySdkTests_OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItlySdkTests_OSX.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD2E0AB251CFEF9000C613D /* ItlySdkTests_iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItlySdkTests_iOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD2E0C0251CFF49000C613D /* ItlySdkTests_tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItlySdkTests_tvOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DD7A69E2546F1F100A5165B /* Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
 		9DD889FA25112C59005D8941 /* Sequence+ValidationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+ValidationResponse.swift"; sourceTree = "<group>"; };
 		9DE19615250675EF00966F06 /* ItlySdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ItlySdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DE196222506761600966F06 /* ItlySdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ItlySdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,6 +275,7 @@
 				9DC34C3E25000B5F00B23A17 /* Itly.swift */,
 				9D34519B250F99A300022763 /* EventMetadata.swift */,
 				9DC34C3D25000B5F00B23A17 /* Event.swift */,
+				9DD7A69E2546F1F100A5165B /* Properties.swift */,
 				9DF393BC2534C14800F62177 /* ITLPlugin.h */,
 				9D3D9E962534C1ED00602A29 /* ITLPlugin.m */,
 				9D3D9F142534E90F00602A29 /* ITLEvent.h */,
@@ -602,6 +608,7 @@
 				9D34519C250F99A300022763 /* EventMetadata.swift in Sources */,
 				9D3D9F3D2534EB2400602A29 /* ITLEvent.m in Sources */,
 				9D6C6417252C848F00A44CB1 /* PluginProtocol+Safe.swift in Sources */,
+				9DD7A69F2546F1F100A5165B /* Properties.swift in Sources */,
 				9DD889FB25112C59005D8941 /* Sequence+ValidationResponse.swift in Sources */,
 				9DC34C4F25000B5F00B23A17 /* Itly.swift in Sources */,
 				9DC34C5225000B5F00B23A17 /* Environment.swift in Sources */,
@@ -654,6 +661,7 @@
 				9DE19643250677F700966F06 /* Event.swift in Sources */,
 				9D3D9F3E2534EB2400602A29 /* ITLEvent.m in Sources */,
 				9DD88A0025112CDF005D8941 /* ValidationResponse.swift in Sources */,
+				9DD7A6A02546F1F100A5165B /* Properties.swift in Sources */,
 				9D6C6418252C848F00A44CB1 /* PluginProtocol+Safe.swift in Sources */,
 				9DE19644250677F700966F06 /* Itly.swift in Sources */,
 				9DE1963B250677F700966F06 /* ValidationOptions.swift in Sources */,
@@ -676,6 +684,7 @@
 				9DE19652250677F800966F06 /* Event.swift in Sources */,
 				9D3D9F3F2534EB2400602A29 /* ITLEvent.m in Sources */,
 				9DD88A0325112CDF005D8941 /* ValidationResponse.swift in Sources */,
+				9DD7A6A12546F1F100A5165B /* Properties.swift in Sources */,
 				9D6C6419252C848F00A44CB1 /* PluginProtocol+Safe.swift in Sources */,
 				9DE19653250677F800966F06 /* Itly.swift in Sources */,
 				9DE1964A250677F800966F06 /* ValidationOptions.swift in Sources */,
@@ -698,6 +707,7 @@
 				9DE19661250677F800966F06 /* Event.swift in Sources */,
 				9D3D9F402534EB2400602A29 /* ITLEvent.m in Sources */,
 				9DD88A0625112CE0005D8941 /* ValidationResponse.swift in Sources */,
+				9DD7A6A22546F1F100A5165B /* Properties.swift in Sources */,
 				9D6C641A252C848F00A44CB1 /* PluginProtocol+Safe.swift in Sources */,
 				9DE19662250677F800966F06 /* Itly.swift in Sources */,
 				9DE19659250677F800966F06 /* ValidationOptions.swift in Sources */,

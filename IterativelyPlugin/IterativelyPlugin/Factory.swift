@@ -9,7 +9,7 @@ import Foundation
 import ItlySdk
 
 protocol ProcessingQueueFactory {
-    func createProcessingQueueWithLogger(_ logger: Logger?) throws -> ProcessingQueue
+    func createProcessingQueue() throws -> ProcessingQueue
 }
 
 protocol ClientApiFactory {
@@ -25,6 +25,7 @@ struct MainFactory {
     let config: IterativelyOptions
     let apiKey: String
     let url: String
+    let logger: Logger?
 }
 
 extension MainFactory: TrackModelBuilderFactory {
@@ -36,12 +37,13 @@ extension MainFactory: TrackModelBuilderFactory {
 extension MainFactory: ClientApiFactory {
     func createClientApi() throws -> ClientApi {
         return DefaultClientApi(baseUrl: URL(string: self.url)!,
-                                apiKey: apiKey)
+                                apiKey: apiKey,
+                                logger: logger)
     }
 }
 
 extension MainFactory: ProcessingQueueFactory {
-    func createProcessingQueueWithLogger(_ logger: Logger?) throws -> ProcessingQueue {
+    func createProcessingQueue() throws -> ProcessingQueue {
         let clientApi = try createClientApi()
         
         return DefaultProcessingQueue(client: clientApi,

@@ -17,10 +17,10 @@
 		9DD2E08D251CDE2E000C613D /* ClientApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2E08C251CDE2E000C613D /* ClientApiTests.swift */; };
 		9DD2E132251D0053000C613D /* ItlyIterativelyPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE692C72514E9A3007AD6FD /* ItlyIterativelyPlugin.framework */; };
 		9DD2E147251D0072000C613D /* ItlyIterativelyPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE692E72514EA11007AD6FD /* ItlyIterativelyPlugin.framework */; };
-		9DE237892518F2CA00ABDCF1 /* TrackModel+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE237882518F2CA00ABDCF1 /* TrackModel+Encodable.swift */; };
-		9DE2378A2518F2CA00ABDCF1 /* TrackModel+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE237882518F2CA00ABDCF1 /* TrackModel+Encodable.swift */; };
-		9DE2378B2518F2CA00ABDCF1 /* TrackModel+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE237882518F2CA00ABDCF1 /* TrackModel+Encodable.swift */; };
-		9DE2378C2518F2CA00ABDCF1 /* TrackModel+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE237882518F2CA00ABDCF1 /* TrackModel+Encodable.swift */; };
+		9DE237892518F2CA00ABDCF1 /* TrackModel+JSONSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE237882518F2CA00ABDCF1 /* TrackModel+JSONSerialization.swift */; };
+		9DE2378A2518F2CA00ABDCF1 /* TrackModel+JSONSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE237882518F2CA00ABDCF1 /* TrackModel+JSONSerialization.swift */; };
+		9DE2378B2518F2CA00ABDCF1 /* TrackModel+JSONSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE237882518F2CA00ABDCF1 /* TrackModel+JSONSerialization.swift */; };
+		9DE2378C2518F2CA00ABDCF1 /* TrackModel+JSONSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE237882518F2CA00ABDCF1 /* TrackModel+JSONSerialization.swift */; };
 		9DE237962518F50200ABDCF1 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE237952518F50200ABDCF1 /* Factory.swift */; };
 		9DE237972518F50200ABDCF1 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE237952518F50200ABDCF1 /* Factory.swift */; };
 		9DE237982518F50200ABDCF1 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE237952518F50200ABDCF1 /* Factory.swift */; };
@@ -93,7 +93,7 @@
 		9DD2E08C251CDE2E000C613D /* ClientApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientApiTests.swift; sourceTree = "<group>"; };
 		9DD2E12D251D0053000C613D /* ItlyIterativelyPluginTests_iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItlyIterativelyPluginTests_iOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD2E142251D0072000C613D /* ItlyIterativelyPluginTests_tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItlyIterativelyPluginTests_tvOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DE237882518F2CA00ABDCF1 /* TrackModel+Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrackModel+Encodable.swift"; sourceTree = "<group>"; };
+		9DE237882518F2CA00ABDCF1 /* TrackModel+JSONSerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrackModel+JSONSerialization.swift"; sourceTree = "<group>"; };
 		9DE237952518F50200ABDCF1 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		9DE2379E2518F72400ABDCF1 /* QueueRetrySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueRetrySettings.swift; sourceTree = "<group>"; };
 		9DE692C72514E9A3007AD6FD /* ItlyIterativelyPlugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ItlyIterativelyPlugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,7 +217,7 @@
 				9DE6934C2514F0A9007AD6FD /* IterativelyPlugin.swift */,
 				9DE693682514F8BF007AD6FD /* IterativelyOptions.swift */,
 				9DE6931E2514EBA3007AD6FD /* TrackModel.swift */,
-				9DE237882518F2CA00ABDCF1 /* TrackModel+Encodable.swift */,
+				9DE237882518F2CA00ABDCF1 /* TrackModel+JSONSerialization.swift */,
 				9DE693522514F382007AD6FD /* ClientApi.swift */,
 				9DE6937125150790007AD6FD /* TrackModelBuilder.swift */,
 				9DE2379E2518F72400ABDCF1 /* QueueRetrySettings.swift */,
@@ -544,7 +544,7 @@
 				9DE237962518F50200ABDCF1 /* Factory.swift in Sources */,
 				9DE6931F2514EBA3007AD6FD /* TrackModel.swift in Sources */,
 				9DE6937225150790007AD6FD /* TrackModelBuilder.swift in Sources */,
-				9DE237892518F2CA00ABDCF1 /* TrackModel+Encodable.swift in Sources */,
+				9DE237892518F2CA00ABDCF1 /* TrackModel+JSONSerialization.swift in Sources */,
 				9DE693532514F382007AD6FD /* ClientApi.swift in Sources */,
 				9DE693692514F8BF007AD6FD /* IterativelyOptions.swift in Sources */,
 				9DE6934D2514F0A9007AD6FD /* IterativelyPlugin.swift in Sources */,
@@ -559,7 +559,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DE6937325150790007AD6FD /* TrackModelBuilder.swift in Sources */,
-				9DE2378A2518F2CA00ABDCF1 /* TrackModel+Encodable.swift in Sources */,
+				9DE2378A2518F2CA00ABDCF1 /* TrackModel+JSONSerialization.swift in Sources */,
 				9DE693242514EBB0007AD6FD /* TrackModel.swift in Sources */,
 				9DE6936A2514F8BF007AD6FD /* IterativelyOptions.swift in Sources */,
 				9DE6937C251507A5007AD6FD /* ProcessingQueue.swift in Sources */,
@@ -575,7 +575,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DE6937425150790007AD6FD /* TrackModelBuilder.swift in Sources */,
-				9DE2378B2518F2CA00ABDCF1 /* TrackModel+Encodable.swift in Sources */,
+				9DE2378B2518F2CA00ABDCF1 /* TrackModel+JSONSerialization.swift in Sources */,
 				9DE693292514EBB1007AD6FD /* TrackModel.swift in Sources */,
 				9DE6936B2514F8BF007AD6FD /* IterativelyOptions.swift in Sources */,
 				9DE6937D251507A5007AD6FD /* ProcessingQueue.swift in Sources */,
@@ -591,7 +591,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DE6937525150790007AD6FD /* TrackModelBuilder.swift in Sources */,
-				9DE2378C2518F2CA00ABDCF1 /* TrackModel+Encodable.swift in Sources */,
+				9DE2378C2518F2CA00ABDCF1 /* TrackModel+JSONSerialization.swift in Sources */,
 				9DE6932E2514EBB1007AD6FD /* TrackModel.swift in Sources */,
 				9DE6936C2514F8BF007AD6FD /* IterativelyOptions.swift in Sources */,
 				9DE6937E251507A5007AD6FD /* ProcessingQueue.swift in Sources */,

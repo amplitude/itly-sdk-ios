@@ -16,9 +16,6 @@ struct Validation {
     var details: String
 }
 
-extension TrackType: Encodable {}
-extension Validation: Encodable {}
-
 struct TrackModel {
     var type: TrackType
     var dateSent: String

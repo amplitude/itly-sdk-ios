@@ -21,7 +21,6 @@ import Foundation
         self.init(name: name, propertiesDict: properties?.properties, id: id, version: version, metadata: nil)
     }
 
-
     @objc func mergeProperties(_ properties: Properties) -> Event {
         return Event(
             name: self.name,
@@ -30,5 +29,15 @@ import Foundation
             version: self.version,
             metadata: self.metadata
         )
+    }
+}
+
+public extension Event {
+    convenience init(name: String, optionalDict: [String: Any?]?, id: String? = nil, version: String? = nil, metadata: EventMetadata? = nil) {
+        self.init(name: name,
+                  propertiesDict: optionalDict?.mapValues{ $0 ?? NSNull() },
+                  id: id,
+                  version: version,
+                  metadata: metadata)
     }
 }

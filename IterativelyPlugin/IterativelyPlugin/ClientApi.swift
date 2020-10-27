@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ItlySdk
 
 protocol ClientApi {
     func uploadTrackModels(_ batch: [TrackModel], completion: @escaping ((Result<Void,ClientApiError>) -> Void))
@@ -34,6 +35,7 @@ class DefaultClientApi: ClientApi {
     private let baseUrl: URL
     private let apiKey: String
     private let urlSession: URLSession
+    private let logger: Logger?
     
     func uploadTrackModels(_ batch: [TrackModel], completion: @escaping ((Result<Void,ClientApiError>) -> Void)) {
         var request = URLRequest(url: baseUrl)
@@ -42,14 +44,21 @@ class DefaultClientApi: ClientApi {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
         do {
-            struct Body: Encodable {
+            struct Body {
                 var objects: [TrackModel]
+                var asDict: [String:Any] {
+                    return [
+                        "objects": objects.map{ $0.asDict }
+                    ]
+                }
             }
-            request.httpBody = try JSONEncoder().encode(Body(objects: batch))
+            request.httpBody = try JSONSerialization.data(withJSONObject: Body(objects: batch).asDict, options: .prettyPrinted)
         } catch {
             completion(.failure(.internalError(error)))
             return
         }
+        
+        logger?.debug("DefaultClientApi: Request:\r\nURL: \(request.url?.absoluteString ?? "")\r\nMethod: \(request.httpMethod ?? "unnkown")\r\nHeaders:\(request.allHTTPHeaderFields ?? [:])\r\nBody: \(request.httpBody.map{ String(data: $0, encoding: .utf8) ?? "" } ?? "")")
         
         urlSession.dataTask(with: request) { data, response, error in
             guard let response = response as? HTTPURLResponse, error == nil else {
@@ -69,9 +78,11 @@ class DefaultClientApi: ClientApi {
     
     init(baseUrl: URL,
          apiKey: String,
-         urlSession: URLSession = .shared) {
+         urlSession: URLSession = .shared,
+         logger: Logger? = nil) {
         self.baseUrl = baseUrl
         self.apiKey = apiKey
         self.urlSession = urlSession
+        self.logger = logger
     }
 }
