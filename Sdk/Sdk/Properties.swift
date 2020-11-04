@@ -9,7 +9,7 @@
 import Foundation
 
 public extension Properties {
-    convenience init(_ optionalDict: [String: Any?]) {
+    convenience init(optionalDict: [String: Any?]) {
         self.init(optionalDict.mapValues{ $0 ?? NSNull() })
     }
 }

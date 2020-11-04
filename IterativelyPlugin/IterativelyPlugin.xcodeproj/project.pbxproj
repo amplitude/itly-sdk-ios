@@ -662,6 +662,7 @@
 		9DD2E136251D0053000C613D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = IterativelyPluginTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -680,6 +681,7 @@
 		9DD2E137251D0053000C613D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = IterativelyPluginTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
