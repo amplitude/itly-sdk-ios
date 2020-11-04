@@ -58,8 +58,8 @@ extension Sequence where Self == [String: Any?] {
     
     convenience init(requiredString: String, optionalEnum: OptionalEnum? = nil) {
         self.init(name: "context",
-                  properties: Properties(["requiredString": requiredString,
-                                                "optionalEnum": optionalEnum?.rawValue]))
+                  optionalDict: ["requiredString": requiredString,
+                                 "optionalEnum": optionalEnum?.rawValue])
     }
 }
 
@@ -68,8 +68,8 @@ extension Sequence where Self == [String: Any?] {
     
     @objc convenience init(requiredNumber: Double, optionalArray: [String]? = nil) {
         self.init(name: "identify",
-                  properties: Properties(["requiredNumber": requiredNumber,
-                                                "optionalArray": optionalArray]))
+                  optionalDict: ["requiredNumber": requiredNumber,
+                                 "optionalArray": optionalArray])
     }
 }
 
@@ -77,8 +77,9 @@ extension Sequence where Self == [String: Any?] {
     @objc static let VALID_ALL_PROPS = Group(requiredBoolean: false, optionalString: "I'm optional!")
     
     @objc convenience init(requiredBoolean: Bool, optionalString: String? = nil) {
-        self.init(name: "group", properties: Properties(["requiredBoolean": requiredBoolean,
-                                                               "optionalString": optionalString]))
+        self.init(name: "group",
+                  optionalDict: ["requiredBoolean": requiredBoolean,
+                                 "optionalString": optionalString])
     }
 }
 

@@ -7,11 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ObjC.h"
-#import "ITLPlugin.h"
-#import "ITLEvent.h"
-#import "ITLEventMetadata.h"
-//#import "ITLProperties.h"
+#import <ItlySdk/ObjC.h>
+#import <ItlySdk/ITLPlugin.h>
+#import <ItlySdk/ITLEvent.h>
+#import <ItlySdk/ITLEventMetadata.h>
 
 //! Project version number for itlycore.
 FOUNDATION_EXPORT double ItlySdkVersionNumber;

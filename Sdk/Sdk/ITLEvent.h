@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <Foundation/NSObjCRuntime.h>
-#import "ITLEventMetadata.h"
-#import "ITLProperties.h"
+#import <ItlySdk/ITLEventMetadata.h>
+#import <ItlySdk/ITLProperties.h>
 
 NS_SWIFT_NAME(Event)
 @interface ITLEvent : ITLProperties

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ITLProperties.h"
+#import <ItlySdk/ITLProperties.h>
 
 @implementation ITLProperties
 

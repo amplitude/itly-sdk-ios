@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <ItlySdk/ItlySdk-Swift.h>
-#import "ITLEvent.h"
-#import "ITLEventMetadata.h"
+#import <ItlySdk/ITLEvent.h>
+#import <ItlySdk/ITLEventMetadata.h>
 
 @implementation ITLEvent
 @synthesize name;

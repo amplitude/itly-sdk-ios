@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <ItlySdk/ItlySdk-Swift.h>
-#import "ITLPlugin.h"
+#import <ItlySdk/ITLPlugin.h>
 
 @implementation ITLPlugin
 
