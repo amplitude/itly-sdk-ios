@@ -14,12 +14,12 @@ import Foundation
     @objc public let plugins: [Plugin]
     @objc public let validation: ValidationOptions
     @objc public let logger: Logger?
-    
+
     @objc public init(environment: Environment = .development,
                 disabled: Bool = false,
                 plugins: [Plugin] = [],
                 validation: ValidationOptions? = nil,
-                logger: Logger?
+                logger: Logger? = nil
     ) {
         self.environment = environment
         self.disabled = disabled
@@ -88,7 +88,7 @@ public extension Options {
         self.validation = ValidationOptions(trackInvalid: environment == .production, errorOnInvalid: environment != .production)
         super.init()
     }
-    
+
     @objc public func build() -> Options {
         return Options(environment: environment,
                        disabled: disabled,
