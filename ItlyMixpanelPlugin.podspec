@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
 
   spec.source_files   = 'MixpanelPlugin/ItlyMixpanelPlugin/**/*.{h,swift}'
   spec.frameworks  = "Foundation"
-  spec.dependency "Mixpanel-swift", "~> 2.7"
+  spec.dependency "Mixpanel-swift", "~> 2.7.0"
   spec.dependency "ItlySdk"
 
   spec.swift_version = '5.3'
