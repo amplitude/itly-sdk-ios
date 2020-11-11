@@ -12,11 +12,11 @@ import Foundation
     convenience init(name: String) {
         self.init(name: name, propertiesDict: nil, id: nil, version: nil, metadata: nil)
     }
-    
+
     convenience init(name: String, id: String? = nil, version: String? = nil) {
         self.init(name: name, propertiesDict: nil, id: id, version: version, metadata: nil)
     }
-    
+
     convenience init(name: String, properties: Properties?, id: String? = nil, version: String? = nil) {
         self.init(name: name, propertiesDict: properties?.properties, id: id, version: version, metadata: nil)
     }
@@ -35,7 +35,7 @@ import Foundation
 public extension Event {
     convenience init(name: String, optionalDict: [String: Any?]?, id: String? = nil, version: String? = nil, metadata: EventMetadata? = nil) {
         self.init(name: name,
-                  propertiesDict: optionalDict?.mapValues{ $0 ?? NSNull() },
+                  propertiesDict: Properties.compact(optionalDict),
                   id: id,
                   version: version,
                   metadata: metadata)
