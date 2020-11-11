@@ -9,19 +9,23 @@ import Foundation
 import ItlySdk
 
 @objc(ITLIterativelyPlugin) public class IterativelyPlugin: Plugin {
+    private var config: IterativelyOptions;
+    private var isDisabled: Bool = false;
     private var trackModelBuilder: TrackModelBuilder!
     private var queue: ProcessingQueue?
     private let createFactory: ((Logger?) -> MainFactory)
     
-    @objc public init(_ apiKey: String, url: String, config: IterativelyOptions) throws {
+    @objc public init(_ apiKey: String, url: String, options: IterativelyOptions) throws {
+        self.config = options
         self.createFactory = { logger in
-            return MainFactory(config: config, apiKey: apiKey, url: url, logger: logger)
+            return MainFactory(config: options, apiKey: apiKey, url: url, logger: logger)
         }
         super.init(id: "IterativelyPlugin")
     }
 
     public override func load(_ options: Options) {
         super.load(options)
+        self.isDisabled = (options.environment == .production) || self.config.disabled;
         
         do {
             let mainFactory = createFactory(options.logger)
@@ -33,7 +37,7 @@ import ItlySdk
     }
     
     public override func postGroup(_ userId: String?, groupId: String, properties: Properties?, validationResults: [ValidationResponse]) {
-        super.postGroup(userId, groupId: groupId, properties: properties, validationResults: validationResults)
+        guard !isDisabled else { return }
         
         let model = trackModelBuilder.buildTrackModelForType(.group,
                                                              properties: properties,
@@ -42,7 +46,7 @@ import ItlySdk
     }
     
     public override func postIdentify(_ userId: String?, properties: Properties?, validationResults: [ValidationResponse]) {
-        super.postIdentify(userId, properties: properties, validationResults: validationResults)
+        guard !isDisabled else { return }
 
         let model = trackModelBuilder.buildTrackModelForType(.identify,
                                                              properties: properties,
@@ -51,7 +55,7 @@ import ItlySdk
     }
     
     public override func postTrack(_ userId: String?, event: Event, validationResults: [ValidationResponse]) {
-        super.postTrack(userId, event: event, validationResults: validationResults)
+        guard !isDisabled else { return }
         
         let model = trackModelBuilder.buildTrackModelForType(.track,
                                                              event: event,
@@ -61,12 +65,12 @@ import ItlySdk
     }
     
     public override func flush() {
-        super.flush()
+        guard !isDisabled else { return }
         queue?.flush()
     }
     
     public override func shutdown() {
-        super.shutdown()
+        guard !isDisabled else { return }
         queue = nil
     }
 }
