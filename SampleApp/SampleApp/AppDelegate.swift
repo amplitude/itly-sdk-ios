@@ -24,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let validatorPlugin = ItlySchemaValidatorPlugin()
         
         Itly.shared.load(Context(requiredString: "Required string"),
-                         options: Options(plugins: [iterativelyPlugin, validatorPlugin],
+                         options: Options(disabled: false,
+                                          plugins: [iterativelyPlugin, validatorPlugin],
                                           validation: ValidationOptions(trackInvalid: true,
                                                                         errorOnInvalid: false),
                                           logger: ConsoleLogger()))

@@ -2,8 +2,7 @@
 //  ItlyCore.swift
 //  Iteratively_example
 //
-//  Created by Konstantin Dorogan on 24.08.2020.
-//  Copyright © 2020 Konstantin Dorogan. All rights reserved.
+//  Copyright © 2020 Iteratively. All rights reserved.
 //
 
 import Foundation
@@ -14,69 +13,6 @@ import Foundation
 
     private var isDisabled: Bool { config?.disabled ?? true }
     
-    @objc public func alias(_ userId: String, previousId: String?) {
-        guard !isDisabled else { return }
-        
-        self.config.plugins.alias(userId, previousId: previousId, options: config!)
-    }
-    
-    @objc public func identify(_ userId: String?, properties: Properties?) {
-        guard !isDisabled else { return }
-
-        let event = Event(name: "identify", properties: properties)
-        let validation = validate(event)
-        
-        config.plugins.identify(userId, properties: event, validationResults: validation, options: config!)
-        
-        validation.filter{ !$0.valid }.forEach{ invalidResult in
-            config.logger?.error("Itly Error in tracker.identify(): \(invalidResult.message ?? "")")
-        }
-    }
-    
-    @objc public func group(_ groupId: String, properties: Properties?) {
-        guard !isDisabled else { return }
-
-        let event = Event(name: "group", properties: properties)
-        let validation = validate(event)
-        
-        config.plugins.group(nil, groupId: groupId, properties: event, validationResults: validation, options: config!)
-
-        validation.filter{ !$0.valid }.forEach{ invalidResult in
-            config.logger?.error("Itly Error in tracker.group(): \(invalidResult.message ?? "")")
-        }
-    }
-    
-    @objc public func track(_ event: Event) {
-        guard !isDisabled else { return }
-
-        let validation = validateContextWithEvent(event)
-        
-        let combinedEvent = event.mergeProperties(context)
-        config.plugins.track(nil, event: combinedEvent, validationResults: validation, options: config!)
-
-        validation.filter{ !$0.valid }.forEach{ invalidResult in
-            config.logger?.error("Itly Error in tracker.track(\(event.name)): \(invalidResult.message ?? "")")
-        }
-    }
-    
-    @objc public func reset() {
-        guard !isDisabled else { return }
-
-        config.plugins.reset(options: config!)
-    }
-    
-    @objc public func flush() {
-        guard !isDisabled else { return }
-
-        config.plugins.flush(options: config!)
-    }
-    
-    @objc public func shutdown() {
-        guard !isDisabled else { return }
-
-        config.plugins.shutdown(options: config!)
-    }
-
     @objc public func load(_ context: Properties?, options: Options) {
         guard !options.disabled else {
             options.logger?.info("Itly disabled = true")
@@ -89,7 +25,89 @@ import Foundation
         self.config.logger?.debug("Itly load")
         self.config.logger?.debug("Itly \(config.plugins.count) plugins are enabled")
 
-        self.config.plugins.load(options)
+        runOnAllPlugins(op: "load") { (plugin) in
+            try plugin.safeLoad(options);
+        }
+    }
+    
+    @objc public func alias(_ userId: String, previousId: String?) {
+        guard !isDisabled else { return }
+
+        runOnAllPlugins(op: "alias") { (plugin) in
+            try plugin.safeAlias(userId, previousId: previousId);
+        }
+        runOnAllPlugins(op: "postAlias") { (plugin) in
+            try plugin.safePostAlias(userId, previousId: previousId);
+        }
+    }
+    
+    @objc public func identify(_ userId: String?, properties: Properties?) {
+        guard !isDisabled else { return }
+
+        validateAndRunOnAllPlugins(
+            op: "identify",
+            event: Event(name: "identify", properties: properties),
+            includeContext: false,
+            method: { (p, e) in
+                try p.safeIdentify(nil, properties: e)
+            },
+            postMethod: { (p, e, validation) in
+                try p.safePostIdentify(nil, properties: e, validationResults: validation)
+            })
+    }
+    
+    @objc public func group(_ groupId: String, properties: Properties?) {
+        guard !isDisabled else { return }
+
+        validateAndRunOnAllPlugins(
+            op: "group",
+            event: Event(name: "group", properties: properties),
+            includeContext: false,
+            method: { (p, e) in
+                try p.safeGroup(nil, groupId: groupId, properties: e)
+            },
+            postMethod: { (p, e, validation) in
+                try p.safePostGroup(nil, groupId: groupId, properties: e, validationResults: validation)
+            })
+    }
+    
+    @objc public func track(_ event: Event) {
+        guard !isDisabled else { return }
+
+        validateAndRunOnAllPlugins(
+            op: "track",
+            event: event,
+            includeContext: true,
+            method: { (p, e) in
+                try p.safeTrack(nil, event: e)
+            },
+            postMethod: { (p, e, validation) in
+                try p.safePostTrack(nil, event: e, validationResults: validation)
+            })
+    }
+    
+    @objc public func reset() {
+        guard !isDisabled else { return }
+
+        runOnAllPlugins(op: "reset") { (plugin) in
+            try plugin.safeReset();
+        }
+    }
+    
+    @objc public func flush() {
+        guard !isDisabled else { return }
+
+        runOnAllPlugins(op: "flush") { (plugin) in
+            try plugin.safeFlush();
+        }
+    }
+    
+    @objc public func shutdown() {
+        guard !isDisabled else { return }
+
+        runOnAllPlugins(op: "shutdown") { (plugin) in
+            try plugin.safeShutdown();
+        }
     }
     
     private func validate(_ event: Event) -> [ValidationResponse] {
@@ -97,13 +115,64 @@ import Foundation
             return []
         }
         
-        return config.plugins.validate(event, options: config!)
+        var validation: [ValidationResponse] = []
+        runOnAllPlugins(op: "validate") { (plugin) in
+            validation.append(try plugin.safeValidate(event));
+        }
+        
+        return validation
     }
     
-    private func validateContextWithEvent(_ event: Event) -> [ValidationResponse] {
-        let validatedContext = validate(context)
-        let validatedEvent = validate(event)
+    private func validateAndRunOnAllPlugins(
+        op: String,
+        event: Event,
+        includeContext: Bool,
+        method: (Plugin, Event) throws -> Void,
+        postMethod: (Plugin, Event, [ValidationResponse]) throws -> Void
+    ) {
+        let contextValidation = includeContext ? validate(context) : []
+        let isContextValid = contextValidation.valid
         
-        return validatedContext + validatedEvent
+        let eventValidation = validate(event)
+        let isEventValid = eventValidation.valid
+        
+        let isValid = isContextValid && isEventValid;
+        
+        let combinedEvent = includeContext
+            ? event.mergeProperties(context)
+            : event
+        
+        if (isValid || config.validation.trackInvalid) {
+            runOnAllPlugins(op: op, method: { plugin in
+                try method(plugin, combinedEvent)
+            })
+        }
+        
+        let validation = contextValidation + eventValidation
+        
+        // Log any errors
+        validation.filter{ !$0.valid }.forEach{ invalidResult in
+            config.logger?.error("Validation error for \(combinedEvent.name): \(invalidResult.message ?? "")")
+        }
+        
+        // Run post method
+        runOnAllPlugins(op: op, method: { plugin in
+            try postMethod(plugin, combinedEvent, validation)
+        })
+        
+        // Throw error is requested
+        if (!isValid && config.validation.errorOnInvalid) {
+            fatalError(validation.first{ !$0.valid }?.message ?? "Unknown error validating \(event.name)")
+        }
+    }
+    
+    private func runOnAllPlugins(op: String, method: (Plugin) throws -> Void) {
+        config.plugins.forEach { plugin in
+            do {
+                try method(plugin)
+            } catch {
+                config.logger?.error("Itly Error in \(plugin.id).\(op): \(error.localizedDescription).")
+            }
+        }
     }
 }

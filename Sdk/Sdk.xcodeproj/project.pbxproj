@@ -29,7 +29,6 @@
 		9D3D9F512534ED5C00602A29 /* ITLEventMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D3D9F482534ED4300602A29 /* ITLEventMetadata.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D3D9F522534ED5D00602A29 /* ITLEventMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D3D9F482534ED4300602A29 /* ITLEventMetadata.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D3D9F532534ED5D00602A29 /* ITLEventMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D3D9F482534ED4300602A29 /* ITLEventMetadata.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9D5F294325110A7C00A8EB46 /* Sequence+PluginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F294225110A7C00A8EB46 /* Sequence+PluginProtocol.swift */; };
 		9D694970253E2F4A00A396A7 /* ITLProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D69496F253E2F4A00A396A7 /* ITLProperties.m */; };
 		9D694971253E2F4A00A396A7 /* ITLProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D69496F253E2F4A00A396A7 /* ITLProperties.m */; };
 		9D694972253E2F4A00A396A7 /* ITLProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D69496F253E2F4A00A396A7 /* ITLProperties.m */; };
@@ -81,13 +80,10 @@
 		9DD889FE25112C59005D8941 /* Sequence+ValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD889FA25112C59005D8941 /* Sequence+ValidationResponse.swift */; };
 		9DD889FF25112CDF005D8941 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D345197250F8C9100022763 /* Options.swift */; };
 		9DD88A0025112CDF005D8941 /* ValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D345199250F97F500022763 /* ValidationResponse.swift */; };
-		9DD88A0125112CDF005D8941 /* Sequence+PluginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F294225110A7C00A8EB46 /* Sequence+PluginProtocol.swift */; };
 		9DD88A0225112CDF005D8941 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D345197250F8C9100022763 /* Options.swift */; };
 		9DD88A0325112CDF005D8941 /* ValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D345199250F97F500022763 /* ValidationResponse.swift */; };
-		9DD88A0425112CDF005D8941 /* Sequence+PluginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F294225110A7C00A8EB46 /* Sequence+PluginProtocol.swift */; };
 		9DD88A0525112CE0005D8941 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D345197250F8C9100022763 /* Options.swift */; };
 		9DD88A0625112CE0005D8941 /* ValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D345199250F97F500022763 /* ValidationResponse.swift */; };
-		9DD88A0725112CE0005D8941 /* Sequence+PluginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F294225110A7C00A8EB46 /* Sequence+PluginProtocol.swift */; };
 		9DE1963B250677F700966F06 /* ValidationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4125000B5F00B23A17 /* ValidationOptions.swift */; };
 		9DE1963C250677F700966F06 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4225000B5F00B23A17 /* Environment.swift */; };
 		9DE1963D250677F700966F06 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC34C4325000B5F00B23A17 /* Logger.swift */; };
@@ -141,7 +137,6 @@
 		9D3D9F142534E90F00602A29 /* ITLEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITLEvent.h; sourceTree = "<group>"; };
 		9D3D9F3C2534EB2400602A29 /* ITLEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITLEvent.m; sourceTree = "<group>"; };
 		9D3D9F482534ED4300602A29 /* ITLEventMetadata.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITLEventMetadata.h; sourceTree = "<group>"; };
-		9D5F294225110A7C00A8EB46 /* Sequence+PluginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+PluginProtocol.swift"; sourceTree = "<group>"; };
 		9D69496E253E2ECC00A396A7 /* ITLProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITLProperties.h; sourceTree = "<group>"; };
 		9D69496F253E2F4A00A396A7 /* ITLProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITLProperties.m; sourceTree = "<group>"; };
 		9D6C6416252C848F00A44CB1 /* PluginProtocol+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PluginProtocol+Safe.swift"; sourceTree = "<group>"; };
@@ -230,7 +225,6 @@
 			isa = PBXGroup;
 			children = (
 				9DD889FA25112C59005D8941 /* Sequence+ValidationResponse.swift */,
-				9D5F294225110A7C00A8EB46 /* Sequence+PluginProtocol.swift */,
 				9D6C6416252C848F00A44CB1 /* PluginProtocol+Safe.swift */,
 				9D6C6422252C85AB00A44CB1 /* ObjC.h */,
 				9D6C6423252C85EE00A44CB1 /* ObjC.m */,
@@ -602,7 +596,6 @@
 			files = (
 				9D694970253E2F4A00A396A7 /* ITLProperties.m in Sources */,
 				9DC34C5325000B5F00B23A17 /* Logger.swift in Sources */,
-				9D5F294325110A7C00A8EB46 /* Sequence+PluginProtocol.swift in Sources */,
 				9D6C6424252C85EE00A44CB1 /* ObjC.m in Sources */,
 				9DC34C5125000B5F00B23A17 /* ValidationOptions.swift in Sources */,
 				9D34519C250F99A300022763 /* EventMetadata.swift in Sources */,
@@ -656,7 +649,6 @@
 				9D694971253E2F4A00A396A7 /* ITLProperties.m in Sources */,
 				9DE1963C250677F700966F06 /* Environment.swift in Sources */,
 				9DE1963D250677F700966F06 /* Logger.swift in Sources */,
-				9DD88A0125112CDF005D8941 /* Sequence+PluginProtocol.swift in Sources */,
 				9D6C6425252C85EE00A44CB1 /* ObjC.m in Sources */,
 				9DE19643250677F700966F06 /* Event.swift in Sources */,
 				9D3D9F3E2534EB2400602A29 /* ITLEvent.m in Sources */,
@@ -679,7 +671,6 @@
 				9D694972253E2F4A00A396A7 /* ITLProperties.m in Sources */,
 				9DE1964B250677F800966F06 /* Environment.swift in Sources */,
 				9DE1964C250677F800966F06 /* Logger.swift in Sources */,
-				9DD88A0425112CDF005D8941 /* Sequence+PluginProtocol.swift in Sources */,
 				9D6C6426252C85EE00A44CB1 /* ObjC.m in Sources */,
 				9DE19652250677F800966F06 /* Event.swift in Sources */,
 				9D3D9F3F2534EB2400602A29 /* ITLEvent.m in Sources */,
@@ -702,7 +693,6 @@
 				9D694973253E2F4A00A396A7 /* ITLProperties.m in Sources */,
 				9DE1965A250677F800966F06 /* Environment.swift in Sources */,
 				9DE1965B250677F800966F06 /* Logger.swift in Sources */,
-				9DD88A0725112CE0005D8941 /* Sequence+PluginProtocol.swift in Sources */,
 				9D6C6427252C85EE00A44CB1 /* ObjC.m in Sources */,
 				9DE19661250677F800966F06 /* Event.swift in Sources */,
 				9D3D9F402534EB2400602A29 /* ITLEvent.m in Sources */,

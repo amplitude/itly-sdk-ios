@@ -32,7 +32,7 @@ import DSJSONSchemaValidation
         logger?.debug("\(self.id) validate(event=\(event.name))")
         guard let validator = validatorsMap[event.name] else {
             // no validator found
-            return ValidationResponse(valid: true)
+            return ValidationResponse(valid: false, message: "No schema found for \(event.name).")
         }
         
         logger?.debug("\(self.id) validator=\(validator)")
