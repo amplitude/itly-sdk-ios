@@ -39,7 +39,13 @@ import DSJSONSchemaValidation
         do {
             try validator.validate(event.properties)
         } catch let error {
-            return ValidationResponse(valid: false, message: error.localizedDescription, pluginId: self.id)
+            let failureReason = (error as NSObject).value(forKey: "localizedFailureReason") ?? "Unknown validation error.";
+            
+            return ValidationResponse(
+                valid: false,
+                message: "\(error.localizedDescription) \(failureReason)",
+                pluginId: self.id
+            )
         }
 
         return ValidationResponse(valid: true, pluginId: self.id)
