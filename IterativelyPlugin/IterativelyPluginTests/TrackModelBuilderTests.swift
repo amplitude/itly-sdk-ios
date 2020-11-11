@@ -2,7 +2,7 @@
 //  ItlyIterativelyPluginTests.swift
 //  ItlyIterativelyPluginTests
 //
-//  Created by Konstantin Dorogan on 24.09.2020.
+//  Copyright © 2020 Iteratively. All rights reserved.
 //
 
 import XCTest
@@ -15,10 +15,10 @@ class TrackModelBuilderTests: XCTestCase {
             return "mocked_date"
         }
     }
-    
+
     let formatter = MockedTrackModelDateFormatter()
     let testEvent = Event(name: "test", properties: Properties( ["property1": "value1", "property2": "value2"]), id: "test_id", version: "mocked_version")
-    
+
     func testTrackModelTypes() throws {
         let builder = DefaultTrackModelBuilder(dateFormatter: formatter, omitValues: false)
 
@@ -26,20 +26,20 @@ class TrackModelBuilderTests: XCTestCase {
         XCTAssertEqual(builder.buildTrackModelForType(.identify).type, .identify)
         XCTAssertEqual(builder.buildTrackModelForType(.track).type, .track)
     }
-    
+
     func testTrackModelValidation() throws {
         let builder = DefaultTrackModelBuilder(dateFormatter: formatter, omitValues: false)
 
-        
-        
+
+
         let model = builder.buildTrackModelForType(.group,
                                        validation: ValidationResponse(valid: false, message: "Validation Message"))
         XCTAssertEqual(model.validation.details, "Validation Message")
     }
-    
+
     func testNoOmitValues() throws {
         let builder = DefaultTrackModelBuilder(dateFormatter: formatter, omitValues: false)
-        
+
         let model = builder.buildTrackModelForType(.group, event: testEvent, properties: testEvent, validation: nil)
         XCTAssertEqual(model.type, .group)
         XCTAssertEqual(model.dateSent, "mocked_date")
@@ -55,7 +55,7 @@ class TrackModelBuilderTests: XCTestCase {
 
     func testOmitValues() throws {
         let builder = DefaultTrackModelBuilder(dateFormatter: formatter, omitValues: true)
-        
+
         let model = builder.buildTrackModelForType(.group, event: testEvent, properties: testEvent, validation: nil)
         XCTAssertEqual(model.type, .group)
         XCTAssertEqual(model.dateSent, "mocked_date")

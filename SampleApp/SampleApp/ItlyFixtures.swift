@@ -2,7 +2,7 @@
 //  ItlyFixtures.swift
 //  SampleApp_Carthage
 //
-//  Created by Konstantin Dorogan on 28.09.2020.
+//  Copyright © 2020 Iteratively. All rights reserved.
 //
 
 import Foundation
@@ -17,15 +17,15 @@ import ItlySchemaValidatorPlugin
     public func debug(_ message: String) {
         print("ITLY [debug]: \(message)")
     }
-    
+
     public func info(_ message: String) {
         print("ITLY [info]: \(message)")
     }
-    
+
     public func warn(_ message: String) {
         print("ITLY [warn]: \(message)")
     }
-    
+
     public func error(_ message: String) {
         print("ITLY [error]: \(message)")
     }
@@ -50,12 +50,12 @@ extension Sequence where Self == [String: Any?] {
     @objc static let VALID_ONLY_REQUIRED_PROPS = Context(requiredString: "Required context string")
     @objc static let VALID_ALL_PROPS = Context(requiredString: "Required context string", optionalEnum: .value1)
     @objc static let INVALID_NO_PROPS = Event(name: "context")
-    
+
     enum OptionalEnum: String {
         case value1 = "Value 1"
         case value2 = "Value 2"
     }
-    
+
     convenience init(requiredString: String, optionalEnum: OptionalEnum? = nil) {
         self.init(name: "context",
                   optionalDict: ["requiredString": requiredString,
@@ -65,7 +65,7 @@ extension Sequence where Self == [String: Any?] {
 
 @objc class Identify: Event {
     @objc static let VALID_ALL_PROPS = Identify(requiredNumber: 2.0, optionalArray: ["optional"])
-    
+
     @objc convenience init(requiredNumber: Double, optionalArray: [String]? = nil) {
         self.init(name: "identify",
                   optionalDict: ["requiredNumber": requiredNumber,
@@ -75,7 +75,7 @@ extension Sequence where Self == [String: Any?] {
 
 @objc class Group: Event {
     @objc static let VALID_ALL_PROPS = Group(requiredBoolean: false, optionalString: "I'm optional!")
-    
+
     @objc convenience init(requiredBoolean: Bool, optionalString: String? = nil) {
         self.init(name: "group",
                   optionalDict: ["requiredBoolean": requiredBoolean,

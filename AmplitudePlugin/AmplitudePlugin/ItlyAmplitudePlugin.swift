@@ -2,8 +2,7 @@
 //  ItlyAmplitudePlugin.swift
 //  ItlyAmplitudePlugin
 //
-//  Created by Konstantin Dorogan on 03.09.2020.
-//  Copyright © 2020 Konstantin Dorogan. All rights reserved.
+//  Copyright © 2020 Iteratively. All rights reserved.
 //
 
 import Foundation
@@ -14,7 +13,7 @@ import ItlySdk
     private var amplitudeClient: Amplitude?
     private weak var logger: Logger?
     private let apiKey: String
-    
+
     @objc public init(_ apiKey: String) {
         self.apiKey = apiKey
         super.init(id: "ItlyAmplitudePlugin")
@@ -25,14 +24,14 @@ import ItlySdk
 
         self.logger = options.logger
         logger?.debug("\(self.id) load")
-        
+
         self.amplitudeClient = Amplitude.instance()
         amplitudeClient?.initializeApiKey(apiKey)
     }
-    
+
     public override func reset() {
         super.reset()
-        
+
         logger?.debug("\(self.id) reset")
         amplitudeClient?.setUserId(nil, startNewSession: true)
     }
@@ -44,7 +43,7 @@ import ItlySdk
         if userId != nil {
             amplitudeClient?.setUserId(userId, startNewSession: true)
         }
-        
+
         let identifyArgs = AMPIdentify()
         properties?.properties.compactMap { key, value -> (key: String, value: NSObject)? in
             let nsValue = value as? NSObject
@@ -52,13 +51,13 @@ import ItlySdk
         }.forEach{ key, value in
             identifyArgs.set(key, value: value)
         }
-        
+
         amplitudeClient?.identify(identifyArgs)
     }
 
     public override func track(_ userId: String?, event: Event) {
         super.track(userId, event: event)
-        
+
         logger?.debug("\(self.id) track(userId = \(userId ?? "") event=\(event.name) properties=\(event.properties)")
         amplitudeClient?.logEvent(event.name, withEventProperties: event.properties)
     }

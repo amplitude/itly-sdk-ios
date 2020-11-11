@@ -2,8 +2,7 @@
 //  EventTests.swift
 //  ItlyCoreTests
 //
-//  Created by Konstantin Dorogan on 21.09.2020.
-//  Copyright © 2020 Konstantin Dorogan. All rights reserved.
+//  Copyright © 2020 Iteratively. All rights reserved.
 //
 
 import XCTest
@@ -15,7 +14,7 @@ class EventTests: XCTestCase {
         let event = Event(name: "test")
         XCTAssertTrue(event.properties.isEmpty)
     }
-    
+
     func testSimplyEvent() throws {
         let event = Event(name: "test", id: "test_id", version: "test_version")
         XCTAssertEqual(event.properties.count, 0)
@@ -27,13 +26,13 @@ class EventTests: XCTestCase {
     func testCustomEvent() throws {
         class CustomEvent: Event {
             var customProperty: String? { properties["customProperty"] as? String }
-            
+
             convenience init(customProperty: String) {
                 self.init(name: "customEvent",
                           properties: Properties( ["customProperty": customProperty]))
             }
         }
-        
+
         let event = CustomEvent(customProperty: "test_value")
         XCTAssertEqual(event.name, "customEvent")
         XCTAssertEqual(event.properties.count, 1)

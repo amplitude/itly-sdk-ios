@@ -2,7 +2,7 @@
 //  ItlyQueue.swift
 //  ItlyIterativelyPlugin
 //
-//  Created by Konstantin Dorogan on 18.09.2020.
+//  Copyright © 2020 Iteratively. All rights reserved.
 //
 
 import Foundation
@@ -20,7 +20,7 @@ class DefaultProcessingQueue {
     private let client: ClientApi
     private var pendingItems: [TrackModel] = []
     private let logger: Logger?
-    
+
     private func _pushTrackModel(_ model: TrackModel) {
         pendingItems.append(model)
 
@@ -29,27 +29,27 @@ class DefaultProcessingQueue {
             _flush()
         }
     }
-    
+
     private func _flush() {
         logger?.debug("ItlyIterativelyPlugin: Flush")
         let itemsToUpload = pendingItems
         pendingItems = []
         _uploadItems(itemsToUpload, maxAttempts: retries.maxRetries)
     }
-    
+
     private func _uploadItems(_ items: [TrackModel], maxAttempts: Int) {
         guard items.count > 0 else {
             // nothing to send
             logger?.debug("ItlyIterativelyPlugin: Requested sending an empty list.")
             return
         }
-        
+
         guard maxAttempts > 0 else {
             // failed to send
             logger?.debug("ItlyIterativelyPlugin: Failed to upload \(items.count) events. Maximum attempts exceeded.")
             return
         }
-        
+
         let retries = self.retries
         let logger = self.logger
         client.uploadTrackModels(items) { [weak self] result in
@@ -78,7 +78,7 @@ class DefaultProcessingQueue {
             self?.scheduleFlushInterval(flushIntervalMs)
         }
     }
-    
+
     init(client: ClientApi,
          flushQueueSize: Int,
          flushIntervalMs: Int,
@@ -90,7 +90,7 @@ class DefaultProcessingQueue {
         self.flushQueueSize = flushQueueSize
         self.retries = retries
         self.logger = logger
-        
+
         scheduleFlushInterval(flushIntervalMs)
     }
 }
@@ -102,7 +102,7 @@ extension DefaultProcessingQueue: ProcessingQueue {
             self._pushTrackModel(model)
         }
     }
-    
+
     func flush() {
         queue.async {
             self._flush()

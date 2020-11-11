@@ -2,7 +2,7 @@
 //  Factory.swift
 //  ItlyIterativelyPlugin
 //
-//  Created by Konstantin Dorogan on 21.09.2020.
+//  Copyright © 2020 Iteratively. All rights reserved.
 //
 
 import Foundation
@@ -45,7 +45,7 @@ extension MainFactory: ClientApiFactory {
 extension MainFactory: ProcessingQueueFactory {
     func createProcessingQueue() throws -> ProcessingQueue {
         let clientApi = try createClientApi()
-        
+
         return DefaultProcessingQueue(client: clientApi,
                                       flushQueueSize: config.flushQueueSize,
                                       flushIntervalMs: config.flushIntervalMs,

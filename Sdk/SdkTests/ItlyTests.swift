@@ -2,8 +2,7 @@
 //  ItlyTests.swift
 //  ItlyCoreTests
 //
-//  Created by Konstantin Dorogan on 21.09.2020.
-//  Copyright © 2020 Konstantin Dorogan. All rights reserved.
+//  Copyright © 2020 Iteratively. All rights reserved.
 //
 
 import XCTest
@@ -30,18 +29,18 @@ class ItlyTests: XCTestCase {
             super.load(options)
             self.loadCount += 1
         }
-        
+
         override func validate(_ event: Event) -> ValidationResponse {
             return ValidationResponse(valid: !alwaysInvalid)
         }
-        
+
         override func alias(_ userId: String, previousId: String?) {
             self.aliasCount += 1
         }
         override func postAlias(_ userId: String, previousId: String?) {
             self.postAliasCount += 1
         }
-        
+
         override func identify(_ userId: String?, properties: Properties?) {
             self.identityCount += 1
         }
@@ -55,41 +54,41 @@ class ItlyTests: XCTestCase {
         override func postGroup(_ userId: String?, groupId: String, properties: Properties?, validationResults: [ValidationResponse]) {
             self.postGroupCount += 1
         }
-        
+
         override func track(_ userId: String?, event: Event) {
             self.trackCount += 1
         }
         override func postTrack(_ userId: String?, event: Event, validationResults: [ValidationResponse]) {
             self.postTrackCount += 1
         }
-        
+
         override func reset() {
             self.resetCount += 1
         }
         override func flush() {
             self.flushCount += 1
-            
+
         }
         override func shutdown() {
             self.shutdownCount += 1
         }
-        
+
         override init() {
             super.init(id: "CustomPluginId")
         }
     }
-    
+
     func testPluginIntegration() throws {
         let plugin = CustomPlugin()
-        
+
         let itlyCore = Itly()
-        
+
         let options = Options(environment: .development,
                               disabled: false,
                               plugins: [plugin],
                               validation: nil,
                               logger: nil)
-        
+
         XCTAssertEqual(plugin.id, "CustomPluginId")
         XCTAssertEqual(plugin.loadCount, 0)
         XCTAssertEqual(plugin.aliasCount, 0)
@@ -129,15 +128,15 @@ class ItlyTests: XCTestCase {
 
     func testDisabledPluginIntegration() throws {
         let plugin = CustomPlugin()
-        
+
         let itlyCore = Itly()
-        
+
         let options = Options(environment: .development,
                               disabled: true,
                               plugins: [plugin],
                               validation: nil,
                               logger: nil)
-        
+
         XCTAssertEqual(plugin.id, "CustomPluginId")
         XCTAssertEqual(plugin.loadCount, 0)
         XCTAssertEqual(plugin.aliasCount, 0)
@@ -174,20 +173,20 @@ class ItlyTests: XCTestCase {
         XCTAssertEqual(plugin.flushCount, 0)
         XCTAssertEqual(plugin.shutdownCount, 0)
     }
-    
+
     func testTrackInvalidEnabled() throws {
         let plugin = CustomPlugin()
-        
+
         let validationPlugin = CustomPlugin()
         validationPlugin.alwaysInvalid = true
-        
+
         let itlyCore = Itly()
         let options = Options(environment: .development,
                               disabled: false,
                               plugins: [plugin, validationPlugin],
                               validation: ValidationOptions(disabled: false, trackInvalid: true, errorOnInvalid: false),
                               logger: nil)
-        
+
         XCTAssertEqual(plugin.id, "CustomPluginId")
         XCTAssertEqual(plugin.loadCount, 0)
         XCTAssertEqual(plugin.aliasCount, 0)
@@ -224,21 +223,21 @@ class ItlyTests: XCTestCase {
         XCTAssertEqual(plugin.flushCount, 1)
         XCTAssertEqual(plugin.shutdownCount, 1)
     }
-    
-    
+
+
     func testTrackInvalidDisabled() throws {
         let plugin = CustomPlugin()
-        
+
         let validationPlugin = CustomPlugin()
         validationPlugin.alwaysInvalid = true
-        
+
         let itlyCore = Itly()
         let options = Options(environment: .development,
                               disabled: false,
                               plugins: [plugin, validationPlugin],
                               validation: ValidationOptions(disabled: false, trackInvalid: false, errorOnInvalid: false),
                               logger: nil)
-        
+
         XCTAssertEqual(plugin.id, "CustomPluginId")
         XCTAssertEqual(plugin.loadCount, 0)
         XCTAssertEqual(plugin.aliasCount, 0)
@@ -275,21 +274,21 @@ class ItlyTests: XCTestCase {
         XCTAssertEqual(plugin.flushCount, 1)
         XCTAssertEqual(plugin.shutdownCount, 1)
     }
-    
-    
+
+
     func testDisabledValidation() throws {
         let plugin = CustomPlugin()
-        
+
         let validationPlugin = CustomPlugin()
         validationPlugin.alwaysInvalid = true
-        
+
         let itlyCore = Itly()
         let options = Options(environment: .development,
                               disabled: false,
                               plugins: [plugin, validationPlugin],
                               validation: ValidationOptions(disabled: true, trackInvalid: false, errorOnInvalid: false),
                               logger: nil)
-        
+
         XCTAssertEqual(plugin.id, "CustomPluginId")
         XCTAssertEqual(plugin.loadCount, 0)
         XCTAssertEqual(plugin.aliasCount, 0)
@@ -326,31 +325,31 @@ class ItlyTests: XCTestCase {
         XCTAssertEqual(plugin.flushCount, 1)
         XCTAssertEqual(plugin.shutdownCount, 1)
     }
-    
+
     func testContext() throws {
         class TestContextPlugin: Plugin {
             var trackCounter = 0
             var postTrackCounter = 0
-            
+
             override func track(_ userId: String?, event: Event) {
                 trackCounter += 1
                 XCTAssertEqual(event.name, "test")
                 XCTAssertEqual(event.properties["eventProperty"] as! String, "eventPropertyVal")
                 XCTAssertEqual(event.properties["contextProperty"] as! String, "contextPropertyVal")
             }
-            
+
             override func postTrack(_ userId: String?, event: Event, validationResults: [ValidationResponse]) {
                 postTrackCounter += 1
                 XCTAssertEqual(event.name, "test")
                 XCTAssertEqual(event.properties["eventProperty"] as! String, "eventPropertyVal")
                 XCTAssertEqual(event.properties["contextProperty"] as! String, "contextPropertyVal")
             }
-            
+
             override init() {
                 super.init(id: "TestContextPlugin")
             }
         }
-        
+
 
         let plugin = TestContextPlugin()
         let itlyCore = Itly()
@@ -359,7 +358,7 @@ class ItlyTests: XCTestCase {
                               plugins: [plugin],
                               validation: ValidationOptions(disabled: true, trackInvalid: false, errorOnInvalid: false),
                               logger: nil)
-        
+
         XCTAssertEqual(plugin.id, "TestContextPlugin")
         XCTAssertEqual(plugin.trackCounter, 0)
         XCTAssertEqual(plugin.postTrackCounter, 0)
@@ -371,5 +370,5 @@ class ItlyTests: XCTestCase {
         XCTAssertEqual(plugin.trackCounter, 1)
         XCTAssertEqual(plugin.postTrackCounter, 1)
     }
-    
+
 }

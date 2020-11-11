@@ -2,7 +2,7 @@
 //  QueueRetrySettings.swift
 //  ItlyIterativelyPlugin
 //
-//  Created by Konstantin Dorogan on 21.09.2020.
+//  Copyright © 2020 Iteratively. All rights reserved.
 //
 
 import Foundation

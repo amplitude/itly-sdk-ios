@@ -2,7 +2,7 @@
 //  ClientApi.swift
 //  ItlyIterativelyPlugin
 //
-//  Created by Konstantin Dorogan on 18.09.2020.
+//  Copyright © 2020 Iteratively. All rights reserved.
 //
 
 import Foundation
@@ -36,7 +36,7 @@ class DefaultClientApi: ClientApi {
     private let apiKey: String
     private let urlSession: URLSession
     private let logger: Logger?
-    
+
     func uploadTrackModels(_ batch: [TrackModel], completion: @escaping ((Result<Void,ClientApiError>) -> Void)) {
         var request = URLRequest(url: baseUrl)
         request.httpMethod = "POST"
@@ -57,25 +57,25 @@ class DefaultClientApi: ClientApi {
             completion(.failure(.internalError(error)))
             return
         }
-        
+
         logger?.debug("DefaultClientApi: Request:\r\nURL: \(request.url?.absoluteString ?? "")\r\nMethod: \(request.httpMethod ?? "unnkown")\r\nHeaders:\(request.allHTTPHeaderFields ?? [:])\r\nBody: \(request.httpBody.map{ String(data: $0, encoding: .utf8) ?? "" } ?? "")")
-        
+
         urlSession.dataTask(with: request) { data, response, error in
             guard let response = response as? HTTPURLResponse, error == nil else {
                 completion(.failure(.networkError(error!)))
                 return
             }
-            
+
             let successRange = 200..<300
             if successRange.contains(response.statusCode) {
                 completion(.success(()))
                 return
             }
-            
+
             completion(.failure(.serverError(response.statusCode)))
         }.resume()
     }
-    
+
     init(baseUrl: URL,
          apiKey: String,
          urlSession: URLSession = .shared,

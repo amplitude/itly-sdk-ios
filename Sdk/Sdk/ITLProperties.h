@@ -2,8 +2,7 @@
 //  ITLProperties.h
 //  Sdk
 //
-//  Created by Konstantin Dorogan on 19.10.2020.
-//  Copyright © 2020 Konstantin Dorogan. All rights reserved.
+//  Copyright © 2020 Iteratively. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

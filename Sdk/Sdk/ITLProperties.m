@@ -2,8 +2,7 @@
 //  ITLProperties.m
 //  Sdk
 //
-//  Created by Konstantin Dorogan on 19.10.2020.
-//  Copyright © 2020 Konstantin Dorogan. All rights reserved.
+//  Copyright © 2020 Iteratively. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -20,9 +19,9 @@
     NSMutableDictionary* dictCopy = [dict mutableCopy];
     NSArray* keysForNullValues = [dictCopy allKeysForObject:[NSNull null]];
     [dictCopy removeObjectsForKeys:keysForNullValues];
-    
+
     properties = dictCopy;
-    
+
     return self;
 }
 

@@ -2,8 +2,7 @@
 //  ItlySchemaValidatorPluginTests.swift
 //  ItlySchemaValidatorPluginTests
 //
-//  Created by Konstantin Dorogan on 21.09.2020.
-//  Copyright © 2020 Konstantin Dorogan. All rights reserved.
+//  Copyright © 2020 Iteratively. All rights reserved.
 //
 
 import XCTest
@@ -21,32 +20,32 @@ class ItlySchemaValidatorPluginTests: XCTestCase {
         static let VALID_ONLY_REQUIRED_PROPS = ContextEvent(requiredString: "Required context string")
         static let VALID_ALL_PROPS = ContextEvent(requiredString: "Required context string", optionalEnum: .value1)
         static let INVALID_NO_PROPS = Event(name: "context")
-        
+
         enum OptionalEnum: String {
             case value1 = "Value 1"
             case value2 = "Value 2"
         }
-        
+
         var requiredString: String { properties["requiredString"] as! String }
         var optionalEnum: OptionalEnum? { OptionalEnum(rawValue: properties["optionalEnum"] as! String) }
-        
+
         convenience init(requiredString: String, optionalEnum: OptionalEnum? = nil) {
             self.init(name: "context",
                       properties: Properties( ["requiredString": requiredString, "optionalEnum": optionalEnum?.rawValue]))
         }
     }
-    
+
     var validator: ItlySchemaValidatorPlugin!
-    
+
     override func setUpWithError() throws {
         self.validator = try ItlySchemaValidatorPlugin(schemasMap: schemas)
         validator.load(Options(logger: nil))
     }
-    
+
     override func tearDownWithError() throws {
         self.validator = nil
     }
-    
+
     func testLoadValidator() throws {
         XCTAssertTrue(true)
     }
@@ -58,7 +57,7 @@ class ItlySchemaValidatorPluginTests: XCTestCase {
     func testContextWithInvalidProperties() throws {
         let res = validator.validate(ContextEvent.INVALID_NO_PROPS)
         XCTAssertFalse(res.valid)
-        
+
     }
 
 }

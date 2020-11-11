@@ -2,7 +2,7 @@
 //  ProcessingQueueTests.swift
 //  ItlyIterativelyPluginTests
 //
-//  Created by Konstantin Dorogan on 24.09.2020.
+//  Copyright © 2020 Iteratively. All rights reserved.
 //
 
 import XCTest
@@ -26,12 +26,12 @@ class ProcessingQueueTests: XCTestCase {
                validation: Validation(details: ""))
 
 
-    
+
     func testQueueSize() throws {
         class SuccessClientApi: ClientApi {
             var expectation = XCTestExpectation()
             var uploadTrackModelsCount = 0
-            
+
             func uploadTrackModels(_ batch: [TrackModel], completion: @escaping ((Result<Void, ClientApiError>) -> Void)) {
                 XCTAssertEqual(batch.count, 2)
                 completion(.success(()))
@@ -45,9 +45,9 @@ class ProcessingQueueTests: XCTestCase {
                                            flushQueueSize: 2,
                                            flushIntervalMs: 100_000,
                                            retries: retrySettings)
-        
+
         XCTAssertEqual(client.uploadTrackModelsCount, 0)
-        
+
         client.expectation = XCTestExpectation()
         queue.pushTrackModel(testModel)
         queue.pushTrackModel(testModel)
@@ -65,7 +65,7 @@ class ProcessingQueueTests: XCTestCase {
         class SuccessClientApi: ClientApi {
             var expectation = XCTestExpectation()
             var uploadTrackModelsCount = 0
-            
+
             func uploadTrackModels(_ batch: [TrackModel], completion: @escaping ((Result<Void, ClientApiError>) -> Void)) {
                 XCTAssertEqual(batch.count, 1)
                 completion(.success(()))
@@ -79,9 +79,9 @@ class ProcessingQueueTests: XCTestCase {
                                            flushQueueSize: 2,
                                            flushIntervalMs: 100,
                                            retries: retrySettings)
-        
+
         XCTAssertEqual(client.uploadTrackModelsCount, 0)
-        
+
         client.expectation = XCTestExpectation()
         queue.pushTrackModel(testModel)
         wait(for: [client.expectation], timeout: 1)
@@ -92,12 +92,12 @@ class ProcessingQueueTests: XCTestCase {
         wait(for: [client.expectation], timeout: 1)
         XCTAssertEqual(client.uploadTrackModelsCount, 2)
     }
-    
+
     func testQueueRetriesWithServerError() throws {
         class ServerErrorClientApi: ClientApi {
             var expectation = XCTestExpectation()
             var uploadTrackModelsCount = 0
-            
+
             func uploadTrackModels(_ batch: [TrackModel], completion: @escaping ((Result<Void, ClientApiError>) -> Void)) {
                 completion(.failure(.serverError(500)))
                 uploadTrackModelsCount += 1
@@ -119,12 +119,12 @@ class ProcessingQueueTests: XCTestCase {
         wait(for: [client.expectation], timeout: Double(retrySettings.maxRetries * retrySettings.delayMaximumMs) / 1000.0)
         XCTAssertEqual(client.uploadTrackModelsCount, 5)
     }
-    
+
     func testQueueRetriesWithNetworkError() throws {
         class NetworkErrorClientApi: ClientApi {
             var expectation = XCTestExpectation()
             var uploadTrackModelsCount = 0
-            
+
             func uploadTrackModels(_ batch: [TrackModel], completion: @escaping ((Result<Void, ClientApiError>) -> Void)) {
                 completion(.failure(.networkError(SomeError.some)))
                 uploadTrackModelsCount += 1
@@ -146,12 +146,12 @@ class ProcessingQueueTests: XCTestCase {
         wait(for: [client.expectation], timeout: Double(retrySettings.maxRetries * retrySettings.delayMaximumMs) / 1000.0)
         XCTAssertEqual(client.uploadTrackModelsCount, 5)
     }
-    
+
     func testQueueRetriesWithInternalError() throws {
         class InternalErrorClientApi: ClientApi {
             var expectation = XCTestExpectation()
             var uploadTrackModelsCount = 0
-            
+
             func uploadTrackModels(_ batch: [TrackModel], completion: @escaping ((Result<Void, ClientApiError>) -> Void)) {
                 completion(.failure(.internalError(SomeError.some)))
                 uploadTrackModelsCount += 1
@@ -175,5 +175,5 @@ class ProcessingQueueTests: XCTestCase {
         XCTAssertEqual(client.uploadTrackModelsCount, 1)
 
     }
-    
+
 }

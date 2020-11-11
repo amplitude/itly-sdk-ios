@@ -2,8 +2,7 @@
 //  PluginProtocol+Safe.swift
 //  ItlyCore
 //
-//  Created by Konstantin Dorogan on 06.10.2020.
-//  Copyright © 2020 Konstantin Dorogan. All rights reserved.
+//  Copyright © 2020 Iteratively. All rights reserved.
 //
 
 import Foundation
@@ -14,19 +13,19 @@ extension Plugin {
             self.load(options)
         }
     }
-    
+
     func safeAlias(_ userId: String, previousId: String?) throws {
         try ObjC.catchException {
             self.alias(userId, previousId: previousId)
         }
     }
-    
+
     func safePostAlias(_ userId: String, previousId: String?) throws {
         try ObjC.catchException {
             self.postAlias(userId, previousId: previousId)
         }
     }
-    
+
     func safeIdentify(_ userId: String?, properties: Properties?) throws {
         try ObjC.catchException {
             self.identify(userId, properties: properties)
@@ -48,7 +47,7 @@ extension Plugin {
             self.postGroup(userId, groupId: groupId, properties: properties, validationResults: validationResults)
         }
     }
-    
+
     func safeTrack(_ userId: String?, event: Event) throws {
         try ObjC.catchException {
             self.track(userId, event: event)
@@ -59,7 +58,7 @@ extension Plugin {
             self.postTrack(userId, event: event, validationResults: validationResults)
         }
     }
-    
+
     func safeReset() throws {
         try ObjC.catchException {
             self.reset()
@@ -75,10 +74,10 @@ extension Plugin {
             self.shutdown()
         }
     }
-    
+
     func safeValidate(_ event: Event) throws -> ValidationResponse {
         var result: ValidationResponse!
-        
+
         try ObjC.catchException {
             result = self.validate(event)
         }

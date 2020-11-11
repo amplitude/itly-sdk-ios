@@ -2,7 +2,7 @@
 //  main.m
 //  SampleApp_ObjC
 //
-//  Created by Konstantin Dorogan on 12.10.2020.
+//  Copyright © 2020 Iteratively. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

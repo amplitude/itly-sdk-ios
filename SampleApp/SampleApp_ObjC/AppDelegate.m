@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  SampleApp_ObjC
 //
-//  Created by Konstantin Dorogan on 12.10.2020.
+//  Copyright © 2020 Iteratively. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -20,7 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+
     ITLIterativelyOptions* iterativelyPluginOptions = [[ITLIterativelyOptions alloc] initWithEnvironment:ITLEnvironmentDevelopment
                                                                                       omitValues:FALSE
                                                                                        batchSize:1
@@ -29,7 +29,7 @@
                                                                                       maxRetries:25
                                                                               delayInitialMillis:10000
                                                                               delayMaximumMillis:3600000];
-    
+
     // Create plugins
     NSError* error;
     ITLIterativelyPlugin* iterativelyPlugin = [[ITLIterativelyPlugin alloc] init:@"api-key"
@@ -40,34 +40,34 @@
     ITLSchemaValidatorPlugin* validationPlugin = [[ITLSchemaValidatorPlugin alloc] initWithSchemasMap:ITLSchemaValidatorPlugin.defaultSchema
                                                                                                 error:&error];
 
-    
+
     ITLValidationOptions* validationOptions = [[ITLValidationOptions alloc] initWithDisabled:false
                                                                                 trackInvalid:true
                                                                               errorOnInvalid:false];
-    
-    
+
+
     ITLItlyOptions* itlyOptions = [[ITLItlyOptions alloc] initWithEnvironment:ITLEnvironmentDevelopment
                                                                  disabled:false
                                                                   plugins:@[iterativelyPlugin,
                                                                             validationPlugin]
                                                                validation:validationOptions
                                                                    logger:[ConsoleLogger new]];
-    
+
     [ITLItly.shared load:[[Context alloc] initWithRequiredString:@"Required string" optionalEnum:nil]
                  options:itlyOptions];
 
-    
-    
+
+
     NSString* userId = @"userId";
-    
+
     [ITLItly.shared identify:userId
                   properties: [[Identify alloc] initWithRequiredNumber:@42.0 optionalArray:nil]];
-    
+
     [ITLItly.shared group:@"groupId"
                properties:[[Group alloc] initWithRequiredBoolean:@YES optionalString:nil]];
-    
+
     [ITLItly.shared track:[EventNoProperties new]];
-    
+
     return YES;
 }
 

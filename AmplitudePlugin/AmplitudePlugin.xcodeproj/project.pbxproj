@@ -203,7 +203,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1160;
-				ORGANIZATIONNAME = "Konstantin Dorogan";
+				ORGANIZATIONNAME = "Iteratively";
 				TargetAttributes = {
 					9D9B07B22500EEC300100E3A = {
 						CreatedOnToolsVersion = 11.6;

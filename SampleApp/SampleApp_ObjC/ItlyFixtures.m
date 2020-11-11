@@ -2,7 +2,7 @@
 //  ItlyFixtures.m
 //  SampleApp_ObjC
 //
-//  Created by Konstantin Dorogan on 12.10.2020.
+//  Copyright © 2020 Iteratively. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -16,7 +16,7 @@
     dispatch_once(&onceToken, ^{
         sharedInstance = [ITLItly new];
     });
-    
+
     return sharedInstance;
 }
 
@@ -46,14 +46,14 @@
         const char* contextSchema = "{\"$id\":\"https://iterative.ly/company/77b37977-cb3a-42eb-bce3-09f5f7c3adb7/context\",\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"title\":\"Context\",\"description\":\"\",\"type\":\"object\",\"properties\":{\"requiredString\":{\"description\":\"description for context requiredString\",\"type\":\"string\"},\"optionalEnum\":{\"description\":\"description for context optionalEnum\",\"enum\":[\"Value 1\",\"Value 2\"]}},\"additionalProperties\":false,\"required\":[\"requiredString\"]}";
         const char* groupSchema = "{\"$id\":\"https://iterative.ly/company/77b37977-cb3a-42eb-bce3-09f5f7c3adb7/group\",\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"title\":\"Group\",\"description\":\"\",\"type\":\"object\",\"properties\":{\"requiredBoolean\":{\"description\":\"Description for group requiredBoolean\",\"type\":\"boolean\"},\"optionalString\":{\"description\":\"Description for group optionalString\",\"type\":\"string\"}},\"additionalProperties\":false,\"required\":[\"requiredBoolean\"]}";
         const char* identifySchema = "{\"$id\":\"https://iterative.ly/company/77b37977-cb3a-42eb-bce3-09f5f7c3adb7/identify\",\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"title\":\"Identify\",\"description\":\"\",\"type\":\"object\",\"properties\":{\"optionalArray\":{\"description\":\"Description for identify optionalArray\",\"type\":\"array\",\"uniqueItems\":false,\"items\":{\"type\":\"string\"}},\"requiredNumber\":{\"description\":\"Description for identify requiredNumber\",\"type\":\"number\"}},\"additionalProperties\":false,\"required\":[\"requiredNumber\"]}";
-        
+
         schema = @{
             @"context": [NSData dataWithBytes:contextSchema length:strlen(contextSchema)],
             @"group": [NSData dataWithBytes:groupSchema length:strlen(groupSchema)],
             @"identify": [NSData dataWithBytes:identifySchema length:strlen(identifySchema)]
         };
     });
-    
+
     return schema;
 }
 @end

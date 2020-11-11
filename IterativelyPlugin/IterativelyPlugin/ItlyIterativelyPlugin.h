@@ -2,7 +2,7 @@
 //  ItlyIterativelyPlugin.h
 //  ItlyIterativelyPlugin
 //
-//  Created by Konstantin Dorogan on 18.09.2020.
+//  Copyright © 2020 Iteratively. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

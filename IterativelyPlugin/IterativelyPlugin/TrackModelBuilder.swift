@@ -2,7 +2,7 @@
 //  TrackModelBuilder.swift
 //  ItlyIterativelyPlugin
 //
-//  Created by Konstantin Dorogan on 18.09.2020.
+//  Copyright © 2020 Iteratively. All rights reserved.
 //
 
 import Foundation
@@ -26,7 +26,7 @@ protocol TrackModelDateFormatter {
 class DefaultTrackModelBuilder: TrackModelBuilder {
     private let dateFormatter: TrackModelDateFormatter
     private let omitValues: Bool
-    
+
     func buildTrackModelForType(_ type: TrackType, event: Event?, properties: Properties?, validation: ValidationResponse?) -> TrackModel {
         let valid = validation?.valid ?? true
         let details = omitValues ? "" : validation?.message ?? ""
@@ -43,7 +43,7 @@ class DefaultTrackModelBuilder: TrackModelBuilder {
             validation: Validation(details: details)
         )
     }
-    
+
     init(dateFormatter: TrackModelDateFormatter, omitValues: Bool) {
         self.omitValues = omitValues
         self.dateFormatter = dateFormatter

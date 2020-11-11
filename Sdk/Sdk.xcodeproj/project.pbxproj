@@ -484,7 +484,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1160;
-				ORGANIZATIONNAME = "Konstantin Dorogan";
+				ORGANIZATIONNAME = "Iteratively";
 				TargetAttributes = {
 					9DC34C3125000B0800B23A17 = {
 						CreatedOnToolsVersion = 11.6;

@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  SampleApp_Carthage
 //
-//  Created by Konstantin Dorogan on 28.09.2020.
+//  Copyright © 2020 Iteratively. All rights reserved.
 //
 
 import UIKit
@@ -12,22 +12,22 @@ import ItlySchemaValidatorPlugin
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+
         let iterativelyOptions = IterativelyOptions(
             batchSize: 1,
             flushQueueSize: 1,
             disabled: false)
-        
+
         let iterativelyPlugin = try! IterativelyPlugin("api-key",
                                                        url: "http://localhost:8080/test",
                                                        options: iterativelyOptions)
 
-        
+
         let validatorPlugin = ItlySchemaValidatorPlugin()
-        
+
         Itly.shared.load(Context(requiredString: "Required string"),
                          options: Options(//environment: .production,
                                           disabled: false,
@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Itly.shared.identify(userId, properties: Identify(requiredNumber: 42.0))
         Itly.shared.group("groupId", properties: Group(requiredBoolean: true))
         Itly.shared.track(EventNoProperties())
-        
+
         return true
     }
 
