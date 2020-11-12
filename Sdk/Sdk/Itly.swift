@@ -13,20 +13,27 @@ import Foundation
 
     private var isDisabled: Bool { config?.disabled ?? true }
     
-    @objc public func load(_ context: Properties?, options: Options) {
-        guard !options.disabled else {
-            options.logger?.info("Itly disabled = true")
+    @objc public func load(_ context: Properties?, options: Options?) {
+        let config = options ?? Options()
+        
+        guard self.config == nil else {
+            self.config.logger?.error("Error: Itly is already loaded. [Itly.instance load] should only be called once.")
             return
         }
         
-        self.config = options
+        guard !config.disabled else {
+            config.logger?.info("Itly disabled = true")
+            return
+        }
+        
+        self.config = config
         self.context = Event(name: "context", properties: context)
         
         self.config.logger?.debug("Itly load")
         self.config.logger?.debug("Itly \(config.plugins.count) plugins are enabled")
 
         runOnAllPlugins(op: "load") { (plugin) in
-            try plugin.safeLoad(options);
+            try plugin.safeLoad(config);
         }
     }
     
