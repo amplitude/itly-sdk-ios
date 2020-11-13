@@ -9,7 +9,7 @@ import Foundation
 
 @objc (ITLItly) public class Itly: NSObject {
     private var config: Options!
-    private var context: Event!
+    private var context: Event? = nil
 
     private var isDisabled: Bool { config?.disabled ?? true }
     
@@ -26,9 +26,11 @@ import Foundation
             return
         }
         
-        self.config = config
-        self.context = Event(name: "context", properties: context)
+        if (context != nil) {
+            self.context = Event(name: "context", properties: context)
+        }
         
+        self.config = config
         self.config.logger?.debug("Itly load")
         self.config.logger?.debug("Itly \(config.plugins.count) plugins are enabled")
 
@@ -137,7 +139,7 @@ import Foundation
         method: (Plugin, Event) throws -> Void,
         postMethod: (Plugin, Event, [ValidationResponse]) throws -> Void
     ) {
-        let contextValidation = includeContext ? validate(context) : []
+        let contextValidation = (includeContext && self.context != nil) ? validate(self.context!) : []
         let isContextValid = contextValidation.valid
         
         let eventValidation = validate(event)
@@ -145,8 +147,8 @@ import Foundation
         
         let isValid = isContextValid && isEventValid;
         
-        let combinedEvent = includeContext
-            ? event.mergeProperties(context)
+        let combinedEvent = (includeContext && self.context != nil)
+            ? event.mergeProperties(self.context!)
             : event
         
         if (isValid || config.validation.trackInvalid) {
