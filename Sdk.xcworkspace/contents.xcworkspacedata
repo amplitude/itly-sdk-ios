@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:SampleApp/SampleApp_Sdk.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SegmentPlugin/SegmentPlugin.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MixpanelPlugin/MixpanelPlugin.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:AmplitudePlugin/AmplitudePlugin.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:IterativelyPlugin/IterativelyPlugin.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SchemaValidatorPlugin/SchemaValidatorPlugin.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Sdk/Sdk.xcodeproj">
+   </FileRef>
+</Workspace>
