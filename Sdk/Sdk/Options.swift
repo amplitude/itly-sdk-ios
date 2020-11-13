@@ -8,18 +8,11 @@
 import Foundation
 
 // DEFAULTS
-public let DEFAULT_ENVIRONMENT: Environment = .development
-public let DEFAULT_DISABLED: Bool = false
-public let DEFAULT_PLUGINS: [Plugin] = []
-public let DEFAULT_LOGGER: Logger? = nil
-public let DEFAULT_VALIDATION_OPTIONS: ValidationOptions? = nil
-public let VALIDATION_OPTIONS_DEV: ValidationOptions = ValidationOptions(
-    disabled: false, trackInvalid: false, errorOnInvalid: true
-)
-public let VALIDATION_OPTIONS_PROD: ValidationOptions = ValidationOptions(
-    disabled: false, trackInvalid: true, errorOnInvalid: false
-)
-
+public let ITLY_OPTIONS_DEFAULT_ENVIRONMENT: Environment = .development
+public let ITLY_OPTIONS_DEFAULT_DISABLED: Bool = false
+public let ITLY_OPTIONS_DEFAULT_PLUGINS: [Plugin] = []
+public let ITLY_OPTIONS_DEFAULT_VALIDATION_OPTIONS: ValidationOptions? = nil
+public let ITLY_OPTIONS_DEFAULT_LOGGER: Logger? = nil
 
 @objc (ITLItlyOptions) open class Options: NSObject {
     @objc public let environment: Environment
@@ -28,19 +21,28 @@ public let VALIDATION_OPTIONS_PROD: ValidationOptions = ValidationOptions(
     @objc public let validation: ValidationOptions
     @objc public let logger: Logger?
 
+    
+    @objc public convenience override init() {
+        self.init(
+            environment: ITLY_OPTIONS_DEFAULT_ENVIRONMENT,
+            disabled: ITLY_OPTIONS_DEFAULT_DISABLED,
+            plugins: ITLY_OPTIONS_DEFAULT_PLUGINS,
+            validation: ITLY_OPTIONS_DEFAULT_VALIDATION_OPTIONS,
+            logger: ITLY_OPTIONS_DEFAULT_LOGGER
+        )
+    }
+    
     @objc public init(
-        environment: Environment = DEFAULT_ENVIRONMENT,
-        disabled: Bool = DEFAULT_DISABLED,
-        plugins: [Plugin] = DEFAULT_PLUGINS,
-        validation: ValidationOptions? = DEFAULT_VALIDATION_OPTIONS,
-        logger: Logger? = DEFAULT_LOGGER
+        environment: Environment = ITLY_OPTIONS_DEFAULT_ENVIRONMENT,
+        disabled: Bool = ITLY_OPTIONS_DEFAULT_DISABLED,
+        plugins: [Plugin] = ITLY_OPTIONS_DEFAULT_PLUGINS,
+        validation: ValidationOptions? = ITLY_OPTIONS_DEFAULT_VALIDATION_OPTIONS,
+        logger: Logger? = ITLY_OPTIONS_DEFAULT_LOGGER
     ) {
         self.environment = environment
         self.disabled = disabled
         self.plugins = plugins
-        self.validation = validation ?? ((environment == .production)
-            ? VALIDATION_OPTIONS_PROD
-            : VALIDATION_OPTIONS_DEV)
+        self.validation = validation ?? ValidationOptions.getValidationOptions(environment)
         self.logger = logger
         super.init()
     }
@@ -65,11 +67,11 @@ public let VALIDATION_OPTIONS_PROD: ValidationOptions = ValidationOptions(
 }
 
 @objc (ITLItlyOptionsBuilder) open class OptionsBuilder: NSObject {
-    @objc public var environment: Environment = DEFAULT_ENVIRONMENT
-    @objc public var disabled: Bool = DEFAULT_DISABLED
-    @objc public var plugins: [Plugin] = DEFAULT_PLUGINS
-    @objc public var logger: Logger? = DEFAULT_LOGGER
-    @objc public var validation: ValidationOptions? = DEFAULT_VALIDATION_OPTIONS
+    @objc public var environment: Environment = ITLY_OPTIONS_DEFAULT_ENVIRONMENT
+    @objc public var disabled: Bool = ITLY_OPTIONS_DEFAULT_DISABLED
+    @objc public var plugins: [Plugin] = ITLY_OPTIONS_DEFAULT_PLUGINS
+    @objc public var logger: Logger? = ITLY_OPTIONS_DEFAULT_LOGGER
+    @objc public var validation: ValidationOptions? = ITLY_OPTIONS_DEFAULT_VALIDATION_OPTIONS
     
     @objc public func setOptions(_ options: Options) {
         self.disabled = options.disabled
