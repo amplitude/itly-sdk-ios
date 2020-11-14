@@ -1,9 +1,9 @@
 Pod::Spec.new do |spec|
   spec.name         = "ItlySchemaValidatorPlugin"
   spec.version      = "1.0.0"
-  spec.summary      = "Iteratively Analytics SDK for iOS — Swift & Objective-C"
+  spec.summary      = "Iteratively Schema Validator Plugin"
   spec.description  = <<-DESC
-                       Schema validation plugin for Iteratively SDK
+                       Schema validation plugin for Iteratively SDK (Swift & Objective-C)
                        DESC
 
   spec.homepage     = "https://iterative.ly"

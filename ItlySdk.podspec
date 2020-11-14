@@ -1,9 +1,9 @@
 Pod::Spec.new do |spec|
   spec.name         = "ItlySdk"
   spec.version      = "1.0.0"
-  spec.summary      = "Iteratively Analytics SDK for iOS — Swift & Objective-C"
+  spec.summary      = "Iteratively SDK"
   spec.description  = <<-DESC
-                       Iteratively SDK
+                       Iteratively Analytics SDK for iOS — Swift & Objective-C
                        DESC
 
   spec.homepage     = "https://iterative.ly"

@@ -1,9 +1,9 @@
 Pod::Spec.new do |spec|
   spec.name         = "ItlyMixpanelPlugin"
   spec.version      = "1.0.0"
-  spec.summary      = "Iteratively Analytics SDK for iOS — Swift & Objective-C"
+  spec.summary      = "Iteratively Mixpanel Plugin"
   spec.description  = <<-DESC
-                       Mixpanel plugin for Iteratively SDK
+                       Mixpanel plugin for Iteratively SDK (Swift & Objective-C)
                        DESC
 
   spec.homepage     = "https://iterative.ly"
