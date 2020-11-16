@@ -12,6 +12,7 @@ All modules are located within one Xcode workspace: `ItlySDK.xcworkspace`.
   ```
   $ xcodebuild test -workspace Sdk.xcworkspace -scheme ItlySdkTests_iOS
   $ xcodebuild test -workspace Sdk.xcworkspace -scheme ItlyIterativelyPluginTests_iOS
+  $ xcodebuild test -workspace Sdk.xcworkspace -scheme ItlySchemaValidatorPluginTests_iOS
   ```
 ## Publishing
 The common way for versioning is tagging. The CocoaPods provides more flixibility in tagging whereas the Carthage has some limits according to [Taging Convention](https://github.com/Carthage/Carthage#tag-stable-releases). Taking into account that all plugins are contained in the one repository, we have only one way of versioning for Carthage: a tag share the same version for all (means that version of all plugins will be bumped even if it's necessary to change only one plugin). As for the CocoaPods we can use a slightly different way of version tagging by using prefixes.

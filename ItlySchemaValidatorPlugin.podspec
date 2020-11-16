@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
   spec.source_files   = 'SchemaValidatorPlugin/SchemaValidatorPlugin/**/*.{h,swift}'
   spec.framework  = "Foundation"
   spec.dependency "DSJSONSchemaValidation", "~> 2.0.0"
-  spec.dependency "ItlySdk"
+  spec.dependency "ItlySdk", "~> 1.0.0"
 
   spec.swift_version = '5.3'
 
