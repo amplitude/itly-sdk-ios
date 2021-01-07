@@ -38,11 +38,30 @@ import DSJSONSchemaValidation
         do {
             try validator.validate(event.properties)
         } catch let error {
-            let failureReason = (error as NSObject).value(forKey: "localizedFailureReason") ?? "Unknown validation error.";
+            // This is really a com.argentumko.JSONSchemaValidationError but unable to import type
+            let errorObj = (error as NSObject)
+            let failureReason = errorObj.value(forKey: "localizedFailureReason") ?? "Unknown validation error.";
+
+            var propertyInfo = "";
+            var validatorInfo = "";
+            do {
+                let userInfo: NSDictionary = (errorObj.value(forKey: "userInfo") ?? "") as! NSDictionary;
+                let propertyPath = userInfo["path"] ?? "unknown"
+                let propertyValue = userInfo["object"] ?? "undefined"
+                propertyInfo = " Error with property \(propertyPath) = \(propertyValue)."
+
+                let validator = userInfo["validator"]
+                validatorInfo = validator.debugDescription
+                let startIndex = validatorInfo.firstIndex(of: "{") ?? validatorInfo.startIndex
+                let endIndex = validatorInfo.firstIndex(of: "}") ?? validatorInfo.endIndex
+                validatorInfo = " Rules " + String(validatorInfo[startIndex..<endIndex]) + "}"
+            } catch {
+
+            }
 
             return ValidationResponse(
                 valid: false,
-                message: "\(error.localizedDescription) \(failureReason)",
+                message: "\(error.localizedDescription)\(propertyInfo) \(failureReason)\(validatorInfo)",
                 pluginId: self.id
             )
         }
