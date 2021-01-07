@@ -40,18 +40,20 @@ import DSJSONSchemaValidation
         } catch let error {
             
             logger?.debug("\(self.id) VALIDATION FAILURE \(error)")
+            
+            // This is really a com.argentumko.JSONSchemaValidationError but unable to import type
             let errorObj = (error as NSObject)
             let failureReason = errorObj.value(forKey: "localizedFailureReason") ?? "Unknown validation error.";
             
             var propertyInfo = "";
             var validatorInfo = "";
             do {
-                let userInfo: NSObject = (errorObj.value(forKey: "userInfo") ?? "") as! NSObject;
-                let propertyPath = userInfo.value(forKey: "path") ?? ""
-                let propertyValue = userInfo.value(forKey: "object") ?? ""
+                let userInfo: NSDictionary = (errorObj.value(forKey: "userInfo") ?? "") as! NSDictionary;
+                let propertyPath = userInfo["path"] ?? "unknown"
+                let propertyValue = userInfo["object"] ?? "undefined"
                 propertyInfo = " Error with property \(propertyPath) = \(propertyValue)."
                 
-                let validator = userInfo.value(forKey: "validator")
+                let validator = userInfo["validator"]
                 validatorInfo = validator.debugDescription
                 let startIndex = validatorInfo.firstIndex(of: "{") ?? validatorInfo.startIndex
                 let endIndex = validatorInfo.firstIndex(of: "}") ?? validatorInfo.endIndex
