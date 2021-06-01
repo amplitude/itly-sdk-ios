@@ -9,6 +9,7 @@ jobs:
     strategy:
       matrix:
         ruby-version: ["2.7.x"]
+#        test-os: ["iOS", "OSX"],
         itly-package: [
           "Sdk",
           "SchemaValidatorPlugin",
@@ -24,10 +25,14 @@ jobs:
       - name: Set Xcode 12
         run: |
           sudo xcode-select -switch /Applications/Xcode_12.app
+
       - name: Setup Ruby
         uses: actions/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby-version }}
+
+      - name: Setup XCPretty
+        run: gem install xcpretty
 
 #      - name: Cache Bundle Gems and Cocoapods
 #        id: cache-gems-pods
@@ -55,6 +60,5 @@ jobs:
             -workspace Sdk.xcworkspace \
             -scheme Itly${{ matrix.itly-package }}Tests_iOS \
             -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.0'
-
-          xcodebuild test -workspace Sdk.xcworkspace -list
+            -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.0' \
+          | xcpretty && exit ${PIPESTATUS[0]}
