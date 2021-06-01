@@ -41,7 +41,7 @@ jobs:
       - name: Validate Podfile
         run: pod lib lint
 
-      - name: [iOS] SDK Test
+      - name: iOS SDK Test
         run: |
           xcodebuild test \
             -workspace Sdk.xcworkspace \
@@ -49,7 +49,7 @@ jobs:
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.0'
 
-      - name: [iOS] Schema Validator Test
+      - name: iOS Schema Validator Test
         run: |
           xcodebuild test \
             -workspace Sdk.xcworkspace \
@@ -57,7 +57,7 @@ jobs:
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.0'
 
-      - name: [iOS] Iteratively Plugin Test
+      - name: iOS Iteratively Plugin Test
         run: |
           xcodebuild test \
             -workspace Sdk.xcworkspace \
