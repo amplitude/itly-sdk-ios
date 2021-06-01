@@ -13,9 +13,9 @@ jobs:
           "Sdk",
           "SchemaValidatorPlugin",
           "IterativelyPlugin",
-          "AmplitudePlugin",
-          "MixpanelPlugin",
-          "SegmentPlugin",
+#          "AmplitudePlugin",
+#          "MixpanelPlugin",
+#          "SegmentPlugin",
         ]
     steps:
       - name: Check out Git repository
@@ -56,3 +56,5 @@ jobs:
             -scheme Itly${{ matrix.itly-package }}Tests_iOS \
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.0'
+
+          xcodebuild test -workspace Sdk.xcworkspace -list
