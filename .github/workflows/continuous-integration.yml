@@ -9,7 +9,14 @@ jobs:
     strategy:
       matrix:
         ruby-version: ["2.7.x"]
-        itly-package: ["Sdk", "SchemaValidator", "IterativelyPlugin"]
+        itly-package: [
+          "Sdk",
+          "SchemaValidatorPlugin",
+          "IterativelyPlugin",
+          "AmplitudePlugin",
+          "MixpanelPlugin",
+          "SegmentPlugin",
+        ]
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
@@ -49,19 +56,3 @@ jobs:
             -scheme Itly${{ matrix.itly-package }}Tests_iOS \
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.0'
-
-#      - name: iOS Schema Validator Test
-#        run: |
-#          xcodebuild test \
-#            -workspace Sdk.xcworkspace \
-#            -scheme ItlySchemaValidatorPluginTests_iOS \
-#            -sdk iphonesimulator \
-#            -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.0'
-#
-#      - name: iOS Iteratively Plugin Test
-#        run: |
-#          xcodebuild test \
-#            -workspace Sdk.xcworkspace \
-#            -scheme ItlyIterativelyPluginTests_iOS \
-#            -sdk iphonesimulator \
-#            -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.0'
