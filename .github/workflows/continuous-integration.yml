@@ -69,3 +69,32 @@ jobs:
 #          xcodebuild test -workspace Sdk.xcworkspace \
 #            -scheme Itly${{ matrix.itly-package }}Tests_${{ matrix.test-os }} \
 #          | xcpretty && exit ${PIPESTATUS[0]}
+
+  lint:
+    name: Lint Pods
+    runs-on: macos-10.15
+    strategy:
+      matrix:
+        ruby-version: ["2.7.x"]
+        itly-package: [
+          "Sdk",
+          "SchemaValidatorPlugin",
+          "IterativelyPlugin",
+          "AmplitudePlugin",
+          "MixpanelPlugin",
+          "SegmentPlugin",
+        ]
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+
+      - name: Install Cocoapods
+        run: gem install cocoapods
+
+      - name: Validate ${{ matrix.itly-package }} Podfile
+        run: pod lib lint Itly${{ matrix.itly-package }}.podspec
