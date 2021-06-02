@@ -17,7 +17,7 @@ jobs:
 #          "AmplitudePlugin",
 #          "MixpanelPlugin",
 #          "SegmentPlugin",
-        ],
+        ]
         mac-package: [
           "Sdk",
           "IterativelyPlugin",
