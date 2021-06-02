@@ -71,14 +71,14 @@ jobs:
 #          | xcpretty && exit ${PIPESTATUS[0]}
 
   lint:
-    name: Lint Pods
+    name: pod lint
     runs-on: macos-10.15
     strategy:
       matrix:
         ruby-version: ["2.7.x"]
         itly-package: [
           "Sdk",
-          "SchemaValidatorPlugin",
+#          "SchemaValidatorPlugin",
           "IterativelyPlugin",
           "AmplitudePlugin",
           "MixpanelPlugin",
