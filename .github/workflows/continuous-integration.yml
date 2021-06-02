@@ -76,14 +76,14 @@ jobs:
     strategy:
       matrix:
         ruby-version: ["2.7.x"]
-#        itly-package: [
-#          "Sdk",
-##          "SchemaValidatorPlugin",
-#          "IterativelyPlugin",
-#          "AmplitudePlugin",
-#          "MixpanelPlugin",
-#          "SegmentPlugin",
-#        ]
+        itly-package: [
+          "Sdk",
+#          "SchemaValidatorPlugin",
+          "IterativelyPlugin",
+          "AmplitudePlugin",
+          "MixpanelPlugin",
+          "SegmentPlugin",
+        ]
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
@@ -96,20 +96,5 @@ jobs:
       - name: Install Cocoapods
         run: gem install cocoapods
 
-#      - name: Validate ${{ matrix.itly-package }} Podfile
-#        run: pod lib lint Itly${{ matrix.itly-package }}.podspec
-
-      - name: Validate SDK Podfile
-        run: pod lib lint ItlySdk.podspec
-
-      - name: Validate IterativelyPlugin Podfile
-        run: pod lib lint ItlyIterativelyPlugin.podspec
-
-      - name: Validate AmplitudePlugin Podfile
-        run: pod lib lint ItlyAmplitudePlugin.podspec
-
-      - name: Validate MixpanelPlugin Podfile
-        run: pod lib lint ItlyMixpanelPlugin.podspec
-
-      - name: Validate SegmentPlugin Podfile
-        run: pod lib lint ItlySegmentPlugin.podspec
+      - name: Validate ${{ matrix.itly-package }} Podfile
+        run: pod lib lint Itly${{ matrix.itly-package }}.podspec
