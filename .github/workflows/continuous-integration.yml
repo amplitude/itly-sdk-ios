@@ -10,13 +10,17 @@ jobs:
       matrix:
         ruby-version: ["2.7.x"]
 #        test-os: ["iOS", "OSX", "tvOS"],
-        itly-package: [
+        ios-package: [
           "Sdk",
           "SchemaValidatorPlugin",
           "IterativelyPlugin",
 #          "AmplitudePlugin",
 #          "MixpanelPlugin",
 #          "SegmentPlugin",
+        ],
+        mac-package: [
+          "Sdk",
+          "IterativelyPlugin",
         ]
     steps:
       - name: Check out Git repository
@@ -54,18 +58,18 @@ jobs:
 #      - name: Validate Podfile
 #        run: pod lib lint
 
-      - name: iOS ${{ matrix.itly-package }} Test
+      - name: iOS ${{ matrix.ios-package }} Test
         run: |
           xcodebuild test \
             -workspace Sdk.xcworkspace \
-            -scheme Itly${{ matrix.itly-package }}Tests_iOS \
+            -scheme Itly${{ matrix.ios-package }}Tests_iOS \
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.0' \
           | xcpretty && exit ${PIPESTATUS[0]}
 
-      - name: macOS ${{ matrix.itly-package }} Test
+      - name: macOS ${{ matrix.mac-package }} Test
         run: |
           xcodebuild test \
             -workspace Sdk.xcworkspace \
-            -scheme Itly${{ matrix.itly-package }}Tests_${{ matrix.itly-package != 'SchemaValidatorPlugin' && 'OSX' || 'macOS' }} \
+            -scheme Itly${{ matrix.mac-package }}Tests_OSX \
           | xcpretty && exit ${PIPESTATUS[0]}
