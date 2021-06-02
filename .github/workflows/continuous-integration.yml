@@ -71,8 +71,8 @@ jobs:
 #          | xcpretty && exit ${PIPESTATUS[0]}
 
   lint:
-    name: pod lint
-    runs-on: macos-10.15
+    name: Lint pod
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         ruby-version: ["2.7.x"]
