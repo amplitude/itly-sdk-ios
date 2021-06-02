@@ -78,7 +78,7 @@ jobs:
         ruby-version: ["2.7.x"]
         itly-package: [
           "Sdk",
-#          "SchemaValidatorPlugin",
+          "SchemaValidatorPlugin",
           "IterativelyPlugin",
           "AmplitudePlugin",
           "MixpanelPlugin",

@@ -55,6 +55,13 @@ import DSJSONSchemaValidation
                 let startIndex = validatorInfo.firstIndex(of: "{") ?? validatorInfo.startIndex
                 let endIndex = validatorInfo.firstIndex(of: "}") ?? validatorInfo.endIndex
                 validatorInfo = " Rules " + String(validatorInfo[startIndex..<endIndex]) + "}"
+
+                // NOTE: The following call to fakeThrowableForSwift() is purely to make `pod lint` happy
+                //   It is possible to throw an error in ObjC above, however, this is
+                //   not visible to Swift which produces the following warning
+                //   "warning: 'catch' block is unreachable because no errors are thrown in 'do' block"
+                //   This dummy function informs Swift an error may occur in this try block
+                try fakeThrowableForSwift()
             } catch {
 
             }
@@ -68,4 +75,9 @@ import DSJSONSchemaValidation
 
         return ValidationResponse(valid: true, pluginId: self.id)
     }
+
+    /**
+    A do nothing function that pretends it can throw
+    */
+    private func fakeThrowableForSwift() throws {}
 }

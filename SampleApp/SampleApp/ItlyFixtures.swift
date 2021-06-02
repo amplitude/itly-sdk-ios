@@ -46,20 +46,19 @@ extension Sequence where Self == [String: Any?] {
     var asProperties: [String: Any] { self.compactMapValues{ $0 } }
 }
 
-@objc class Context: Event {
+@objc class Context: Properties {
     @objc static let VALID_ONLY_REQUIRED_PROPS = Context(requiredString: "Required context string")
     @objc static let VALID_ALL_PROPS = Context(requiredString: "Required context string", optionalEnum: .value1)
-    @objc static let INVALID_NO_PROPS = Event(name: "context")
+    @objc static let INVALID_NO_PROPS = Properties()
 
     enum OptionalEnum: String {
         case value1 = "Value 1"
         case value2 = "Value 2"
     }
 
-    convenience init(requiredString: String, optionalEnum: OptionalEnum? = nil) {
-        self.init(name: "context",
-                  optionalDict: ["requiredString": requiredString,
-                                 "optionalEnum": optionalEnum?.rawValue])
+    init(requiredString: String, optionalEnum: OptionalEnum? = nil) {
+        super.init(Properties.compact(["requiredString": requiredString,
+                                 "optionalEnum": optionalEnum?.rawValue]))
     }
 }
 
