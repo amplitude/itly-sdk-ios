@@ -67,5 +67,5 @@ jobs:
         run: |
           xcodebuild test \
             -workspace Sdk.xcworkspace \
-            -scheme Itly${{ matrix.itly-package }}Tests_${{ matrix.itly-package == 'Sdk' && 'OSX' || 'macOS' }} \
+            -scheme Itly${{ matrix.itly-package }}Tests_${{ matrix.itly-package != 'SchemaValidatorPlugin' && 'OSX' || 'macOS' }} \
           | xcpretty && exit ${PIPESTATUS[0]}
