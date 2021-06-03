@@ -24,5 +24,5 @@ Pod::Spec.new do |spec|
   spec.dependency "ItlySdk", "~> 1.0"
 
   spec.swift_version = '5.3'
-
+  spec.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
 end
