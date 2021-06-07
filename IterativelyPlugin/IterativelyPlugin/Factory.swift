@@ -36,9 +36,7 @@ extension MainFactory: TrackModelBuilderFactory {
 
 extension MainFactory: ClientApiFactory {
     func createClientApi() throws -> ClientApi {
-        return DefaultClientApi(baseUrl: URL(string: self.url)!,
-                                apiKey: apiKey,
-                                logger: logger)
+        return DefaultClientApi(apiKey: apiKey, options: config, logger: logger)
     }
 }
 

@@ -102,8 +102,8 @@ public let ITERATIVELY_OPTIONS_DEFAULT_DISABLED: Bool = false
     @objc public var maxRetries: Int
     @objc public var delayInitialMillis: Int
     @objc public var delayMaximumMillis: Int
-    @objc public let branch: String?
-    @objc public let version: String?
+    @objc public var branch: String?
+    @objc public var version: String?
 
     @objc public init(_ options: IterativelyOptions = IterativelyOptions()) {
         self.url = options.url

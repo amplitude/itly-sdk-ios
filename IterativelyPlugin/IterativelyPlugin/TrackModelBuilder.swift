@@ -9,11 +9,15 @@ import Foundation
 import ItlySdk
 
 protocol TrackModelBuilder {
-    func buildTrackModelForType(_ type: TrackType, event: Event?, properties: Properties?, validation: ValidationResponse?) -> TrackModel
+    func buildTrackModelForType(
+        _ type: TrackType, event: Event?, properties: Properties?, validation: ValidationResponse?
+    ) -> TrackModel
 }
 
 extension TrackModelBuilder {
-    func buildTrackModelForType(_ type: TrackType, event: Event? = nil, properties: Properties? = nil, validation: ValidationResponse? = nil) -> TrackModel{
+    func buildTrackModelForType(
+        _ type: TrackType, event: Event? = nil, properties: Properties? = nil, validation: ValidationResponse? = nil
+    ) -> TrackModel{
         return self.buildTrackModelForType(type, event: event, properties: properties, validation: validation)
     }
 
@@ -27,20 +31,27 @@ class DefaultTrackModelBuilder: TrackModelBuilder {
     private let dateFormatter: TrackModelDateFormatter
     private let omitValues: Bool
 
-    func buildTrackModelForType(_ type: TrackType, event: Event?, properties: Properties?, validation: ValidationResponse?) -> TrackModel {
-        let valid = validation?.valid ?? true
-        let details = omitValues ? "" : validation?.message ?? ""
-        let sanitizedProperties = omitValues ? properties?.sanitizedProperties : properties?.properties
-
+    func buildTrackModelForType(
+        _ type: TrackType,
+        event: Event?,
+        properties: Properties?,
+        validation: ValidationResponse?
+    ) -> TrackModel {
         return TrackModel(
             type: type,
+            messageId: UUID().uuidString,
             dateSent: dateFormatter.string(from: Date()),
             eventId: event?.id,
             eventSchemaVersion: event?.version,
             eventName: event?.name,
-            properties: sanitizedProperties,
-            valid: valid,
-            validation: Validation(details: details)
+            properties: omitValues
+                ? properties?.sanitizedProperties
+                : properties?.properties,
+            valid: validation?.valid ?? true,
+            validation: Validation(details: omitValues
+                ? ""
+                : validation?.message ?? ""
+            )
         )
     }
 

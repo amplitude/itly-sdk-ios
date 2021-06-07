@@ -33,8 +33,10 @@ extension ClientApiError: LocalizedError {
 
 class DefaultClientApi: ClientApi {
     private let baseUrl: URL
-    private let apiKey: String
     private let urlSession: URLSession
+
+    private let apiKey: String
+    private let options: IterativelyOptions
     private let logger: Logger?
 
     func uploadTrackModels(_ batch: [TrackModel], completion: @escaping ((Result<Void,ClientApiError>) -> Void)) {
@@ -44,15 +46,14 @@ class DefaultClientApi: ClientApi {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
         do {
-            struct Body {
-                var objects: [TrackModel]
-                var asDict: [String:Any] {
-                    return [
-                        "objects": objects.map{ $0.asDict }
-                    ]
-                }
+            var json: [String:Any] = ["objects": batch.map{ $0.asDict }]
+            if(options.version != nil) {
+                json["trackingPlanVersion"] = options.version
             }
-            request.httpBody = try JSONSerialization.data(withJSONObject: Body(objects: batch).asDict, options: .prettyPrinted)
+            if(options.branch != nil) {
+                json["branchName"] = options.branch
+            }
+            request.httpBody = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
         } catch {
             completion(.failure(.internalError(error)))
             return
@@ -76,13 +77,16 @@ class DefaultClientApi: ClientApi {
         }.resume()
     }
 
-    init(baseUrl: URL,
-         apiKey: String,
-         urlSession: URLSession = .shared,
-         logger: Logger? = nil) {
-        self.baseUrl = baseUrl
+    init(
+        apiKey: String,
+        options: IterativelyOptions = IterativelyOptions(),
+        logger: Logger? = nil,
+        urlSession: URLSession = .shared
+    ) {
         self.apiKey = apiKey
-        self.urlSession = urlSession
+        self.options = options
         self.logger = logger
+        self.baseUrl = URL(string: options.url)!
+        self.urlSession = urlSession
     }
 }
