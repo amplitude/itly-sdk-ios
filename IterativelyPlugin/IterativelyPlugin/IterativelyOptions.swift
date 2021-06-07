@@ -32,6 +32,8 @@ public let ITERATIVELY_OPTIONS_DEFAULT_DISABLED: Bool = false
     @objc public let maxRetries: Int
     @objc public let delayInitialMillis: Int
     @objc public let delayMaximumMillis: Int
+    @objc public let branch: String?
+    @objc public let version: String?
 
     @objc public convenience override init() {
         self.init(
@@ -56,7 +58,9 @@ public let ITERATIVELY_OPTIONS_DEFAULT_DISABLED: Bool = false
         maxRetries: Int = ITERATIVELY_OPTIONS_DEFAULT_MAX_RETRIES,
         delayInitialMillis: Int = ITERATIVELY_OPTIONS_DEFAULT_DELAY_INITIAL_MILLIS,
         delayMaximumMillis: Int = ITERATIVELY_OPTIONS_DEFAULT_DELAY_MAXIMUM_MILLIS,
-        disabled: Bool = ITERATIVELY_OPTIONS_DEFAULT_DISABLED
+        disabled: Bool = ITERATIVELY_OPTIONS_DEFAULT_DISABLED,
+        branch: String? = nil,
+        version: String? = nil
     ) {
         self.url = url
         self.disabled = disabled;
@@ -67,6 +71,8 @@ public let ITERATIVELY_OPTIONS_DEFAULT_DISABLED: Bool = false
         self.maxRetries = maxRetries
         self.delayInitialMillis = delayInitialMillis
         self.delayMaximumMillis = delayMaximumMillis
+        self.branch = branch
+        self.version = version
         super.init()
     }
 
@@ -96,6 +102,8 @@ public let ITERATIVELY_OPTIONS_DEFAULT_DISABLED: Bool = false
     @objc public var maxRetries: Int
     @objc public var delayInitialMillis: Int
     @objc public var delayMaximumMillis: Int
+    @objc public let branch: String?
+    @objc public let version: String?
 
     @objc public init(_ options: IterativelyOptions = IterativelyOptions()) {
         self.url = options.url
@@ -107,6 +115,8 @@ public let ITERATIVELY_OPTIONS_DEFAULT_DISABLED: Bool = false
         self.maxRetries = options.maxRetries
         self.delayInitialMillis = options.delayInitialMillis
         self.delayMaximumMillis = options.delayMaximumMillis
+        self.branch = options.branch
+        self.version = options.version
         super.init()
     }
 
@@ -120,6 +130,9 @@ public let ITERATIVELY_OPTIONS_DEFAULT_DISABLED: Bool = false
             maxRetries: self.maxRetries,
             delayInitialMillis: self.delayInitialMillis,
             delayMaximumMillis: self.delayMaximumMillis,
-            disabled: self.disabled)
+            disabled: self.disabled,
+            branch: self.branch,
+            version: self.version
+        )
     }
 }
