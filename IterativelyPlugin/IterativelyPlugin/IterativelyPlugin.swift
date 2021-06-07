@@ -14,12 +14,20 @@ import ItlySdk
     private var queue: ProcessingQueue?
     private let createFactory: ((Logger?) -> MainFactory)
 
-    @objc public init(_ apiKey: String, url: String, options: IterativelyOptions) throws {
+    @objc public init(_ apiKey: String, options: IterativelyOptions = IterativelyOptions()) throws {
         self.config = options
         self.createFactory = { logger in
-            return MainFactory(config: options, apiKey: apiKey, url: url, logger: logger)
+            return MainFactory(config: options, apiKey: apiKey, url: options.url, logger: logger)
         }
         super.init(id: "IterativelyPlugin")
+    }
+
+    // NOTICE: For backwards compatiblity with v1.0.0-v1.0.1 codegen.
+    // TODO: Remove this sometime when we are confident people are no longer using v1.0.1
+    @objc public convenience init(
+        _ apiKey: String, url: String?, options: IterativelyOptions = IterativelyOptions()
+    ) throws {
+        try self.init(apiKey, options: options.withOverrides({ (o) in o.url = url ?? options.url }))
     }
 
     public override func load(_ options: Options) {

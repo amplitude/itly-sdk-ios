@@ -12,6 +12,7 @@ public let MS_IN_S: Int = 1000
 public let S_IN_M: Int = 60
 public let M_IN_H: Int = 60
 
+public let ITERATIVELY_OPTIONS_DEFAULT_URL: String = "https://data.us-east-2.iterative.ly/t"
 public let ITERATIVELY_OPTIONS_DEFAULT_OMIT_VALUES: Bool = false
 public let ITERATIVELY_OPTIONS_DEFAULT_BATCH_SIZE: Int = 100
 public let ITERATIVELY_OPTIONS_DEFAULT_FLUSH_QUEUE_SIZE: Int = 10
@@ -22,6 +23,7 @@ public let ITERATIVELY_OPTIONS_DEFAULT_DELAY_MAXIMUM_MILLIS: Int = 1 * MS_IN_S *
 public let ITERATIVELY_OPTIONS_DEFAULT_DISABLED: Bool = false
 
 @objc(ITLIterativelyOptions) public class IterativelyOptions: NSObject {
+    @objc public let url: String
     @objc public let disabled: Bool
     @objc public let omitValues: Bool
     @objc public let batchSize: Int
@@ -33,6 +35,7 @@ public let ITERATIVELY_OPTIONS_DEFAULT_DISABLED: Bool = false
 
     @objc public convenience override init() {
         self.init(
+            url: ITERATIVELY_OPTIONS_DEFAULT_URL,
             omitValues: ITERATIVELY_OPTIONS_DEFAULT_OMIT_VALUES,
             batchSize: ITERATIVELY_OPTIONS_DEFAULT_BATCH_SIZE,
             flushQueueSize: ITERATIVELY_OPTIONS_DEFAULT_FLUSH_QUEUE_SIZE,
@@ -43,8 +46,9 @@ public let ITERATIVELY_OPTIONS_DEFAULT_DISABLED: Bool = false
             disabled: ITERATIVELY_OPTIONS_DEFAULT_DISABLED
         )
     }
-    
+
     @objc public init(
+        url: String = ITERATIVELY_OPTIONS_DEFAULT_URL,
         omitValues: Bool = ITERATIVELY_OPTIONS_DEFAULT_OMIT_VALUES,
         batchSize: Int = ITERATIVELY_OPTIONS_DEFAULT_BATCH_SIZE,
         flushQueueSize: Int = ITERATIVELY_OPTIONS_DEFAULT_FLUSH_QUEUE_SIZE,
@@ -54,6 +58,7 @@ public let ITERATIVELY_OPTIONS_DEFAULT_DISABLED: Bool = false
         delayMaximumMillis: Int = ITERATIVELY_OPTIONS_DEFAULT_DELAY_MAXIMUM_MILLIS,
         disabled: Bool = ITERATIVELY_OPTIONS_DEFAULT_DISABLED
     ) {
+        self.url = url
         self.disabled = disabled;
         self.omitValues = omitValues
         self.batchSize = batchSize
@@ -64,11 +69,15 @@ public let ITERATIVELY_OPTIONS_DEFAULT_DISABLED: Bool = false
         self.delayMaximumMillis = delayMaximumMillis
         super.init()
     }
-    
+
+    @objc public func withOverrides(_ builderBlock: (IterativelyOptionsBuilder) -> Void) -> IterativelyOptions {
+        let builder = IterativelyOptionsBuilder(self)
+        builderBlock(builder)
+        return builder.build()
+    }
+
     // Convenience builder for ObjC, in Swift use IterativelyOptions() with optional params
-    @objc public class func builderBlock(
-        _ builderBlock: (IterativelyOptionsBuilder) -> Void
-    ) -> IterativelyOptions {
+    @objc public class func builderBlock(_ builderBlock: (IterativelyOptionsBuilder) -> Void) -> IterativelyOptions {
         let builder = IterativelyOptionsBuilder()
         builderBlock(builder)
         return builder.build();
@@ -78,17 +87,32 @@ public let ITERATIVELY_OPTIONS_DEFAULT_DISABLED: Bool = false
 
 // Convenience for ObjC, in Swift use IterativelyOptions() with optional params
 @objc (ITLIterativelyOptionsBuilder) open class IterativelyOptionsBuilder: NSObject {
-    @objc public var disabled: Bool = ITERATIVELY_OPTIONS_DEFAULT_DISABLED
-    @objc public var omitValues: Bool = ITERATIVELY_OPTIONS_DEFAULT_OMIT_VALUES
-    @objc public var batchSize: Int = ITERATIVELY_OPTIONS_DEFAULT_BATCH_SIZE
-    @objc public var flushQueueSize: Int = ITERATIVELY_OPTIONS_DEFAULT_FLUSH_QUEUE_SIZE
-    @objc public var flushIntervalMs: Int = ITERATIVELY_OPTIONS_DEFAULT_FLUSH_INTERVAL_SIZE
-    @objc public var maxRetries: Int = ITERATIVELY_OPTIONS_DEFAULT_MAX_RETRIES
-    @objc public var delayInitialMillis: Int = ITERATIVELY_OPTIONS_DEFAULT_DELAY_INITIAL_MILLIS
-    @objc public var delayMaximumMillis: Int = ITERATIVELY_OPTIONS_DEFAULT_DELAY_MAXIMUM_MILLIS
-    
+    @objc public var url: String
+    @objc public var disabled: Bool
+    @objc public var omitValues: Bool
+    @objc public var batchSize: Int
+    @objc public var flushQueueSize: Int
+    @objc public var flushIntervalMs: Int
+    @objc public var maxRetries: Int
+    @objc public var delayInitialMillis: Int
+    @objc public var delayMaximumMillis: Int
+
+    @objc public init(_ options: IterativelyOptions = IterativelyOptions()) {
+        self.url = options.url
+        self.disabled = options.disabled;
+        self.omitValues = options.omitValues
+        self.batchSize = options.batchSize
+        self.flushQueueSize = options.flushQueueSize
+        self.flushIntervalMs = options.flushIntervalMs
+        self.maxRetries = options.maxRetries
+        self.delayInitialMillis = options.delayInitialMillis
+        self.delayMaximumMillis = options.delayMaximumMillis
+        super.init()
+    }
+
     @objc public func build() -> IterativelyOptions {
         return IterativelyOptions(
+            url: self.url,
             omitValues: self.omitValues,
             batchSize: self.batchSize,
             flushQueueSize: self.flushQueueSize,
