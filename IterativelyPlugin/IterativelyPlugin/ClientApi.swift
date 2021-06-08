@@ -59,7 +59,7 @@ class DefaultClientApi: ClientApi {
             return
         }
 
-        logger?.debug("DefaultClientApi: Request:\r\nURL: \(request.url?.absoluteString ?? "")\r\nMethod: \(request.httpMethod ?? "unnkown")\r\nHeaders:\(request.allHTTPHeaderFields ?? [:])\r\nBody: \(request.httpBody.map{ String(data: $0, encoding: .utf8) ?? "" } ?? "")")
+        logger?.debug("DefaultClientApi: Request:\r\nURL: \(request.url?.absoluteString ?? "")\r\nMethod: \(request.httpMethod ?? "unknown")\r\nBody: \(request.httpBody.map{ String(data: $0, encoding: .utf8) ?? "" } ?? "")")
 
         urlSession.dataTask(with: request) { data, response, error in
             guard let response = response as? HTTPURLResponse, error == nil else {
