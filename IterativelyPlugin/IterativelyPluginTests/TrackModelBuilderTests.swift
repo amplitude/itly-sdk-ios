@@ -29,11 +29,10 @@ class TrackModelBuilderTests: XCTestCase {
 
     func testTrackModelValidation() throws {
         let builder = DefaultTrackModelBuilder(dateFormatter: formatter, omitValues: false)
+        let model = builder.buildTrackModelForType(
+            .group, validation: ValidationResponse(valid: false, message: "Validation Message")
+        )
 
-
-
-        let model = builder.buildTrackModelForType(.group,
-                                       validation: ValidationResponse(valid: false, message: "Validation Message"))
         XCTAssertEqual(model.validation.details, "Validation Message")
     }
 

@@ -58,6 +58,9 @@
 		9DE6937C251507A5007AD6FD /* ProcessingQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE6937A251507A5007AD6FD /* ProcessingQueue.swift */; };
 		9DE6937D251507A5007AD6FD /* ProcessingQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE6937A251507A5007AD6FD /* ProcessingQueue.swift */; };
 		9DE6937E251507A5007AD6FD /* ProcessingQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE6937A251507A5007AD6FD /* ProcessingQueue.swift */; };
+		D05D7399266EFC9100A8A231 /* ClientApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2E08C251CDE2E000C613D /* ClientApiTests.swift */; };
+		D05D739A266EFE1900A8A231 /* ProcessingQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2E085251CDDD6000C613D /* ProcessingQueueTests.swift */; };
+		D05D739B266EFE1D00A8A231 /* TrackModelBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2E068251CC896000C613D /* TrackModelBuilderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -527,6 +530,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D05D739A266EFE1900A8A231 /* ProcessingQueueTests.swift in Sources */,
+				D05D7399266EFC9100A8A231 /* ClientApiTests.swift in Sources */,
+				D05D739B266EFE1D00A8A231 /* TrackModelBuilderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

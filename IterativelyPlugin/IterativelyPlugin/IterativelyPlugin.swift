@@ -80,4 +80,8 @@ import ItlySdk
         guard !isDisabled else { return }
         queue = nil
     }
+
+    public func url() -> String {
+        return self.config.url
+    }
 }
