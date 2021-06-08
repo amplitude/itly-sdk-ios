@@ -9,6 +9,21 @@ import XCTest
 @testable import ItlyIterativelyPlugin
 @testable import ItlySdk
 
+func jsonDataToDictionary(_ data: Data?) -> [String: Any]? {
+    if data != nil {
+        do {
+            return try JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    return nil
+}
+
+func jsonStringToDictionary(_ text: String) -> [String: Any]? {
+    return jsonDataToDictionary(text.data(using: .utf8))
+}
+
 class ClientApiTests: XCTestCase {
 
     class MockedURLSession: URLSession {
@@ -66,20 +81,7 @@ class ClientApiTests: XCTestCase {
     }
 
     func testStatus200() throws {
-        sessionUrl.statusCode = 200
-        var callbackCalled = false
-        clientApi!.uploadTrackModels([testModel]) { result in
-            callbackCalled = true
-            switch result {
-            case .failure:
-                XCTAssertTrue(false)
-                break
-            case .success:
-                XCTAssertTrue(true)
-                break
-            }
-        }
-        XCTAssert(callbackCalled)
+        uploadTrackModels(clientApi!, [testModel])
     }
 
     func testStatus500() throws {
@@ -99,10 +101,46 @@ class ClientApiTests: XCTestCase {
         XCTAssert(callbackCalled)
     }
 
-    func testRequest() throws {
+    func testRequest_withBranchAndVersion_hasBranchAndVersionInJson() throws {
+        self.clientApi = DefaultClientApi(
+            apiKey: self.apiKey,
+            options: IterativelyOptions(
+                url: trackerUrl,
+                branch: "main",
+                version: "1.2.3"
+            ),
+            urlSession: self.sessionUrl
+        )
+
+        uploadTrackModels(clientApi!, [testModel])
+
+        let requestBody = sessionUrl.request!.httpBody
+        XCTAssertNotNil(requestBody)
+        let requestJson = jsonDataToDictionary(requestBody)
+
+        XCTAssertEqual(requestJson!["trackingPlanVersion"] as! String, "1.2.3")
+        XCTAssertEqual(requestJson!["branchName"] as! String, "main")
+    }
+
+    func testRequest_withoutBranchAndVersion_noBranchAndVersionInJson() throws {
+        uploadTrackModels(clientApi!, [testModel])
+
+        let requestBody = sessionUrl.request!.httpBody
+        XCTAssertNotNil(requestBody)
+        let requestJson = jsonDataToDictionary(requestBody)
+
+        XCTAssertNil(requestJson!["trackingPlanVersion"])
+        XCTAssertNil(requestJson!["branchName"])
+    }
+
+    /**
+    * Mocks successful upload of given @batch via @client.uploadTrackModels
+    * Waits for requests to complete before continuing
+    */
+    private func uploadTrackModels(_ client: ClientApi, _ batch: [TrackModel]) {
         sessionUrl.statusCode = 200
         var callbackCalled = false
-        clientApi!.uploadTrackModels([testModel]) { result in
+        client.uploadTrackModels(batch) { result in
             callbackCalled = true
             switch result {
             case .failure:
@@ -114,24 +152,5 @@ class ClientApiTests: XCTestCase {
             }
         }
         XCTAssert(callbackCalled)
-
-        XCTAssertNotNil(sessionUrl.request)
-        XCTAssertEqual(sessionUrl.request!.url?.absoluteURL.absoluteString, trackerUrl)
-        XCTAssertEqual(sessionUrl.request!.httpMethod?.lowercased(), "post")
-
-        let headers = sessionUrl.request!.allHTTPHeaderFields!
-        XCTAssertEqual(headers["Authorization"], "Bearer \(self.apiKey)")
-        XCTAssertEqual(headers["Content-Type"], "application/json")
-
-//        struct Body: Encodable {
-//            var objects: [TrackModel]
-//        }
-//        let extectedHttpBody = String(data: try! JSONEncoder().encode(Body(objects: [testModel])), encoding: .utf8)
-
-        XCTAssertNotNil(sessionUrl.request!.httpBody)
-        let data = sessionUrl.request!.httpBody!
-        let actualHttpBody = String(data: data, encoding: .utf8)
-
-        XCTAssertGreaterThan(actualHttpBody!.count, 0)
     }
 }

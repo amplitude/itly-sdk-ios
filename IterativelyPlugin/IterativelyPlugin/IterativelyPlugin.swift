@@ -22,7 +22,7 @@ import ItlySdk
         super.init(id: "IterativelyPlugin")
     }
 
-    // NOTICE: For backwards compatiblity with v1.0.0-v1.0.1 codegen.
+    // NOTICE: For backwards compatibility with v1.0.0-v1.0.1 codegen.
     // TODO: Remove this sometime when we are confident people are no longer using v1.0.1
     @objc public convenience init(
         _ apiKey: String, url: String?, options: IterativelyOptions = IterativelyOptions()
