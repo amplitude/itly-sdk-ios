@@ -125,9 +125,9 @@ class ClientApiTests: XCTestCase {
         XCTAssertEqual(objects[0]["messageId"] as! String, testModel.messageId)
         XCTAssertEqual(objects[0]["dateSent"] as! String, testModel.dateSent)
 
-        XCTAssertEqual(objects[0]["eventSchemaVersion"] as! String, testModel.eventSchemaVersion)
-        XCTAssertEqual(objects[0]["eventId"] as! String, testModel.eventId)
-        XCTAssertEqual(objects[0]["eventName"] as! String, testModel.eventName)
+        XCTAssertEqual(objects[0]["eventSchemaVersion"] as? String, testModel.eventSchemaVersion)
+        XCTAssertEqual(objects[0]["eventId"] as? String, testModel.eventId)
+        XCTAssertEqual(objects[0]["eventName"] as? String, testModel.eventName)
 
         XCTAssertEqual(objects[0]["valid"] as! Bool, testModel.valid)
         XCTAssertEqual((objects[0]["validation"] as! [String: String])["details"], testModel.validation.details)
