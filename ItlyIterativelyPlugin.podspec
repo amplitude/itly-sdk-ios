@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "ItlyIterativelyPlugin"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.2"
   spec.summary      = "Iteratively tracker plugin"
   spec.description  = <<-DESC
                        Iteratively tracker plugin for Iteratively SDK (Swift & Objective-C)

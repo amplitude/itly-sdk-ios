@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "ItlyAmplitudePlugin"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.2"
   spec.summary      = "Iteratively Amplitude plugin"
   spec.description  = <<-DESC
                        Amplitude plugin for Iteratively SDK (Swift & Objective-C)
