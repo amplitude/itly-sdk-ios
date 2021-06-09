@@ -19,6 +19,7 @@ extension TrackModel {
     var asDict: [String: Any] {
         return [
             "type": type.rawValue,
+            "messageId": messageId,
             "dateSent": dateSent,
             "eventId": eventId ?? NSNull(),
             "eventSchemaVersion": eventSchemaVersion ?? NSNull(),

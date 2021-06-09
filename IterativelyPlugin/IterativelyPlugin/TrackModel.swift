@@ -18,6 +18,7 @@ struct Validation {
 
 struct TrackModel {
     var type: TrackType
+    var messageId: String
     var dateSent: String
     var eventId: String?
     var eventSchemaVersion: String?

@@ -47,19 +47,14 @@ public let ITLY_OPTIONS_DEFAULT_LOGGER: Logger? = nil
         super.init()
     }
     
-    @objc public func withOverrides(
-        _ builderBlock: (OptionsBuilder) -> Void
-    ) -> Options {
-        let builder = OptionsBuilder()
-        builder.setOptions(self)
+    @objc public func withOverrides(_ builderBlock: (OptionsBuilder) -> Void) -> Options {
+        let builder = OptionsBuilder(self)
         builderBlock(builder)
         return builder.build()
     }
     
     // Convenience builder for ObjC, in Swift use Options() with optional params
-    @objc public class func builderBlock(
-        _ builderBlock: (OptionsBuilder) -> Void
-    ) -> Options {
+    @objc public class func builderBlock(_ builderBlock: (OptionsBuilder) -> Void) -> Options {
         let builder = OptionsBuilder()
         builderBlock(builder)
         return builder.build()
@@ -67,13 +62,13 @@ public let ITLY_OPTIONS_DEFAULT_LOGGER: Logger? = nil
 }
 
 @objc (ITLItlyOptionsBuilder) open class OptionsBuilder: NSObject {
-    @objc public var environment: Environment = ITLY_OPTIONS_DEFAULT_ENVIRONMENT
-    @objc public var disabled: Bool = ITLY_OPTIONS_DEFAULT_DISABLED
-    @objc public var plugins: [Plugin] = ITLY_OPTIONS_DEFAULT_PLUGINS
-    @objc public var logger: Logger? = ITLY_OPTIONS_DEFAULT_LOGGER
-    @objc public var validation: ValidationOptions? = ITLY_OPTIONS_DEFAULT_VALIDATION_OPTIONS
+    @objc public var environment: Environment
+    @objc public var disabled: Bool
+    @objc public var plugins: [Plugin]
+    @objc public var logger: Logger?
+    @objc public var validation: ValidationOptions?
     
-    @objc public func setOptions(_ options: Options) {
+    @objc public init(_ options: Options = Options()) {
         self.disabled = options.disabled
         self.environment = options.environment
         self.plugins = options.plugins

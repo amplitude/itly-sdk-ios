@@ -22,6 +22,7 @@ Pod::Spec.new do |spec|
   spec.framework  = "Foundation"
 
   spec.swift_version = '5.3'
+  spec.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
 
   spec.test_spec do |test_spec|
     test_spec.ios.deployment_target = "9.0"

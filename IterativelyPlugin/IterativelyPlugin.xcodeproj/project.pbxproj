@@ -58,6 +58,10 @@
 		9DE6937C251507A5007AD6FD /* ProcessingQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE6937A251507A5007AD6FD /* ProcessingQueue.swift */; };
 		9DE6937D251507A5007AD6FD /* ProcessingQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE6937A251507A5007AD6FD /* ProcessingQueue.swift */; };
 		9DE6937E251507A5007AD6FD /* ProcessingQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE6937A251507A5007AD6FD /* ProcessingQueue.swift */; };
+		D05D7399266EFC9100A8A231 /* ClientApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2E08C251CDE2E000C613D /* ClientApiTests.swift */; };
+		D05D739A266EFE1900A8A231 /* ProcessingQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2E085251CDDD6000C613D /* ProcessingQueueTests.swift */; };
+		D05D739B266EFE1D00A8A231 /* TrackModelBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2E068251CC896000C613D /* TrackModelBuilderTests.swift */; };
+		D05D739D266FE00300A8A231 /* IterativelyPluginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D739C266FE00300A8A231 /* IterativelyPluginTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +116,7 @@
 		9DE693682514F8BF007AD6FD /* IterativelyOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IterativelyOptions.swift; sourceTree = "<group>"; };
 		9DE6937125150790007AD6FD /* TrackModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackModelBuilder.swift; sourceTree = "<group>"; };
 		9DE6937A251507A5007AD6FD /* ProcessingQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingQueue.swift; sourceTree = "<group>"; };
+		D05D739C266FE00300A8A231 /* IterativelyPluginTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IterativelyPluginTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +182,7 @@
 		9DD2E067251CC896000C613D /* IterativelyPluginTests */ = {
 			isa = PBXGroup;
 			children = (
+				D05D739C266FE00300A8A231 /* IterativelyPluginTests.swift */,
 				9DD2E08C251CDE2E000C613D /* ClientApiTests.swift */,
 				9DD2E085251CDDD6000C613D /* ProcessingQueueTests.swift */,
 				9DD2E068251CC896000C613D /* TrackModelBuilderTests.swift */,
@@ -527,6 +533,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D05D739A266EFE1900A8A231 /* ProcessingQueueTests.swift in Sources */,
+				D05D7399266EFC9100A8A231 /* ClientApiTests.swift in Sources */,
+				D05D739B266EFE1D00A8A231 /* TrackModelBuilderTests.swift in Sources */,
+				D05D739D266FE00300A8A231 /* IterativelyPluginTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,14 +16,17 @@ class ProcessingQueueTests: XCTestCase {
     let retrySettings = QueueRetrySettings(maxRetries: 5,
                                            delayInitialMs: 100,
                                            delayMaximumMs: 500)
-    let testModel = TrackModel(type: .group,
-               dateSent: "date",
-               eventId: "test_id",
-               eventSchemaVersion: "1.0",
-               eventName: "test",
-               properties: ["property1": "value1", "property2": 2],
-               valid: true,
-               validation: Validation(details: ""))
+    let testModel = TrackModel(
+        type: .group,
+        messageId: "message-id",
+        dateSent: "date",
+        eventId: "test_id",
+        eventSchemaVersion: "1.0",
+        eventName: "test",
+        properties: ["property1": "value1", "property2": 2],
+        valid: true,
+        validation: Validation(details: "")
+    )
 
 
 
