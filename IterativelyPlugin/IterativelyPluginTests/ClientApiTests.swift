@@ -62,13 +62,13 @@ class ClientApiTests: XCTestCase {
     let testModel = TrackModel(
         type: .group,
         messageId: "message-id",
-        dateSent: "date",
+        dateSent: "2021-06-08",
         eventId: "test_id",
-        eventSchemaVersion: "1.0",
-        eventName: "test",
-        properties: ["property1": "value1", "property2": 2],
+        eventSchemaVersion: "1.0.0",
+        eventName: "Test Event",
+        properties: ["prop1": "value1", "property2": 2],
         valid: true,
-        validation: Validation(details: "")
+        validation: Validation(details: "Validated by Iteratively")
     )
 
     override func setUp() {
@@ -99,6 +99,42 @@ class ClientApiTests: XCTestCase {
             }
         }
         XCTAssert(callbackCalled)
+    }
+
+    func testRequest_basicRequest_shouldPostExpectedJson() throws {
+        uploadTrackModels(clientApi!, [testModel])
+
+        // Check endpoint and method
+        XCTAssertNotNil(sessionUrl.request)
+        XCTAssertEqual(sessionUrl.request!.url?.absoluteURL.absoluteString, self.trackerUrl)
+        XCTAssertEqual(sessionUrl.request!.httpMethod?.lowercased(), "post")
+
+        // Check headers
+        let headers = sessionUrl.request!.allHTTPHeaderFields!
+        XCTAssertEqual(headers["Authorization"], "Bearer \(self.apiKey)")
+        XCTAssertEqual(headers["Content-Type"], "application/json")
+
+        // Check request body
+        let requestBody = sessionUrl.request!.httpBody
+        let requestJson = jsonDataToDictionary(requestBody)
+        let objects = requestJson!["objects"] as! [[String: Any]]
+        XCTAssertNotNil(requestBody)
+        XCTAssertNotNil(objects)
+
+        XCTAssertEqual(objects[0]["type"] as! String, testModel.type.rawValue)
+        XCTAssertEqual(objects[0]["messageId"] as! String, testModel.messageId)
+        XCTAssertEqual(objects[0]["dateSent"] as! String, testModel.dateSent)
+
+        XCTAssertEqual(objects[0]["eventSchemaVersion"] as! String, testModel.eventSchemaVersion)
+        XCTAssertEqual(objects[0]["eventId"] as! String, testModel.eventId)
+        XCTAssertEqual(objects[0]["eventName"] as! String, testModel.eventName)
+
+        XCTAssertEqual(objects[0]["valid"] as! Bool, testModel.valid)
+        XCTAssertEqual((objects[0]["validation"] as! [String: String])["details"], testModel.validation.details)
+
+        let properties = objects[0]["properties"] as! [String: Any]
+        XCTAssertEqual(properties["prop1"] as! String, "value1")
+        XCTAssertEqual(properties["property2"] as! Int, 2)
     }
 
     func testRequest_withBranchAndVersion_hasBranchAndVersionInJson() throws {
