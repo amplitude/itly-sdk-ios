@@ -57,9 +57,6 @@ import ItlySdk
         super.identify(userId, properties: properties)
 
         logger?.debug("\(self.id) identify(userId=\(userId ?? ""), properties=\(properties?.properties ?? [:]))")
-        guard let userId = userId else {
-            return
-        }
 
         segmentClient?.identify(userId, traits: properties?.properties)
     }
