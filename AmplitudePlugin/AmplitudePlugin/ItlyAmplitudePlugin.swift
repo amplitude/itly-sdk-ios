@@ -13,9 +13,11 @@ import ItlySdk
     private var amplitudeClient: Amplitude?
     private weak var logger: Logger?
     private let apiKey: String
+    private var config: AmplitudeOptions;
 
-    @objc public init(_ apiKey: String) {
+    @objc public init(_ apiKey: String, options: AmplitudeOptions = AmplitudeOptions()) {
         self.apiKey = apiKey
+        self.config = options
         super.init(id: "ItlyAmplitudePlugin")
     }
 
@@ -27,6 +29,7 @@ import ItlySdk
 
         self.amplitudeClient = Amplitude.instance()
         amplitudeClient?.initializeApiKey(apiKey)
+        amplitudeClient?.setPlan(AMPPlan().setBranch(self.config.branch).setSource(self.config.source).setVersion(self.config.version));
     }
 
     public override func reset() {
