@@ -29,9 +29,9 @@ import Foundation
         planSource: String? = nil,
         planVersion: String? = nil
     ) -> AmplitudeOptions {
-        let branch = planBranch ? planBranch : self.planBranch
-        let source = planSource ? planSource : self.planSource
-        let version = planVersion ? planVersion : self.planVersion
+        let branch = planBranch != nil ? planBranch : self.planBranch
+        let source = planSource != nil ? planSource : self.planSource
+        let version = planVersion != nil ? planVersion : self.planVersion
         return AmplitudeOptions(planBranch: branch, planSource: source, planVersion: version)
     }
 }
