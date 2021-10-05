@@ -29,7 +29,7 @@ import ItlySdk
 
         self.amplitudeClient = Amplitude.instance()
         amplitudeClient?.initializeApiKey(apiKey)
-        amplitudeClient?.setPlan(AMPPlan().setBranch(self.config.branch).setSource(self.config.source).setVersion(self.config.version));
+        amplitudeClient?.setPlan(AMPPlan().setBranch(self.config.planBranch).setSource(self.config.planSource).setVersion(self.config.planVersion));
     }
 
     public override func reset() {

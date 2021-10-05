@@ -9,18 +9,29 @@
 import Foundation
 
 @objc(ITLAmplitudeOptions) public class AmplitudeOptions: NSObject {
-    @objc public let branch: String?
-    @objc public let version: String?
-    @objc public let source: String?
+    @objc public let planBranch: String?
+    @objc public let planVersion: String?
+    @objc public let planSource: String?
     
     @objc public init(
-        branch: String? = nil,
-        source: String? = nil,
-        version: String? = nil
+        planBranch: String? = nil,
+        planSource: String? = nil,
+        planVersion: String? = nil
     ) {
-        self.branch = branch
-        self.source = source
-        self.version = version
+        self.planBranch = planBranch
+        self.planSource = planSource
+        self.planVersion = planVersion
         super.init()
+    }
+    
+    @objc public func withOverrides(
+        planBranch: String? = nil,
+        planSource: String? = nil,
+        planVersion: String? = nil
+    ) -> AmplitudeOptions {
+        let branch = planBranch ? planBranch : self.planBranch
+        let source = planSource ? planSource : self.planSource
+        let version = planVersion ? planVersion : self.planVersion
+        return AmplitudeOptions(planBranch: branch, planSource: source, planVersion: version)
     }
 }
