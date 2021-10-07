@@ -13,6 +13,10 @@ import Foundation
     @objc public let planVersion: String?
     @objc public let planSource: String?
     
+    @objc public convenience override init() {
+        self.init(planBranch: nil, planSource: nil, planVersion: nil)
+    }
+
     @objc public init(
         planBranch: String? = nil,
         planSource: String? = nil,
