@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E30393B270692FB00B2338C /* AmplitudeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E30393A270692FB00B2338C /* AmplitudeOptions.swift */; };
+		3E30393C270692FB00B2338C /* AmplitudeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E30393A270692FB00B2338C /* AmplitudeOptions.swift */; };
+		3E30393D270692FB00B2338C /* AmplitudeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E30393A270692FB00B2338C /* AmplitudeOptions.swift */; };
 		9D9B07B82500EEC300100E3A /* ItlyAmplitudePlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D9B07B62500EEC300100E3A /* ItlyAmplitudePlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9DE195F12506523D00966F06 /* ItlySdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE195F02506523D00966F06 /* ItlySdk.framework */; };
 		9DE196B025067D8200966F06 /* ItlySdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE196AF25067D8200966F06 /* ItlySdk.framework */; };
@@ -22,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E30393A270692FB00B2338C /* AmplitudeOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeOptions.swift; sourceTree = "<group>"; };
 		9D9B07B32500EEC300100E3A /* ItlyAmplitudePlugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ItlyAmplitudePlugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9B07B62500EEC300100E3A /* ItlyAmplitudePlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItlyAmplitudePlugin.h; sourceTree = "<group>"; };
 		9D9B07B72500EEC300100E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 				9DE196C225067DF800966F06 /* ItlyAmplitudePlugin.swift */,
 				9D9B07B62500EEC300100E3A /* ItlyAmplitudePlugin.h */,
 				9D9B07B72500EEC300100E3A /* Info.plist */,
+				3E30393A270692FB00B2338C /* AmplitudeOptions.swift */,
 			);
 			path = AmplitudePlugin;
 			sourceTree = "<group>";
@@ -203,7 +208,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1160;
-				ORGANIZATIONNAME = "Iteratively";
+				ORGANIZATIONNAME = Iteratively;
 				TargetAttributes = {
 					9D9B07B22500EEC300100E3A = {
 						CreatedOnToolsVersion = 11.6;
@@ -325,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E30393B270692FB00B2338C /* AmplitudeOptions.swift in Sources */,
 				9DE196C325067DF800966F06 /* ItlyAmplitudePlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E30393C270692FB00B2338C /* AmplitudeOptions.swift in Sources */,
 				9DE196C425067DF800966F06 /* ItlyAmplitudePlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E30393D270692FB00B2338C /* AmplitudeOptions.swift in Sources */,
 				9DE196C525067DF800966F06 /* ItlyAmplitudePlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

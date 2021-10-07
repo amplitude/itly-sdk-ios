@@ -19,7 +19,7 @@ Pod::Spec.new do |spec|
 
   spec.source_files   = 'AmplitudePlugin/AmplitudePlugin/**/*.{h,swift}'
   spec.framework  = "Foundation"
-  spec.dependency "Amplitude", "~> 8.3.0"
+  spec.dependency "Amplitude", "~> 8.4.0"
   spec.dependency "ItlySdk", "~> 1.0"
 
   spec.swift_version = '5.3'
