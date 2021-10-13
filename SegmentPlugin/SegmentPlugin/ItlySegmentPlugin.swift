@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Analytics
+import Segment
 import ItlySdk
 
 @objc(ITLSegmentPlugin) public class ItlySegmentPlugin: Plugin {

@@ -19,7 +19,7 @@ Pod::Spec.new do |spec|
   spec.tvos.deployment_target = '13.4'
 
   spec.framework  = "Foundation"
-  spec.dependency "Analytics", "~> 4.0.0"
+  spec.dependency "Analytics", "~> 4.1"
   spec.dependency "ItlySdk", "~> 1.0"
 
   spec.swift_version = '5.3'
