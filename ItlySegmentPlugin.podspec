@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "ItlySegmentPlugin"
-  spec.version      = "1.2.0"
+  spec.version      = "1.2.1"
   spec.summary      = "Iteratively Segment plugin"
   spec.description  = <<-DESC
                        Segment plugin for Iteratively SDK (Swift & Objective-C)

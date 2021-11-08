@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "ItlySchemaValidatorPlugin"
-  spec.version      = "1.2.0"
+  spec.version      = "1.2.1"
   spec.summary      = "Iteratively Schema Validator Plugin"
   spec.description  = <<-DESC
                        Schema validation plugin for Iteratively SDK (Swift & Objective-C)
